@@ -1,0 +1,96 @@
+\begin{thebibliography}{10}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+
+\bibitem{BIRD09}
+Bird, S., Klein, E., Loper, E.: Natural Language Processing with Python:
+  Analyzing Text with the Natural Language Toolkit. O'Reilly, Beijing (2009)
+
+\bibitem{BYUN02}
+Byun, H., Lee, S.W.: Applications of support vector machines for pattern
+  recognition: A survey. En: Lee, S.W., Verri, A. (eds.) Pattern Recognition
+  with Support Vector Machines, Lecture Notes in Computer Science, vol. 2388,
+  pp. 571--591. Springer Berlin / Heidelberg (2002)
+
+\bibitem{CORTES95}
+Cortes, C., Vapnik, V.: Support-vector networks. Machine Learning  20,
+  273--297 (1995)
+
+\bibitem{CRANDALL95}
+Crandall, D.: Automatic accent restoration in spanish text (1995)
+
+\bibitem{DAELEMANS96}
+Daelemans, W., Zavrel, J., Berck, P., Gillis, S.: {MBT}: A memory-based part of
+  speech tagger-generator. En: Ejerhed, E., Dagan, I. (eds.) Proceedings of the
+  Fourth Workshop on Very Large Corpora. pp. 14--27 (1996)
+
+\bibitem{RAE}
+Espa{\~n}ola, R.A.: Diccionario de la lengua espa{\~n}ola, vig{\'e}sima segunda
+  edici{\'o}n
+
+\bibitem{GIMENEZ04}
+Gim{\'e}nez, J., M{\`a}rquez, L.: {SVMTool}: A general pos tagger generator
+  based on support vector machines. En: In Proceedings of the 4th International
+  Conference on Language Resources and Evaluation. pp. 43--46 (2004)
+
+\bibitem{GIMENEZ06}
+Gim{\'e}nez, J., M{\`a}rquez, L.: SVMTool: Technical manual v1.3 (2006)
+
+\bibitem{JOACHIMS99}
+Joachims, T.: Making large-scale {SVM} learning practical. En: Sch{\"o}lkopf,
+  B., Burges, C., Smola, A. (eds.) Advances in Kernel Methods - Support Vector
+  Learning. MIT Press, Cambridge, MA, USA (1999)
+
+\bibitem{JOACHIMS08}
+Joachims, T.: SVMlight: Support Vector Machine (2008), {University of Dortmund}
+
+\bibitem{LAFFERTY01}
+Lafferty, J.D., McCallum, A., Pereira, F.C.N.: Conditional random fields:
+  Probabilistic models for segmenting and labeling sequence data. En:
+  Proceedings of the Eighteenth International Conference on Machine Learning.
+  pp. 282--289. ICML '01, Morgan Kaufmann Publishers Inc., San Francisco, CA,
+  USA (2001)
+
+\bibitem{MAKHOUL99}
+Makhoul, J., Kubala, F., Schwartz, R., Weischedel, R.: Performance measures for
+  information extraction. En: Proceedings,DARPA broadcast news workshop (1999)
+
+\bibitem{MCCALLUM02}
+McCallum, A.: {MALLET}: A machine learning for language toolkit. Disponible en
+  \hbox{\url{http://mallet.cs.umass.edu}}
+
+\bibitem{MIHALCEA02}
+Mihalcea, R.: Diacritics restoration: Learning from letters versus learning
+  from words. En: Gelbukh, A.F. (ed.) CICLing. Lecture Notes in Computer
+  Science, vol. 2276, pp. 339--348. Springer (2002)
+
+\bibitem{NAKAGAWA01}
+Nakagawa, T., Kudo, T., Matsumoto, Y.: {Unknown Word Guessing and
+  Part-of-Speech Tagging Using Support Vector Machines}. En: {Proceedings of
+  the Sixth Natural Language Processing Pacific Rim Symposium} (2001)
+
+\bibitem{SIMARD98}
+Simard, M.: {Automatic Insertion of Accents in French Text}. En: {Proceedings
+  of the Conference on Empirical Methods in Natural Language Processing}
+  (1998), {EMNLP}-3
+
+\bibitem{VECIANA04}
+Veciana, R.: La acentuaci{\'o}n espa{\~n}ola: Nuevo manual de las normas
+  acentuales. Universidad de Cantabria (2004)
+
+\bibitem{WALLACH04}
+Wallach, H.M.: Conditional random fields: An introduction. Reporte Técnico
+  MS-CIS-04-21, University of Pennsylvania, Philadelphia (2004)
+
+\bibitem{YAROWSKY94-2}
+Yarowsky, D.: A comparison of corpus-based techniques for restoring accents in
+  spanish and french text. En: Proceedings, 2nd Annual Workshop on Very Large
+  Corpora. pp. 19--32 (1994)
+
+\bibitem{YAROWSKY94}
+Yarowsky, D.: Decision lists for lexical ambiguity resolution: application to
+  accent restoration in spanish and french. En: Proceedings of the 32nd annual
+  meeting on Association for Computational Linguistics. pp. 88--95. ACL '94,
+  Association for Computational Linguistics, Stroudsburg, PA, USA (1994)
+
+\end{thebibliography}

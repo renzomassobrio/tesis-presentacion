@@ -1,0 +1,7 @@
+\beamer@endinputifotherversion {3.33pt}
+\select@language {spanish}
+\beamer@sectionintoc {1}{Introducci\IeC {\'o}n}{3}{0}{1}
+\beamer@sectionintoc {2}{Descripci\IeC {\'o}n del problema}{5}{0}{2}
+\beamer@sectionintoc {3}{M\IeC {\'e}todos para la resoluci\IeC {\'o}n del problema}{8}{0}{3}
+\beamer@sectionintoc {4}{Evaluaci\IeC {\'o}n}{11}{0}{4}
+\beamer@sectionintoc {5}{Conclusiones y trabajo futuro}{16}{0}{5}

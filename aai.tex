@@ -1,0 +1,421 @@
+%%% typeinst.tex %%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% This is the LaTeX source for the instructions to authors using
+% the LaTeX document class 'llncs.cls' for contributions to
+% the Lecture Notes in Computer Sciences series.
+% http://www.springer.com/lncs       Springer Heidelberg 2006/05/04
+%
+% It may be used as a template for your own input - copy it
+% to a new file with a new name and use it as the basis
+% for your article.
+%
+% NB: the document class 'llncs' has its own and detailed documentation, see
+% ftp://ftp.springer.de/data/pubftp/pub/tex/latex/llncs/latex2e/llncsdoc.pdf
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\documentclass[runningheads,a4paper]{llncs}
+
+\usepackage{amssymb}
+\setcounter{tocdepth}{3}
+\usepackage{graphicx}
+
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+
+\usepackage{url}
+\urldef{\mailsi}\path|{siturria,dgarat,gmonce}@fing.edu.uy|
+\urldef{\nltk}\path|http://www.nltk.org/|
+\newcommand{\keywords}[1]{\par\addvspace\baselineskip
+\noindent\keywordname\enspace\ignorespaces#1}
+
+\hyphenation{es-tre-cha-men-te in-te-rro-ga-ti-vos in-te-rro-ga-ti-vo he-rra-mien-ta he-rra-mien-tas i-dio-ma a-ta-ca-da mo-de-lo de-men-cia ma-ne-ra pro-ble-ma e-xis-te}
+
+\begin{document}
+
+\mainmatter  % start of an individual contribution
+
+% first the title is needed
+\title{Restauración automática de acentos ortográficos en adverbios interrogativos}
+
+% a short form should be given in case it is too long for the running head
+\titlerunning{Restauración automática de acentos ortográficos en adverbios interrogativos}
+
+% the name(s) of the author(s) follow(s) next
+\author{Santiago Iturriaga \and Diego Garat \and Guillermo Moncecchi} 
+
+%
+\authorrunning{Restauración automática de acentos ortográficos en adverbios interrogativos}
+% (feature abused for this document to repeat the title also on left hand pages)
+
+% the affiliations are given next; don't give your e-mail address
+% unless you accept that it will be published
+\institute{Facultad de Ingenier\'ia,\\
+Universidad de la Rep\'ublica,\\
+Montevideo, Uruguay \\
+\mailsi}
+
+\maketitle
+
+\begin{abstract}
+%The abstract goes here. DO NOT USE SPECIAL CHARACTERS, SYMBOLS, OR MATH IN YOUR TITLE OR ABSTRACT.
+La omisión de acentos ortográficos es un error tipográfico muy frecuente en el idioma español; su restauración automática consiste en la inserción de acentos omitidos en los lugares que son necesarios. Los adverbios interrogativos son un caso especialmente dificultoso de este problema, ya que en muchas ocasiones no existen marcas claras que indiquen su presencia. Este trabajo presenta dos técnicas de aprendizaje automático, \emph{Conditional Random Fields} (CRF) y \emph{Support Vector Machines} (SVM), aplicadas a la resolución del problema de la restauración automática de acentos ortográficos para el caso específico de los adverbios interrogativos. Se obtuvieron buenos resultados con ambas técnicas, siendo sensiblemente superior el resultado obtenido utilizando un clasificador basado en CRF, y que utiliza como atributos los tokens que más comúnmente preceden y siguen a los adverbios interrogativos.
+\keywords{crf, svm, restauración automática de acentos ortográficos}
+\end{abstract}
+
+\section{Introducción}
+Dado un texto sin la presencia de acentos ortográficos, el problema de su  restauración automática consiste en insertar acentos ortográficos en los lugares del texto en el que son requeridos por las normas de acentuación. Los acentos ortográficos son muy importantes para determinar el significado de una oración; sin embargo, es muy común omitir este tipo de signo ortográfico en la escritura informal, por ejemplo, en letras mayúsculas.
+
+La acentuación ortográfica en algunas palabras del idioma español sirve solamente como ayuda a la pronunciación. Sin embargo, en otras palabras la acentuación ortográfica elimina la ambigüedad de una oración. Podemos clasificar las palabras con acento ortográfico del idioma español de la siguiente manera~\cite{CRANDALL95}:
+\begin{enumerate}
+\item{Palabras sin ambigüedad}. Existe una única forma correcta de escribir estas palabras, e.g. \emph{acentuación} siempre debe ser escrita con tilde.
+\item{Palabras con ambigüedad}. Las palabras pertenecientes a esta clase pueden cambiar su significado dependiendo si son escritas con o sin acentuación ortográfica. Por ejemplo: diferentes conjugaciones del mismo verbo (\emph{canto/cantó, hable/hablé}), sustantivos (\emph{papa/papá, secretaria/secretaría}), etc.
+\end{enumerate}
+
+La restauración de acentos ortográficos es trivial para las palabras \emph{sin ambig\"uedad}. Sin embargo, la restauración de acentos ortográficos en las palabras \emph{con ambig\"uedad} requiere examinar el contexto de cada palabra. Este problema se encuentra estrechamente relacionado con los problemas de desambiguación léxica: involucra aspectos de la desambiguación del significado de una palabra y aspectos del etiquetado gramatical. 
+
+La restauración de acentos ortográficos es una problemática que ha sido atacada utilizando diferentes técnicas. Crandall~\cite{CRANDALL95} propone un método híbrido combinando un método basado en \emph{Hidden Markov Models}(HMM) y un modelo Bayesiano. Simard~\cite{SIMARD98}, para la restauración de acentos ortográficos de textos en francés, también propone un método basado en HMM combinado con un análisis morfosintáctico del corpus. Yarowsky~\cite{YAROWSKY94,YAROWSKY94-2} experimenta con métodos basados en HMM, clasificadores Bayesianos, y listas de decisión para la restauración de acentos ortográficos de textos en español y francés. Todos estos trabajos basan sus métodos de aprendizaje a nivel de palabras, Mihalcea~\cite{MIHALCEA02} presenta un enfoque innovador al utilizar árboles de decisión a nivel de letras para restaurar acentos ortográficos en idioma rumano. Estos trabajos reportan un porcentaje de éxito muy elevado, pero debe tenerse en cuenta que el porcentaje de éxito de línea base también es muy elevado. Por ejemplo, en el idioma francés aproximadamente el $85\%$ de las palabras no llevan acento ortográfico, y la forma correcta de más de la mitad de las palabras restantes puede deducirse determinísticamente. Esto deja una tasa base de éxito de $95\%$~\cite{SIMARD98}.
+
+En este trabajo se presenta la aplicación de dos técnicas de aprendizaje automático, CRF y SVM, para la resolución del problema de restauración automática de acentos ortográficos en adverbios interrogativos. Este tipo de adverbios tienen una gran dependencia con el contexto en el que aparecen y son un problema particularmente difícil de resolver debido a su alto nivel ambigüedad. Según nuestro conocimiento no existen antecedentes de trabajos previos orientados a resolver el problema planteado.
+
+El trabajo está organizado de la siguiente forma. En la siguiente sección se presenta una descripción del problema y el corpus de trabajo. En la sección~\ref{sec:solucion-propuesta} se aborda el problema de restauración de acentos ortográficos como un problema de clasificación y se introducen los métodos CRF y SVM. La discusión del análisis experimental y de los resultados obtenidos es presentada en la sección~\ref{sec:Resultados}, mientras que las conclusiones y las posibles líneas de trabajo futuro son presentadas en la sección~\ref{sec:Conclusiones}.
+
+\section{Descripción del Problema}
+Los adverbios son palabras invariables que complementan el significado de un verbo, un adjetivo u de otro adverbio ~\cite{RAE}. Algunos de ellos ---\emph{cuando, cuanto, como, ...}--- pueden funcionar como relativos (\emph{la ciudad donde nació}) o de forma interrogativa/exclamativa (\emph{¿dónde nació?}), debiendo ser, en este último caso,  acentuados ortográficamente. 
+
+Los adverbios interrogativos pueden formularse de forma directa o indirecta~\cite{VECIANA04}. Un ejemplo de un adverbio interrogativo directo es el siguiente: \emph{¿Adónde os marcháis?}. Una frase similar formulada como adverbio interrogativo indirecto es: \emph{Dime adónde saldréis}. Si bien la existencia de signos de interrogación es un fuerte indicador de la presencia de adverbios interrogativos directos, no existe un indicador claro que marque la presencia de los adverbios interrogativos indirectos. Además, dentro de una frase que contiene un adverbio interrogativo pueden presentarse adverbios no interrogativos: \emph{Cabe preguntarse entonces, ¿por qué algunas enfermedades de origen vírico, como los catarros o la gripe, pueden sufrirse en repetidas ocasiones?}.
+
+El problema que se ataca en este trabajo es el siguiente. Dado un texto del que fueron quitados todos los acentos ortográficos de sus adverbios: \emph{cuándo, cuánto, dónde, cómo, adónde} y \emph{qué}, se debe clasificar cada palabra del texto en una de las siguientes clases: 
+\begin{itemize}
+	\item {\texttt{O}}. Toda palabra que no es uno de los adverbios considerados.
+	\item {\texttt{SIN\_TILDE}}. Si se trata de un adverbio no interrogativo.
+	\item {\texttt{CON\_TILDE}}. Si se trata de un adverbio interrogativo~\footnote{Potencialmente podr\'ia tratarse de un adverbio exclamativo.}.
+\end{itemize}
+
+El corpus de trabajo se basa en la unión de los corpus CESS Treebanks y CoNLL 2002. Para la construcción del corpus se utiliza la herramienta Natural Language Toolkit (NLTK) 2.0~\footnote{Disponible para descargar en \nltk}. El corpus construido consta de un total de $562136$ tokens, de los cuales $18677$ son adverbios no interrogativos y $238$ son adverbios interrogativos. En el cuadro \ref{table:corpus} se muestra la proporci\'on de las etiquetas asignadas al corpus construido.
+
+\begin{table}[ht]
+ 	\renewcommand{\arraystretch}{1.3}
+	\renewcommand{\tabcolsep}{3pt}
+	\caption{Etiquetas asignadas al corpus utilizado.}
+	\label{table:corpus}
+	\centering
+	\begin{tabular}{c r r}
+		\hline\hline
+		\multicolumn{1}{c}{\textbf{Etiqueta}} & \multicolumn{1}{c}{\textbf{Cantidad de tokens}} & \multicolumn{1}{c}{\textbf{Proporci\'on del corpus}} \\
+		\hline
+		\texttt{O} & 543221 & 96,64\% \\
+		\texttt{SIN\_TILDE} & 18677 & 3,32\% \\
+		\texttt{CON\_TILDE} & 238 & 0,04\% \\
+		\hline
+	\end{tabular}
+\end{table}
+
+La gran mayoría de los tokens del corpus (un $96,64\%$)  no son adverbios, y por lo tanto se les asigna la etiqueta \texttt{\small O}. Esto nos asegura que utilizando un clasificador de línea base muy simple podemos obtener fácilmente un $96,64\%$ de precisión asignando la etiqueta \texttt{\small O} a todos los tokens de nuestro corpus. A\'un m\'as, resulta trivial determinar si un token es un adverbio del tipo buscado, por lo tanto basta con asignar la etiqueta \texttt{\small SIN\_TILDE} a todos los adverbios considerados para clasificar correctamente el $98,70\%$ de los adverbios y obtener un $99,96\%$ de \'exito en nuestro clasificador.
+
+\section{Restauración de acentos como un problema de clasificación}
+\label{sec:solucion-propuesta}
+
+En este trabajo se aborda el problema de la restauraci\'on de acentos ortogr\'aficos como un problema de clasificaci\'on. Con este propósito se introducen dos m\'etodos utilizados para el reconocimiento de patrones: Conditional random fields y Support vector machines. A continuación se presentan en detalle cada uno de estos métodos.
+
+\subsection{Clasificación Utilizando CRF}
+\label{sec:CRF}
+
+Conditional random fields, propuesto por Lafferty et al.~\cite{LAFFERTY01}, es un modelo estocástico para el etiquetado y la segmentación de datos secuenciales. Utiliza un modelo que define una probabilidad condicional $p(Y|x)$ sobre secuencias de etiquetas dada la observación de una secuencia particular, $x$. Para etiquetar una nueva secuencia observada $x_*$, el modelo condicional selecciona la etiqueta de la secuencia $y_*$ que maximiza la probabilidad condicional $p(y_*|x_*)$. Un modelo CRF puede representarse como un grafo no dirigido en el que cada vértice representa una variable aleatoria y cada arista indica una dependencia entre las variables de los vértices que conecta. De esta manera, sea $X$ la variable aleatoria que representa las secuencias de observaci\'on, definimos $G=(V,E)$ un grafo no dirigido en el que existe un nodo $v \in V$ por cada variable aleatoria representada por el elemento $Y_v$ de $Y$. El modelo CRF resulta superior a otros métodos utilizados para el etiquetado de datos secuenciales, como Hidden Markov Model (HMM) o Maximum Entropy Markov Model (MEMM), debido a la relajación en el supuesto de independencia y debido a que evita el problema de sesgo de etiquetado presentados por estos modelos~\cite{WALLACH04}.
+
+En este trabajo, para la implementación del clasificador basado en CRF se utiliza la herramienta MALLET 2.0.6, una herramienta desarrollada en Java por Andrew McCallum et al.~\cite{MCCALLUM02}. En el cuadro \ref{table:featuresCRF} se muestra un resumen de las características implementadas en MALLET y utilizadas para la clasificación mediante CRF.
+
+\begin{table}[ht]
+ 	\renewcommand{\arraystretch}{1.3}
+	\renewcommand{\tabcolsep}{3pt}
+	\caption{Características utilizadas para la clasificación mediante CRF.}
+	\label{table:featuresCRF}
+	\centering
+	\begin{tabular}{c l}
+		\hline\hline
+		\multicolumn{1}{c}{\textbf{Característica}} & \multicolumn{1}{c}{\textbf{Descripción}} \\
+		\hline
+		\texttt{ADVERBIO} & Tokens que son adverbios. \\
+		\texttt{NOADVERBIO} & Tokens que no son adverbios. \\
+		\texttt{CAPITALIZED} & Tokens cuya primera letra es mayúscula. \\
+		\texttt{FIRST} & Tokens que aparecen primeros en una oración. \\
+		\texttt{BEGINNING} & Adverbios que aparecen en primer o segundo lugar \\
+		& en una oración. \\
+		\texttt{SIGN-QE} & Tokens que representan signos de exclamación. \\
+		\texttt{IN-QE} & Adverbios en oraciones donde existen ocurrencias \\
+		& de signos de interrogación o exclamación. \\
+		\texttt{ADVERBIO-QE} & Adverbios seguidos o precedidos por un signo \\
+		& interrogativo o exclamativo. \\
+		\texttt{PREV-SINT} & Los siguientes tokens $\rightarrow$ e.g.: \emph{,} \emph{lo} \emph{la} \emph{el} \emph{los} \emph{"} \\
+		\texttt{NEXT-SINT} & Los siguientes tokens $\rightarrow$ e.g.: \emph{el} \emph{la} \emph{los} \emph{en} \emph{las} \emph{ha} \emph{"} \\
+		\texttt{ADVERBIO-SINT} & Adverbios precedidos por \texttt{PREV-SINT} o \\
+		& sucedidos por \texttt{NEXT-SINT}. \\
+		\texttt{PREV-CINT} & Los siguientes tokens $\rightarrow$ e.g.: \emph{por} \emph{-} \emph{sobre} \emph{ver} \emph{a} \emph{saber} \emph{sé} \\
+		\texttt{NEXT-CINT} & Los siguientes tokens $\rightarrow$ e.g.: \emph{es} \emph{le} \emph{significa} \\
+		\texttt{ADVERBIO-CINT} & Adverbios precedidos por \texttt{PREV-CINT} o \\
+		& sucedidos por \texttt{NEXT-CINT}. \\
+		\emph{Conjunciones} & Conjunción de todas las características del token anterior \\
+		& y el token actual, y las del token actual y el token siguiente. \\
+		\hline
+	\end{tabular}
+\end{table}
+
+Las características \texttt{\small PREV-SINT}, \texttt{\small NEXT-SINT}, \texttt{\small PREV-CONT} y \texttt{\small NEXT-CONT} se incluyen en el clasificador luego de un estudio sobre los tokens que preceden y suceden a los adverbios del corpus construido para el problema. La característica \texttt{\small PREV-SINT} es asignada a los tokens que preceden con mayor frecuencia a adverbios no interrogativos, pero no preceden a adverbios interrogativos. La característica \texttt{\small NEXT-SINT} se agrega a los tokens que suceden con mayor frecuencia a adverbios no interrogativos, pero no preceden a adverbios interrogativos. De forma similar, se agregaron las características \texttt{\small PREV-CONT} y \texttt{\small NEXT-CONT} para adverbios interrogativos. Para determinar los tokens de estas características, se analiza por separado cada corpus de entrenamiento. En cada corpus de entrenamiento se seleccionan los tokens que cumplen cada una de las características mencionadas con mayor probabilidad, y se utilizan estos tokens para la definición de cada característica. De esta manera, nos aseguramos que las características utilizadas para cada evaluación son totalmente independientes del corpus utilizado para esa evaluación.
+
+Para el entrenamiento se utiliza un modelo CRF de orden-1 totalmente conectado, y optimizando la verosimilitud por etiqueta. Adicionalmente, se prohíbe la transición de etiquetas \texttt{\small CON\_TILDE} a \texttt{\small CON\_TILDE} ya que no pueden ocurrir dos adverbios interrogativos juntos en una oración. 
+
+\subsection{Clasificación Utilizando SVM}
+\label{sec:SVM}
+
+Support vector machines es un método de aprendizaje estadístico propuesto por Vapnik et al.~\cite{CORTES95}. Es sabido que SVM obtiene mejores resultados que métodos tradicionales ---como redes neuronales--- aún en grandes espacios dimensionales con pequeños conjuntos de entrenamiento; por esta razón ha sido aplicado con éxito a problemas de detección facial, detección y reconocimiento de objetos, reconocimiento de textos manuscritos, categorización, predicción, entre otros~\cite{BYUN02}. 
+
+Support vector machines es un clasificador lineal: dada una serie de vectores de entrada, el m\'etodo intenta dividir linealmente el espacio vectorial creando una serie de regiones, a cada una de las cuales se le asocia una clase de salida. En el caso más simple de dos dimensiones tendremos un conjunto de instancias de entrenamiento ${(x_1, y_1),...,(x_N,y_N)}$, siendo cada instancia $x_i$ un vector en $\Re^N$ y siendo $y_i \in \lbrace-1,+1\rbrace$ la etiqueta de clase correspondiente. 
+
+El algoritmo SVM aprende un hiperplano lineal que separa el conjunto de ejemplos positivos del conjunto de ejemplos negativos con \emph{margen} máximo. El \emph{margen} se define como la distancia del hiperplano al punto más cercano de cada uno de los conjuntos de ejemplos. El separador lineal se encuentra definido por un vector de pesos $w$ y un sesgo $b$ que representa la distancia del hiperplano al origen. La regla de clasificación de SVM es entonces $f(x,w,b)=\langle x \cdot w \rangle+b$.
+
+Para la implementaci\'on del clasificador basado en SVM se utiliza la herramienta SVM$^{light}$ desarrollada en lenguaje C por Thorsten Joachims~\cite{JOACHIMS99,JOACHIMS08}. Junto con SVM$^{light}$ se utiliza SVMTool, una herramienta desarrollada por el grupo de Procesamiento de Lenguaje Natural de la Universidad Politécnica de Cataluña~\cite{GIMENEZ04,GIMENEZ06}. SVMTool es un generador de etiquetadores de secuencias para SVM$^{light}$ implementado en lenguaje Perl que facilita la utilizaci\'on de SVM$^{light}$ en problemas de etiquetado de secuencias. 
+
+Por defecto, la herramienta SVMTool utiliza para la clasificación las características definidas y optimizadas por Giménez et al. En este trabajo se toman como base las caracter\'isticas defecto, calibradas para mejorar su desempeño en el problema de restauración de acentos ortográficos. En el cuadro \ref{table:featuresSVM} se presentan las características de SVMTool utilizadas para la clasificación.
+
+\begin{table}[ht]
+ 	\renewcommand{\arraystretch}{1.3}
+	\renewcommand{\tabcolsep}{3pt}
+	\caption{Características utilizadas en el clasificador basado en SVM.}
+	\label{table:featuresSVM}
+	\centering
+	\begin{tabular}{c l}
+		\hline\hline
+		\multicolumn{1}{c}{\textbf{Característica}} & \multicolumn{1}{c}{\textbf{Descripción}} \\
+		\hline
+		\texttt{Tokens} & $t_{-2}$, $t_{-1}$, $t_{0}$, $t_{+1}$, $t_{+2}$ \\
+		\texttt{Etiquetas} &  $e_{-2}$, $e_{-1}$ \\
+		\texttt{Bigramas$_{t}$} & $(t_{-2},t_{-1})$, $(t_{-1},t_{0})$, $(t_{-1},t_{+1})$, \\
+			& $(t_{0},t_{+1})$, $(t_{+1},t_{+2})$ \\
+		\texttt{Bigramas$_{e}$} & $(e_{-2},e_{-1})$, $(e_{-1},a_{+1})$, $(a_{+1},a_{+2})$ \\
+		\texttt{Trigramas$_{t}$} & $(t_{-2},t_{-1},t_{0})$, $(t_{-2},t_{-1},t_{+1})$, \\
+			& $(t_{-1},t_{0},t_{+1})$, $(t_{-1},t_{+1},t_{+2})$, \\
+			& $(t_{0},t_{+1},t_{+2})$ \\
+		\texttt{Trigramas$_{e}$} & $(e_{-2},e_{-1},a_{+1})$, $(e_{-1},a_{+1},a_{+2})$ \\
+		\texttt{SA} & Tokens cuya primera letra es mayúscula. \\
+		\texttt{aa} & Tokens en los que todas sus letras son minúsculas. \\
+		\texttt{Oraci\'on} & Puntuación de la oración $\rightarrow$ \emph{.} \emph{?} \emph{!} \\
+		\hline
+	\end{tabular}
+\end{table}
+
+Para la clasificación se utiliza una ventana de $5$ tokens centrada en el token a etiquetar. Así $t_{0}$ representa el token a ser etiquetado, $t_{+1}$ el token que sucede a $t_{0}$ en la oración, y $t_{-1}$ el token que lo precede. La característica \texttt{\small Tokens} representa los unigramas formados por los tokens de la oración. 
+
+La característica \texttt{\small Etiquetas} representa las etiquetas de los tokens en la oración; esta característica toma en cuenta las etiquetas de los dos tokens inmediatamente anteriores al token actual.
+
+Adem\'as de los unigramas, para la clasificaci\'on se toman en cuenta bigramas y trigramas tanto de tokens (i.e. \texttt{\small Bigramas$_{t}$}, \texttt{\small Trigramas$_{t}$}) como de etiquetas (i.e. \texttt{\small Bigramas$_{e}$} y \texttt{\small Trigramas$_{e}$}). Para el caso de los bigramas y trigramas de etiquetas ocurre una situaci\'on particular: para formar algunos ngramas se utilizan etiquetas de tokens que se encuentran a la derecha del token que está siendo etiquetado, es decir, etiquetas que aún no han sido asignadas. Existen diferentes formas de resolver este problema, Nakagawa et al.~\cite{NAKAGAWA01} propone realizar un etiquetado en dos pasadas para conocer las etiquetas a izquierda y derecha de cada token. La herramienta SVMTool implementa la solución propuesta por \hbox{Daelemans} et al.~\cite{DAELEMANS96} que consiste en utilizar etiquetas de ambig\"uedad que representan las posibles etiquetas de los tokens no clasificados.
+
+Las caracter\'istica \texttt{\small Oraci\'on} representa información de puntuación de la oración, e.g. si la oración finaliza con el token \emph{'.'}, o \emph{'?'}, o \emph{'!'}.
+
+En SVMTool existen diferentes modelos para realizar el entrenamiento del clasificador. En este trabajo se utiliza el \emph{Modelo 0} de SVMTool con dos pasadas combinadas (\texttt{\small LRL}). Tal como lo mencionamos antes, en el \emph{Modelo 0} se consideran clases de ambig\"uedad para el contexto desconocido. En un entrenamiento de dos pasadas primero se realiza un entrenamiento de izquierda a derecha (\texttt{\small LR}) y luego de derecha a izquierda (\texttt{\small RL}). Al momento de la clasificación ambas direcciones son evaluadas y es elegida la etiqueta que presenta mayor confiabilidad.
+
+Por último, en SVMTool existen dos posibles esquemas de clasificación, el esquema \emph{Goloso} y el esquema \emph{Por oración}. En el esquema \emph{Goloso}, a cada token le es asignada la etiqueta que maximiza la función de puntuación del propio token. En el esquema \emph{Por oración} a cada token le es asignada la etiqueta que maximiza la sumatoria de las funciones de puntuación de todos los tokens de la oración. Se realizaron experimentos con ambos esquemas de clasificación y el esquema \emph{Por oración} arrojó mejores resultados por lo que se decidió utilizar este esquema.
+
+\section{Evaluación}
+\label{sec:Resultados}
+
+Los resultados de los clasificadores son evaluados utilizando las métricas de \emph{Precisión}, \emph{Recall} y \emph{Medida-F}~\cite{BIRD09}:
+
+\begin{equation}
+	\label{eq:precision}
+	P = \frac{PV}{PV + FP}
+\end{equation}
+\begin{equation}
+	\label{eq:recall}
+	R = \frac{PV}{PV + FN}
+\end{equation}
+\begin{equation}
+	\label{eq:medida-f}
+	F_{\alpha} = \frac{P \times R}{(1 - \alpha)P + (\alpha)R}
+\end{equation}
+\newpage
+Para la definición de las métricas presentadas deben definirse los siguientes conceptos:
+\begin{itemize}
+\item{\emph{Positivos Verdaderos} (PV) son elementos de la clase buscada que fueron correctamente identificados.}
+\item{\emph{Negativos Verdaderos} (NV) son elementos que no pertenecen a la clase buscada que fueron correctamente ignorados y clasificados en una clase diferente.}
+\item{\emph{Falsos Positivos} (FP), o errores de Tipo I, son elementos que pertenecen a otra clase y que fueron incorrectamente clasificados en la clase buscada.}
+\item{\emph{Falsos Negativos} (FN), o errores de Tipo II, son elementos que pertenecen a clase buscada y que fueron incorrectamente clasificados en otra clase.}
+\end{itemize}
+
+Para este trabajo se utiliza $F_{0.5}$~\cite{MAKHOUL99}, por lo que la ecuación~\ref{eq:medida-f} se reduce a la ecuación~\ref{eq:medida-f-0-5}.
+
+\begin{equation}
+	\label{eq:medida-f-0-5}
+	F_{0.5} = \frac{2 \times P \times R}{P + R}
+\end{equation}
+
+Para la evaluación de los clasificadores se dividió el corpus por oraciones en $10$ partes de tamaño similar; para cada clasificador se realizan diez entrenamientos diferentes, variando el conjunto de entrenamiento compuesto por nueve de las diez partes del corpus y validando el resultado con la parte del corpus restante. 
+
+%Al comparar el total de errores obtenidos por cada clasificador luego de las diez evaluaciones cruzadas del corpus, podemos ver que el clasificador CRF obtiene una disminución promedio del $31,51\%$ del error en la clasificación de adverbios (tanto interrogativos como no interrogativos) con respecto al clasificador de línea base, mientras que el clasificador SVM obtiene una disminución promedio de solamente el $17,65\%$. 
+Las matrices de confusi\'on de los clasificadores muestran los tipos de errores cometidos. Los cuadros \ref{table:confusion-svm} y \ref{table:confusion-crf} muestran que para ambos clasificadores la gran mayor\'ia de errores son cometidos al clasificar adverbios interrogativos con etiquetas \texttt{\small SIN\_TILDE}. El $98,98\%$ de los errores del clasificador basado en SVM y $95,09\%$ del clasificador basado en CRF son debido a este tipo de confusi\'on. Además, los errores cometidos al clasificar adverbios no interrogativos se deben solamente a que son etiquetados como adverbios interrogativos.
+
+\begin{table}[ht]
+	%\addtolength{\abovecaptionskip}{-2mm}
+	\addtolength{\belowcaptionskip}{-2mm}
+ 	\renewcommand{\arraystretch}{1.3}
+	\renewcommand{\tabcolsep}{3pt}
+	\caption{Matriz de confusión del clasificador basado en SVM.}
+	\label{table:confusion-svm}
+	\centering
+	\begin{tabular}{|r||r|r|r|}
+		\hline
+			& \multicolumn{1}{c|}{\textbf{\texttt{~O~}}}
+			& \multicolumn{1}{c|}{\textbf{\texttt{SIN\_TILDE}}}
+			& \multicolumn{1}{c|}{\textbf{\texttt{CON\_TILDE}}} \\
+		\hline\hline
+		\textbf{\texttt{O}} & 54322,1 & 0,0 & 0,0 \\ \hline
+		\textbf{\texttt{SIN\_TILDE}} & 0,0 & 1867,4 & 0,3 \\ \hline
+		\textbf{\texttt{CON\_TILDE}} & 0,0 & 19,3 & 4,5 \\ 
+		\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[ht]
+	\addtolength{\abovecaptionskip}{-6mm}
+	\addtolength{\belowcaptionskip}{-2mm}
+ 	\renewcommand{\arraystretch}{1.3}
+	\renewcommand{\tabcolsep}{3pt}
+	\caption{Matriz de confusión del clasificador basado en CRF.}
+	\label{table:confusion-crf}
+	\centering
+	\begin{tabular}{|r||r|r|r|}
+		\hline
+			& \multicolumn{1}{c|}{\textbf{\texttt{~O~}}}
+			& \multicolumn{1}{c|}{\textbf{\texttt{SIN\_TILDE}}}
+			& \multicolumn{1}{c|}{\textbf{\texttt{CON\_TILDE}}} \\
+		\hline\hline
+% Original
+%		\textbf{\texttt{O}} & 48605,2 & 0,0 & 0,0 \\ \hline
+%		\textbf{\texttt{SIN\_TILDE}} & 0,0 & 1669,1 & 0,7 \\ \hline
+%		\textbf{\texttt{CON\_TILDE}} & 0,1 & 15,5 & 8,2 \\ 
+% Top10
+%		\textbf{\texttt{O}} & 54322,1 & 0,0 & 0,0 \\ \hline
+%		\textbf{\texttt{SIN\_TILDE}} & 0,0 & 1867,7 & 0,8 \\ \hline
+%		\textbf{\texttt{CON\_TILDE}} & 0,1 & 16,3 & 7,4 \\ 
+% Best
+		\textbf{\texttt{O}} & 54322,1 & 0,0 & 0,0 \\ \hline
+		\textbf{\texttt{SIN\_TILDE}} & 0,0 & 1867,7 & 0,8 \\ \hline
+		\textbf{\texttt{CON\_TILDE}} & 0,1 & 16,0 & 7,7 \\ 
+		\hline
+	\end{tabular}
+\end{table}
+
+A continuación se muestran algunos ejemplos de adverbios encontrados en el corpus junto con la etiqueta que el clasificador basado en CRF le asigna a cada uno de ellos.
+\begin{itemize}
+\item{\emph{Si de él careciéramos, ¿para qu\'e/\texttt{\small SIN\_TILDE} unas tareas que/\texttt{\small SIN\_TILDE} requieren esfuerzo, dedicación, capacidad y que/\texttt{\small SIN\_TILDE} ---además--- no mejoran ninguna economía?}}
+
+\item{\emph{¿No se debate permanentemente ---como/\texttt{\small CON\_TILDE} toda religión y toda de\-men\-cia--- en el conflicto entre lo real y lo ficticio, lo percibido y lo proyectado, lo que/\texttt{\small SIN\_TILDE} constriñe y lo que/\texttt{\small SIN\_TILDE} exalta, los milagros y las bromas pesadas?}}
+
+\item{\emph{-Que/\texttt{\small CON\_TILDE} cómo/\texttt{\small SIN\_TILDE} va a llamarse el chiquillo?}}
+
+\item{\emph{En esta línea, Alberto Fernández se ha preguntado que/\texttt{\small SIN\_TILDE} ''si esto es lo que/\texttt{\small SIN\_TILDE} ocurrió entonces cuando/\texttt{\small SIN\_TILDE} CiU era influyente en Madrid, ¿qu\'e/\texttt{\small SIN\_TILDE} tiene que/\texttt{\small SIN\_TILDE} pasar ahora con un escenario español totalmente diferente?''}}
+
+\item{\emph{El dirigente popular ha evitado, no obstante, plantear su oferta de diálogo a CiU en el Parlamento en forma de ultimátum y ha asegurado que/\texttt{\small SIN\_TILDE} el PP ''no se precipitará'' y que/\texttt{\small SIN\_TILDE} espera a ver ''qué/\texttt{\small SIN\_TILDE} ficha mueve'' la coalición que/\texttt{\small SIN\_TILDE} lidera Jordi Pujol.}} 
+
+\item{\emph{Además, confirmó que/\texttt{\small SIN\_TILDE} la marca de lujo Rolls Royce, adherida igualmente a BMW, permanecerá en el Reino Unido, por su añeja tradición británica y sus dimensiones, mucho menores que/\texttt{\small SIN\_TILDE} Rover, aunque no precisó d\'onde/\texttt{\small SIN\_TILDE} se instalará la nueva planta que/\texttt{\small SIN\_TILDE} la fabricará.}}
+
+\item{\emph{''Un experimento probará la preparación y las capacidades para el contexto militar del futuro, y sirve para que/\texttt{\small SIN\_TILDE} veamos c\'omo/\texttt{\small SIN\_TILDE} cada una de las fuerzas se desempeñará en una guerra''. }}
+
+\end{itemize}
+Podemos notar que las dos grandes causas de error en la clasificación son: por un lado los adverbios interrogativos indirectos, y por otro lado los adverbios no interrogativos contenidos en frases interrogativas.
+
+En los cuadros~\ref{table:metricas-generales} y~\ref{table:metricas-adv} se evalúan los clasificadores utilizando las métricas de desempeño previamente definidas. En el cuadro~\ref{table:metricas-generales} se presenta el desempeño de los clasificadores por etiqueta, y en el cuadro~\ref{table:metricas-adv} se presenta el desempeño de los clasificadores para cada uno de los adverbios.
+
+\begin{table}[ht]
+ 	\renewcommand{\arraystretch}{1.3}
+	\renewcommand{\tabcolsep}{3pt}
+	\caption{Métricas agrupadas por etiqueta.}
+	\label{table:metricas-generales}
+	\centering
+	\begin{tabular}{c r r r r r r}
+		\hline
+		\multicolumn{1}{c}{} 
+			& \multicolumn{2}{c}{\textbf{Precisión}} 
+			& \multicolumn{2}{c}{\textbf{Recall}} 
+			& \multicolumn{2}{c}{\textbf{F$_{0,5}$}} \\
+		\multicolumn{1}{c}{\textbf{Etiqueta}} 
+			& \multicolumn{1}{r}{\textbf{SVM}} & \multicolumn{1}{r}{\textbf{CRF}}
+			& \multicolumn{1}{r}{\textbf{SVM}} & \multicolumn{1}{r}{\textbf{CRF}}
+			& \multicolumn{1}{r}{\textbf{SVM}} & \multicolumn{1}{r}{\textbf{CRF}} \\
+		\hline\hline
+% Original
+%		\texttt{O} 				& 1.00 	& 1.00			& 1.00 & 1.00 			& 1.00 & 1.00 \\
+%		\texttt{SIN\_TILDE} 	& 0.99 & 0.99 			& 1.00 & 1.00 			& 0.99 & \textbf{1.00} \\
+%		\texttt{CON\_TILDE} 	& \textbf{0.95} & 0.93 	& 0.18 & \textbf{0.34} 	& 0.31 & \textbf{0.50} \\
+% Top10
+%		\texttt{O} & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 \\
+%		\texttt{SIN\_TILDE} & 0.99 & 0.99 & 1.00 & 1.00 & 0.99 & 1.00 \\
+%		\texttt{CON\_TILDE} & 0.94 & 0.90 & 0.18 & 0.32 & 0.31 & 0.47 \\
+% Best
+		\texttt{O} & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 \\
+		\texttt{SIN\_TILDE} & 0.99 & 0.99 & 1.00 & 1.00 & 0.99 & \textbf{1.00} \\
+		\texttt{CON\_TILDE} & \textbf{0.94} & 0.91 & 0.18 & \textbf{0.33} & 0.31 & \textbf{0.48} \\
+		\hline
+	\end{tabular}
+\end{table}
+
+Ambos clasificadores presentan una alta tasa de \emph{Precisión}, lo que indica que se comete una cantidad muy pequeña de errores de Tipo I y por lo tanto ofrecen una certeza muy elevada. El clasificador basado en CRF presenta una tasa de  \emph{Recall} sensiblemente más elevada que el basado en SVM; esto indica que el clasificador basado en CRF comete una menor cantidad de errores de Tipo II y por lo tanto clasifica correctamente una mayor cantidad de casos. 
+
+Esta diferencia en el desempeño de los clasificadores puede verse reflejada en la métrica de  \emph{Medida-F}: el clasificador basado en CRF presenta un valor  claramente superior al clasificador basado en SVM.
+
+\begin{table}[ht]
+ 	\renewcommand{\arraystretch}{1.3}
+	\renewcommand{\tabcolsep}{3pt}
+	\caption{Métricas agrupadas por adverbio.}
+	\label{table:metricas-adv}
+	\centering
+	\begin{tabular}{c r r r r r r r}
+		\hline
+		\multicolumn{2}{c}{} 
+			& \multicolumn{2}{c}{\textbf{Precisión}} 
+			& \multicolumn{2}{c}{\textbf{Recall}} 
+			& \multicolumn{2}{c}{\textbf{F$_{0,5}$}} \\
+		\multicolumn{1}{c}{\textbf{Adverbio}} & \multicolumn{1}{c}{\textbf{Cantidad}}
+			& \multicolumn{1}{r}{\textbf{SVM}} & \multicolumn{1}{r}{\textbf{CRF}}
+			& \multicolumn{1}{r}{\textbf{SVM}} & \multicolumn{1}{r}{\textbf{CRF}}
+			& \multicolumn{1}{r}{\textbf{SVM}} & \multicolumn{1}{r}{\textbf{CRF}} \\		
+		\hline\hline
+% Original
+%		qué & 132 	& 0.94 & 0.94 			& 0.23 & \textbf{0.45} 	& 0.37 & \textbf{0.61} \\
+%		cómo & 69 	& \textbf{1.00} & 0.89 	& 0.13 & \textbf{0.24} 	& 0.23 & \textbf{0.37} \\
+%		dónde & 17 	& 1.00 & 1.00 			& 0.12 & 0.12			& 0.21 & \textbf{0.21} \\
+%		cuándo & 4 	& 0.00 & 0.00 			& 0.00 & 0.00 			& 0.00 & 0.00 \\
+%		cuánto & 2 	& 0.00 & 0.00 			& 0.00 & 0.00 			& 0.00 & 0.00 \\
+% Top10
+%		qué & 142 & 0.94 & 0.92 & 0.23 & 0.41 & 0.36 & 0.57 \\
+%		cómo & 72 & 1.00 & 0.88 & 0.14 & 0.20 & 0.24 & 0.32 \\
+%		dónde & 18 & 0.67 & 1.00 & 0.11 & 0.17 & 0.19 & 0.29 \\
+%		cuándo & 4 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 \\
+%		cuánto & 2 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 \\
+% Best
+		qué & 142 & \textbf{0.94} & 0.92 & 0.23 & \textbf{0.42} & 0.36 & \textbf{0.57} \\
+		cómo & 72 & \textbf{1.00} & 0.89 & 0.14 & \textbf{0.23} & 0.24 & \textbf{0.36} \\
+		dónde & 18 & 0.67 & \textbf{1.00} & 0.11 & \textbf{0.17} & 0.19 & \textbf{0.29} \\
+		cuándo & 4 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 \\
+		cuánto & 2 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 \\
+		\hline
+	\end{tabular}
+\end{table}
+
+En el cuadro~\ref{table:metricas-adv} puede verse como los mejores resultados en la métrica \emph{Recall} ---y por ende también la métrica \emph{Medida-F}--- son obtenidos en la clasificación de los adverbios que cuentan con una mayor cantidad de ejemplos en el corpus. El adverbio \emph{qué} siendo el adverbio con mayor ocurrencias en el corpus es a su vez es el adverbio para el que se obtienen los mejores resultados. 
+
+\section{Conclusiones y trabajo futuro}
+\label{sec:Conclusiones}
+
+En este trabajo se plantea el problema de la restauración automática de acentos ortográficos en adverbios interrogativos para el idioma español, un problema que ---según nuestro conocimiento---- no ha sido atacado hasta el momento. Para su resolución se construye un corpus de aproximadamente 500k palabras mediante la unión de los corpus CESS Treebanks y CoNLL 2002. Debido a la falta de trabajos previos que aborden esta problemática, se proponen dos implementaciones para su resolución: un clasificador basado en SVM y un clasificador basado en CRF. Los resultados obtenidos durante la evaluaci\'on muestran que la implementación del clasificador basado en CRF ---que utiliza como atributos los tokens que más comúnmente preceden y siguen a los adverbios interrogativos--- se comporta consistentemente mejor que la implementación del clasificador basado en SVM. 
+\newpage
+En la clasificaci\'on de adverbios no interrogativos la implementación del clasificador basado en CRF mantiene al m\'inimo el error de clasificaci\'on; minimizando la generaci\'on de falsos negativos, ofreciendo seguridad en la clasificaci\'on, y permitiendo la combinaci\'on de este método con otras t\'ecnicas mediante sucesivas iteraciones. 
+
+Los resultados obtenidos en ambos clasificadores mejoran sensiblemente  al aumentar la cantidad de ejemplos en el corpus de entrenamiento. Esto parece indicar que para mejorar los resultados experimentales es necesario aumentar el tamaño del corpus considerado.
+
+Las principales líneas de trabajo a futuro incluyen la construcción de un corpus de mayor porte, y la utilización de otras técnicas ---como el etiquetado gramatical, el análisis morfosintáctico, etc.--- para aumentar la información de contexto al momento de la clasificación.
+
+\bibliographystyle{splncs03}
+\bibliography{aai}
+
+\end{document}
