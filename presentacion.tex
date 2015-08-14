@@ -27,10 +27,31 @@
 
 \hyphenation{}
 
+
+%Arreglos en el footnote
+\makeatletter
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\insertshortauthor
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.58\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\inserttitle
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.1\paperwidth,ht=2.25ex,dp=1ex,center]{date in head/foot}%
+    \usebeamerfont{date in head/foot}\insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+\makeatother
+
+
 \begin{document}
 \title{Optimización de viajes compartidos en taxis utilizando algoritmos evolutivos}
-\author[Gabriel Fagúndez de los Reyes \and Renzo Massobrio]{Gabriel Fagúndez de los Reyes \and Renzo Massobrio} 
-\institute{Facultad de Ingeniería,\\
+\author[G. Fagúndez de los Reyes \and R. Massobrio]{Gabriel Fagúndez de los Reyes \and Renzo Massobrio} 
+\institute[]{Facultad de Ingeniería,\\
 Universidad de la República,\\
 Montevideo, Uruguay}
 
