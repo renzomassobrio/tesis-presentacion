@@ -2,3 +2,5 @@
 \select@language {spanish}
 \beamer@sectionintoc {1}{Introducci\IeC {\'o}n}{3}{0}{1}
 \beamer@sectionintoc {2}{Definici\IeC {\'o}n del problema}{6}{0}{2}
+\beamer@sectionintoc {3}{Algoritmos evolutivos}{23}{0}{3}
+\beamer@sectionintoc {4}{Evaluaci\IeC {\'o}n experimental}{26}{0}{4}
