@@ -80,7 +80,7 @@ Montevideo, Uruguay}
 	\begin{block}{Car pooling}
 		\begin{itemize}
 			\item Beneficios en el plano ecológico y económico, individuales y colectivos.
-			\item Diferentes iniciativas para atender el interés del público: carriles exclusivos, campañas para compartir los viajes al trabajo y aplicaciones para encontrar compañeros de viaje.
+			\item Iniciativas para atender el interés del público: carriles exclusivos, campañas para compartir los viajes al trabajo y aplicaciones para encontrar compañeros de viaje.
 		\end{itemize}
 	\end{block}
 	
@@ -116,8 +116,8 @@ Montevideo, Uruguay}
 	\begin{block}{Consideraciones}
 		\begin{itemize}
 			\item Cada taxi puede trasladar a un número limitado de pasajeros.\pause
-			\item el número máximo de taxis para $N$ pasajeros es $N$, en el caso particular de que cada pasajero viaje en un vehículo separado.\pause
-			\item El costo de un taxi está dado por la suma del \textbf{costo inicial} (“bajada de bandera”) más el \textbf{costo determinado por la distancia} recorrida desde el origen hasta el destino final, pasando por cada uno de los destinos intermedios.\pause
+			\item el número máximo de taxis para $N$ pasajeros es $N$.\pause
+			\item Costo de un taxi = \textbf{costo inicial} (“bajada de bandera”) $+$ \textbf{costo determinado por la distancia} recorrida desde el origen hasta el destino final, pasando por cada uno de los destinos intermedios.\pause
 			\item No se consideran otros posibles costos (e.g. esperas, propinas, peajes).
 		\end{itemize}		
 	\end{block}
@@ -133,8 +133,8 @@ Montevideo, Uruguay}
 		\item una función de costo asociado a la distancia recorrida por cada taxi, $cost: \mathbb{R}^+_0 \rightarrow \mathbb{R}^+_0$.\pause
 	\end{itemize}
 
-	Se desea hallar la planificación $f:P \rightarrow T \times \lbrace 1, \ldots,C_{MAX} \rbrace$ %para transportar los $N$ pasajeros en $K$ taxis ($K \leq N$) %que determine la asignación de pasajeros a taxis y el orden en que serán trasladados a los respectivos destinos, 
-	que \alert{minimice la función de costo total ($CT$)}.%, dada en la Ecuación~\ref{Eq:total_cost_mono}, donde $f^{-1}(t_i,j)$ indica el pasajero asignado a la posición $j$ (orden de traslado) en el taxi $t_{i}$ y $dest\big(f^{-1}(t_{i},0)\big)=O ,\;  \forall \: t_{i}$.
+	Se desea hallar la planificación $f:P \rightarrow T \times \lbrace 1, \ldots,C_{MAX} \rbrace$
+	que \alert{minimice la función de costo total ($CT$)}.
 	\begin{equation*}
 			CT  =  \sum\limits_{t_{i}, C(t_{i})\neq0} \Bigg[B+\sum\limits_{j=1}^{C(t_{i})}cost\bigg(dist \underbrace{\Big(dest\big(f^{-1}(t_{i},j-1)\big),dest\big(f^{-1}(t_{i},j)\big)\Big)}_{\text{destinos consecutivos en el recorrido del taxi } t_i}\bigg)\Bigg]
 	\end{equation*}
@@ -144,15 +144,16 @@ Montevideo, Uruguay}
 	\frametitle{Variante multiobjetivo del PVCT}
 	\begin{block}{Motivación}
 		La decisión de un usuario puede estar condicionada a la demora que debe experimentar por compartir su viaje. 
-		Por tal motivo, es de interés estudiar la variante multiobjetivo del problema, donde se minimiza simultáneamente el \alert{costo del grupo} de usuarios y la \alert{demora percibida} por cada uno de ellos.
+		%Por tal motivo, es de interés estudiar 
+		La variante multiobjetivo del problema minimiza simultáneamente el \alert{costo del grupo} de usuarios y la \alert{demora percibida} por cada uno de ellos.
 	\end{block}
 	
 	\pause
 	
 	\begin{block}{Descripción}
-		Se agrega un \textbf{``nivel de apuro''} asociado a cada pasajero, que denota la demora que está dispuesto a tolerar un usuario por compartir su viaje, respecto al tiempo que demoraría si no compartiera el viaje con otros pasajeros. 
+		Se agrega un \textbf{``nivel de apuro''} asociado a cada pasajero, que denota la demora que está dispuesto a tolerar un usuario por compartir su viaje.
 	
-		En esta variante del problema se contemplan \textbf{vehículos de distintas capacidades}, aportando mayor realismo a la formulación.
+		Se contemplan \textbf{vehículos de distintas capacidades}, aportando mayor realismo a la formulación.
 	\end{block}
 }
 
@@ -170,14 +171,8 @@ Montevideo, Uruguay}
 	\end{equation*}
 
 	\begin{itemize}
-		%\item un conjunto de pasajeros $P = \{p_1,p_2,\ldots,p_N\}$; parten desde un origen común $O$ hacia un conjunto de destinos $D = \{d_1,d_2,\ldots,d_N\}$.
-		%\item un conjunto de taxis $T = \{t_1,t_2,\ldots,t_M\}$; con $M \leq N$, con capacidades $K = \{K_1,K_2,\ldots,K_M\}$.
-		%\item una función $C: T \rightarrow \mathbb{N}_0$ que determina cuántos pasajeros hacen uso de un taxi en un determinado viaje, siendo $C(t_i) \leq K_i$.
-		%\item una constante $B$ que indica el costo inicial del taxi (conocido popularmente como ``bajada de bandera''). 
-		%\item una función de distancia, $dist: \lbrace \lbrace O \rbrace \cup D \rbrace \times D \rightarrow \mathbb{R}^+_0$.
-		%\item una función de costo asociado a la distancia recorrida por cada taxi, $cost: \mathbb{R}^+_0 \rightarrow \mathbb{R}^+_0$.
 		\item $time: \lbrace \lbrace O \rbrace \cup D \rbrace \times D \rightarrow \mathbb{R}^+_0$ indica el tiempo de recorrido.	
-		\item $tol: P \rightarrow \mathbb{R}^+_0$  indica el tiempo adicional tolerado por cada pasajero, frente a viajar directamente desde $O$ a su destino.
+		\item $tol: P \rightarrow \mathbb{R}^+_0$  indica el tiempo adicional tolerado por cada pasajero.
 	\end{itemize}
 }
 
@@ -186,15 +181,15 @@ Montevideo, Uruguay}
 	\begin{block}{Complejidad}
 	El PVCT tiene varios puntos en común con dos conocidos problemas: el \textit{Car Pooling Problem (CPP)} y el \textit{Vehicle Routing Problem (VRP)}.
 
-	Baldacci et al. (2004) estudiaron una variante del \textit{CPP} que modela la realidad de una empresa que busca motivar a sus empleados para compartir vehículos hacia y desde el lugar de trabajo. 
+	Baldacci et al. (2004) estudiaron una variante del \textit{CPP} donde trabajadores desean compartir vehículos hacia y desde el lugar de trabajo. 
 	
 	Esta variante es un caso particular del \textit{VRP} con demanda unitaria, el cual es $\mathcal{NP}$--difícil [Letcheford et al. (2002)].
-	%A pesar de estudiar la versión donde los vehículos parten desde muchos orígenes y viajan hacia un mismo destino, Baldacci et al. mencionan que la misma asignación puede ser utilizada para el problema inverso, el cual tiene grandes similitudes con el problema estudiado en nuestro proyecto.
 	\end{block}
 	\pause
 	\begin{block}{Estrategias de resolución}
 	Cuando se utilizan instancias de tamaños realistas, los algoritmos exactos tradicionales no resultan útiles para una planificación eficiente.
-	En estos casos es necesario utilizar \alert{heurísticas} y \alert{metaheurísticas} que permitan calcular soluciones de calidad aceptable en tiempos razonables.
+
+	\alert{Heurísticas} y \alert{metaheurísticas} permiten calcular soluciones de calidad aceptable en tiempos razonables.
 	\end{block}
 
 }
@@ -208,36 +203,59 @@ Montevideo, Uruguay}
 
 \frame{
 	\frametitle{Algoritmos evolutivos}
-	\begin{itemize}
-		\item Los \textit{algoritmos evolutivos} (AE) son técnicas estocásticas que emulan el proceso de evolución natural de las especies para resolver problemas de optimización, búsqueda y aprendizaje.
-		\item Un AE es una técnica iterativa (cada iteración se denomina \textbf{generación}) que aplica operadores estocásticos sobre un conjunto de individuos (la \textbf{población}).
-		\item Cada individuo en la población codifica una solución tentativa al problema y tiene un valor de \textbf{fitness}, dado por una función de evaluación que determina su adecuación para resolver el problema. 
-		\item El propósito del AE es mejorar el fitness de los individuos en la población mediante la aplicación iterativa de \textbf{operadores evolutivos}a individuos seleccionados según su fitness, guiando al AE hacia soluciones tentativas de mayor calidad.
-	\end{itemize}
-}
-
-\frame{
-	\frametitle{Modelos paralelos en AE}
-	\begin{block}{Descripción}
-		Las implementaciones paralelas se han popularizado como un mecanismo para mejorar el desempe\~no de los AE. 
-		El modelo de subpoblaciones distribuidas divide la poblaci\'on original en varias subpoblaciones (islas).
-		Cada isla ejecuta un AE secuencial.
-		Se define un operador evolutivo adicional llamado \textbf{migraci\'on} que permite el intercambio ocasional de individuos entre islas.
+	\begin{block}{Definición}
+		Los \textit{algoritmos evolutivos} (AE) son técnicas estocásticas que emulan el proceso de evolución natural de las especies para resolver problemas de optimización, búsqueda y aprendizaje.
 	\end{block}
-
+	\pause
+	\begin{block}{Modelos paralelos en AE}
+		Las implementaciones paralelas permiten mejorar el desempe\~no de los AE. 
+		Modelo de subpoblaciones distribuidas: se divide la poblaci\'on en islas que ejecutan un AE secuencial e intercambian individuos mediante \textbf{migración}.
+	\end{block}
+	\pause
 	\begin{block}{
 		El algoritmo evolutivo paralelo con micro--población (\textit{p$\mu$EA})}
 		\begin{columns}
 			\column{0.6\textwidth}
-			\begin{itemize}
-				\item Los AE con subpoblaciones distribuidas suelen perder diversidad, convergiendo a soluciones sub-óptimas del problema.
-				\item p$\mu$EA hace uso de poblaciones pequeñas e incluye un operador específico de diversidad para mitigar este problema.
-			\end{itemize}
-
-			\column{0.4\textwidth}
+				Los AE con subpoblaciones distribuidas suelen perder diversidad. %, convergiendo a soluciones sub-óptimas del problema.
+				\textit{p$\mu$EA} hace uso de poblaciones pequeñas e incluye un operador específico de diversidad.% para mitigar este problema.
+			\column{0.3\textwidth}
 				\includegraphics[width=.9\textwidth]{migracion.png}
 		\end{columns}
 	\end{block}
+}
+
+\frame{
+	\frametitle{AE para optimización multiobjetivo (MOEA)}
+	\begin{block}{Propósitos en MOEA}
+		\begin{columns}
+			\column{0.6\textwidth}
+			Acercarse al frente de Pareto del problema (\textbf{convergencia}) y muestrear adecuadamente el frente de soluciones (\textbf{diversidad}).
+			\column{0.3\textwidth}
+				\includegraphics[width=.8\textwidth]{paretto.png}
+		\end{columns}
+	\end{block}
+	\pause
+	\begin{block}{\textit{p$\mu$MOEA/D}}
+		\begin{columns}
+			\column{0.6\textwidth}
+			\begin{itemize}
+			\item micro--poblaciones distribuidas
+			\item aplica un esquema de agregación lineal para los objetivos
+			\end{itemize}
+			\column{0.3\textwidth}
+				\includegraphics[width=.8\textwidth]{pmuMOEAD.png}
+		\end{columns}
+	\end{block}
+	\pause
+	\begin{block}{\textit{NSGA--II}}
+			\begin{itemize}
+			\item utiliza un ordenamiento no--dominado y elitista
+			\item utiliza \textit{crowding} para preservar la diversidad de la población
+			\end{itemize}
+	\end{block}
+
+
+
 }
 
 
@@ -280,7 +298,6 @@ Montevideo, Uruguay}
 
 }
 
-\section{Evaluación experimental}
 \frame{	
 	\frametitle{Algoritmo ávido}
 	Bla bla bla...
