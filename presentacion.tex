@@ -197,83 +197,6 @@ Montevideo, Uruguay}
 
 
 
-
-% Slide - Algoritmos evolutivos ==============================================================
-\section{Algoritmos evolutivos} 
-\frame{\tableofcontents[currentsection]}
-
-\frame{
-	\frametitle{Algoritmos evolutivos (AE)}
-	\begin{block}{Definición}
-		Técnicas estocásticas que emulan el proceso de evolución natural de las especies para resolver problemas de optimización, búsqueda y aprendizaje.
-	\end{block}
-	\pause
-	\begin{block}{Modelos paralelos en AE}
-		Buscan \textbf{mejorar el desempe\~no} de los AE.\\
-		\alert{Modelo de subpoblaciones distribuidas}: divide la poblaci\'on en \textbf{islas} que ejecutan un AE secuencial e intercambian individuos mediante \textbf{migración}.
-	\end{block}
-	\pause
-	\begin{columns}[totalwidth=\textwidth]
-	\column{0.6\textwidth}
-			\begin{block}{AE paralelo con micro--población (\textit{p$\mu$EA})}
-				Los AE con subpoblaciones distribuidas suelen perder diversidad. %, convergiendo a soluciones sub-óptimas del problema.
-				\textit{p$\mu$EA} hace uso de \textbf{poblaciones pequeñas} e incluye un \textbf{operador específico de diversidad}.% para mitigar este problema.
-			\end{block}
-	\column{0.4\textwidth}
-		\centering
-		\only<1>{\mbox{\phantom{\includegraphics[width=0.8\textwidth]{migracion.png}}}}%
-		\includegraphics<3->[width=0.8\textwidth]{migracion.png}
-		%\includegraphics[width=.9\textwidth]{migracion.png}
-	\end{columns}
-}
-
-\frame{
-	\frametitle{AE para optimización multiobjetivo (MOEA)}
-	\begin{columns}[totalwidth=\textwidth]
-	\column{0.6\textwidth}
-		\begin{block}{Propósitos en MOEA}
-				Acercarse al frente de Pareto del problema (\textbf{convergencia}) y muestrear adecuadamente el frente de soluciones (\textbf{diversidad}).
-		\end{block}
-	\column{0.4\textwidth}
-		\centering
-		\includegraphics[width=.6\textwidth]{paretto.png}
-	\end{columns}
-
-	\pause
-	\begin{columns}[totalwidth=\textwidth]
-	\column{0.6\textwidth}
-		\begin{block}{\textit{p$\mu$MOEA/D}}
-				\begin{itemize}
-				\item micro--poblaciones distribuidas
-				\item agregación lineal de los objetivos
-				\end{itemize}
-		\end{block}
-	\column{0.4\textwidth}
-		\centering
-		\only<1>{\mbox{\phantom{\includegraphics[width=0.6\textwidth]{pmuMOEAD.png}}}}%
-		\includegraphics<2->[width=0.6\textwidth]{pmuMOEAD.png}
-		%\includegraphics[width=.8\textwidth]{pmuMOEAD.png}
-	\end{columns}
-	\pause
-	\begin{columns}[totalwidth=\textwidth]
-	\column{0.6\textwidth}
-		\begin{block}{\textit{NSGA--II}}
-				\begin{itemize}
-					\item ordenamiento no--dominado y elitista
-					\item \textit{crowding} para preservar la diversidad
-				\end{itemize}
-		\end{block}
-	\column{0.4\textwidth}
-		\centering
-		\only<1,2>{\mbox{\phantom{\includegraphics[width=0.6\textwidth]{nsga_rangos.png}}}}%
-		\includegraphics<3->[width=0.6\textwidth]{nsga_rangos.png}
-		%\includegraphics[width=.8\textwidth]{pmuMOEAD.png}
-	\end{columns}
-}
-
-
-
-
 % Slide - Trabajo relacionado ==============================================================
 \section{Trabajo relacionado} 
 \frame{\tableofcontents[currentsection]}
@@ -305,9 +228,23 @@ Montevideo, Uruguay}
 
 
 
+
 % Slide - Implementación ==============================================================
 \section{Implementación} 
 \frame{\tableofcontents[currentsection]}
+
+\frame{
+	\frametitle{Algoritmos evolutivos}
+	\begin{block}{Definición}
+		\begin{itemize}
+			\item Los \textit{algoritmos evolutivos} (AE) son técnicas estocásticas que emulan el proceso de evolución natural de las especies para resolver problemas de optimización, búsqueda y aprendizaje.
+			\item Un AE es una técnica iterativa (cada iteración se denomina \textbf{generación}) que aplica operadores estocásticos sobre un conjunto de individuos (la \textbf{población}).
+			\item Cada individuo en la población codifica una solución tentativa al problema y tiene un valor de \textbf{fitness}, dado por una función de evaluación que determina su adecuación para resolver el problema. 
+			\item El propósito del AE es mejorar el fitness de los individuos en la población mediante la aplicación iterativa de \textbf{operadores evolutivos} a individuos seleccionados según su fitness, guiando al AE hacia soluciones tentativas de mayor calidad.
+		\end{itemize}
+	\end{block}
+}
+
 
 \frame{
 	\frametitle{AE para el PVCT monoobjetivo}
@@ -315,19 +252,25 @@ Montevideo, Uruguay}
 	\column{0.43\linewidth}
 		\begin{block}{Aspectos comunes}
 		\begin{itemize}
-		\item Tuplas de largo $2N-1$ siendo $N$ la cantidad de pasajeros.
+		\item Tuplas de largo $2N-1$\\
+		\hspace{.5cm}{\small$N=$ \#pasajeros.}
 		\pause
 		
-		\item Inicialización: aleatoria y ávida.
-		\pause
-
-		\item Función correctiva: desplaza ceros para romper secuencias de dígitos inválidas.
+		\item Inicialización:\\
+		\hspace{.5cm}{\small aleatoria y ávida.}
 		\pause
 		
-		\item Cruzamiento basado en posición (PBX) + función correctiva.
+		\item Cruzamiento basado en posición (PBX).% + función correctiva.
 
 		\pause
-		\item Mutación por intercambio (EM) + función correctiva.
+		\item Mutación por intercambio (EM).% + función correctiva.
+		\pause
+
+
+		\item Función correctiva:\\ \hspace{.5cm}{\small desplaza ceros para}\\ \hspace{.5cm}{\small romper secuencias de}\\ \hspace{.5cm}{\small dígitos inválidas.}
+		\pause
+
+		\item Implementados en Malva.
 		\end{itemize}
 		\end{block}
 
@@ -335,31 +278,115 @@ Montevideo, Uruguay}
 		\centering
 		\includegraphics[width=.8\textwidth]{distribucion.png}
 
-		\only<1,2>{\mbox{\phantom{\includegraphics[width=0.4\textwidth]{temporal.png}}}}%
-		\includegraphics<3->[width=0.4\textwidth]{temporal.png}
+		\only<1-2>{\mbox{\phantom{\includegraphics[width=0.7\textwidth]{pbx_simple.png}}}}%
+		\includegraphics<3->[width=0.7\textwidth]{pbx_simple.png}
 
-		\only<1-3>{\mbox{\phantom{\includegraphics[width=0.7\textwidth]{pbx_simple.png}}}}%
-		\includegraphics<4->[width=0.7\textwidth]{pbx_simple.png}
+		\only<1-3>{\mbox{\phantom{\includegraphics[width=0.6\textwidth]{em.png}}}}%
+		\includegraphics<4->[width=0.6\textwidth]{em.png}
 
-		\only<1-4>{\mbox{\phantom{\includegraphics[width=0.6\textwidth]{em.png}}}}%
-		\includegraphics<5->[width=0.6\textwidth]{em.png}
+		\only<1-4>{\mbox{\phantom{\includegraphics[width=0.4\textwidth]{temporal.png}}}}%
+		\includegraphics<5->[width=0.4\textwidth]{temporal.png}
 	\end{columns}
 
 }
 
+\frame{
+	\frametitle{AE para el PVCT monoobjetivo}
+	\begin{block}{\textit{seqEA}}
+	AE \textbf{secuencial}. Utiliza selección proporcional.
+	\end{block}
+	\pause
+	\begin{block}{Modelos paralelos en AE}
+		Buscan \textbf{mejorar el desempe\~no} de los AE.\\
+		\alert{Modelo de subpoblaciones distribuidas}: divide la poblaci\'on en \textbf{islas} % que ejecutan un AE secuencial e 
+		que intercambian individuos mediante \textbf{migración}.
+	\end{block}
+	\pause
+	\begin{columns}[totalwidth=\textwidth]
+	\column{0.6\textwidth}
+			\begin{block}{AE paralelo con micro--población (\textit{p$\mu$EA})}
+				%Los AE con subpoblaciones distribuidas suelen perder diversidad. %, convergiendo a soluciones sub-óptimas del problema.
+				\begin{itemize}
+				\item Poblaciones pequeñas.% e incluye un \textbf{operador específico de diversidad}.% para mitigar este problema.
+				\item Selección por torneo.
+				\item Migración asíncrona.
+				\item Topología de anillo unidireccional.
+				%\item Individuos a migrar seleccionados por torneo (reemplazan a los peores de la isla vecina).
+				\end{itemize}
+			\end{block}
+	\column{0.4\textwidth}
+		\centering
+		\only<1,2>{\mbox{\phantom{\includegraphics[width=0.8\textwidth]{migracion.png}}}}%
+		\includegraphics<3->[width=0.8\textwidth]{migracion.png}
+		%\includegraphics[width=.9\textwidth]{migracion.png}
+	\end{columns}
+}
 
 
+\frame{
+	\frametitle{AE para el PVCT multiobjetivo}
+	\begin{block}{Propósitos en AE multiobjetivos (MOEA)}
+			Acercarse al frente de Pareto del problema (\textbf{convergencia}) y muestrear adecuadamente el frente de soluciones (\textbf{diversidad}).
+	\end{block}
+
+	\pause
+	\begin{columns}[totalwidth=\textwidth]
+	\column{0.6\textwidth}
+		\begin{block}{\textit{p$\mu$MOEA/D}}
+		%Micro--poblaciones distribuidas con agregación lineal de los objetivos.
+		$F = w_C\times CT + w_D \times DT$,\\\hspace{1cm} {\tiny$w_C = [0:\frac{1}{\#islas}:1]$, $w_D = 1 - w_C$}.
+		\end{block}
+	\column{0.4\textwidth}
+		\centering
+		\only<1>{\mbox{\phantom{\includegraphics[width=0.7\textwidth]{pmuMOEAD.png}}}}%
+		\includegraphics<2->[width=0.7\textwidth]{pmuMOEAD.png}
+		%\includegraphics[width=.8\textwidth]{pmuMOEAD.png}
+	\end{columns}
+	\pause
+	\begin{block}{\textit{NSGA--II}}
+		Ordenamiento no--dominado (elitista) y \textit{crowding} para preservar diversidad.
+	\end{block}
+	\pause
+	\begin{block}{Aspectos comunes}
+		Función correctiva considera vehículos de distintas capacidades.
+		Inicialización de la población ávida y selección por torneo.
+	\end{block}\pause
+
+}
 
 % Slide - Evaluación Experimental ==============================================================
 \section{Evaluación experimental} 
 \frame{\tableofcontents[currentsection]}
 
 \frame{
-	\frametitle{Evaluación experimental}
+	\frametitle{Generación de instancias}
 	
 	\begin{block}{Generación de puntos realistas en el mapa}
-		Para la generación de instancias realistas del problema se utilizó una herramienta presentada en el trabajo relacionado de Ma et al. llamada Generador de Pedidos de Taxis (\textit{Taxi Query Generator, TQG}).
+		\begin{itemize}
+		\item Generador de Pedidos de Taxis (TQG) con datos de GPS de taxis de Beijing (Ma et al., 2013).
+		\item Script para obtener instancias de un origen a muchos destinos.
+		\item Instancias en Montevideo generadas manualmente.
+		\item API para obtener tarifas TaxiFareFinder (TFF).
+		\end{itemize}
 	\end{block}
+	\pause
+	\begin{block}{Instancias generadas}
+
+	\begin{itemize}\setlength\itemsep{1pt}
+		\item \textbf{6 chicas:} 10 y 15 pasajeros (Beijing).
+		\item \textbf{6 medianas:} 15 y 25 pasajeros (Beijing).
+		\item \textbf{6 grandes:} 25 y 45 pasajeros (Beijing).
+		\item \textbf{4 en Montevideo:} 8 y 17 pasajeros (Montevideo).
+	\end{itemize}
+	Cuatro variantes de cada instancias para el PVCT multiobjetivo considerando distintas capacidades y tolerancias.
+	\end{block}
+
+}
+
+\frame{
+	\frametitle{PVCT monoobjetivo}
+	
+	
 
 }
 

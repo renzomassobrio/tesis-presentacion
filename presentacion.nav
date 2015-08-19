@@ -23,68 +23,67 @@
 \headcommand {\beamer@framepages {18}{20}}
 \headcommand {\slideentry {2}{0}{9}{21/22}{}{0}}
 \headcommand {\beamer@framepages {21}{22}}
-\headcommand {\sectionentry {3}{Algoritmos evolutivos}{23}{Algoritmos evolutivos}{0}}
+\headcommand {\sectionentry {3}{Trabajo relacionado}{23}{Trabajo relacionado}{0}}
 \headcommand {\beamer@sectionpages {6}{22}}
 \headcommand {\beamer@subsectionpages {6}{22}}
 \headcommand {\slideentry {3}{0}{10}{23/23}{}{0}}
 \headcommand {\beamer@framepages {23}{23}}
-\headcommand {\slideentry {3}{0}{11}{24/26}{}{0}}
-\headcommand {\beamer@framepages {24}{26}}
-\headcommand {\slideentry {3}{0}{12}{27/29}{}{0}}
-\headcommand {\beamer@framepages {27}{29}}
-\headcommand {\sectionentry {4}{Trabajo relacionado}{30}{Trabajo relacionado}{0}}
-\headcommand {\beamer@sectionpages {23}{29}}
-\headcommand {\beamer@subsectionpages {23}{29}}
+\headcommand {\slideentry {3}{0}{11}{24/28}{}{0}}
+\headcommand {\beamer@framepages {24}{28}}
+\headcommand {\sectionentry {4}{Implementaci\IeC {\'o}n}{29}{Implementaci\IeC {\'o}n}{0}}
+\headcommand {\beamer@sectionpages {23}{28}}
+\headcommand {\beamer@subsectionpages {23}{28}}
+\headcommand {\slideentry {4}{0}{12}{29/29}{}{0}}
+\headcommand {\beamer@framepages {29}{29}}
 \headcommand {\slideentry {4}{0}{13}{30/30}{}{0}}
 \headcommand {\beamer@framepages {30}{30}}
-\headcommand {\slideentry {4}{0}{14}{31/35}{}{0}}
-\headcommand {\beamer@framepages {31}{35}}
-\headcommand {\sectionentry {5}{Implementaci\IeC {\'o}n}{36}{Implementaci\IeC {\'o}n}{0}}
-\headcommand {\beamer@sectionpages {30}{35}}
-\headcommand {\beamer@subsectionpages {30}{35}}
-\headcommand {\slideentry {5}{0}{15}{36/36}{}{0}}
-\headcommand {\beamer@framepages {36}{36}}
-\headcommand {\slideentry {5}{0}{16}{37/41}{}{0}}
-\headcommand {\beamer@framepages {37}{41}}
-\headcommand {\sectionentry {6}{Evaluaci\IeC {\'o}n experimental}{42}{Evaluaci\IeC {\'o}n experimental}{0}}
-\headcommand {\beamer@sectionpages {36}{41}}
-\headcommand {\beamer@subsectionpages {36}{41}}
-\headcommand {\slideentry {6}{0}{17}{42/42}{}{0}}
-\headcommand {\beamer@framepages {42}{42}}
-\headcommand {\slideentry {6}{0}{18}{43/43}{}{0}}
-\headcommand {\beamer@framepages {43}{43}}
-\headcommand {\slideentry {6}{0}{19}{44/51}{}{0}}
-\headcommand {\beamer@framepages {44}{51}}
-\headcommand {\slideentry {6}{0}{20}{52/52}{}{0}}
-\headcommand {\beamer@framepages {52}{52}}
-\headcommand {\slideentry {6}{0}{21}{53/53}{}{0}}
-\headcommand {\beamer@framepages {53}{53}}
-\headcommand {\slideentry {6}{0}{22}{54/54}{}{0}}
-\headcommand {\beamer@framepages {54}{54}}
-\headcommand {\slideentry {6}{0}{23}{55/55}{}{0}}
-\headcommand {\beamer@framepages {55}{55}}
-\headcommand {\slideentry {6}{0}{24}{56/56}{}{0}}
-\headcommand {\beamer@framepages {56}{56}}
-\headcommand {\slideentry {6}{0}{25}{57/57}{}{0}}
+\headcommand {\slideentry {4}{0}{14}{31/36}{}{0}}
+\headcommand {\beamer@framepages {31}{36}}
+\headcommand {\slideentry {4}{0}{15}{37/39}{}{0}}
+\headcommand {\beamer@framepages {37}{39}}
+\headcommand {\slideentry {4}{0}{16}{40/44}{}{0}}
+\headcommand {\beamer@framepages {40}{44}}
+\headcommand {\sectionentry {5}{Evaluaci\IeC {\'o}n experimental}{45}{Evaluaci\IeC {\'o}n experimental}{0}}
+\headcommand {\beamer@sectionpages {29}{44}}
+\headcommand {\beamer@subsectionpages {29}{44}}
+\headcommand {\slideentry {5}{0}{17}{45/45}{}{0}}
+\headcommand {\beamer@framepages {45}{45}}
+\headcommand {\slideentry {5}{0}{18}{46/47}{}{0}}
+\headcommand {\beamer@framepages {46}{47}}
+\headcommand {\slideentry {5}{0}{19}{48/48}{}{0}}
+\headcommand {\beamer@framepages {48}{48}}
+\headcommand {\slideentry {5}{0}{20}{49/56}{}{0}}
+\headcommand {\beamer@framepages {49}{56}}
+\headcommand {\slideentry {5}{0}{21}{57/57}{}{0}}
 \headcommand {\beamer@framepages {57}{57}}
-\headcommand {\slideentry {6}{0}{26}{58/58}{}{0}}
+\headcommand {\slideentry {5}{0}{22}{58/58}{}{0}}
 \headcommand {\beamer@framepages {58}{58}}
-\headcommand {\sectionentry {7}{Planificador de viajes compartidos en l\IeC {\'\i }nea}{59}{Planificador de viajes compartidos en l\IeC {\'\i }nea}{0}}
-\headcommand {\beamer@sectionpages {42}{58}}
-\headcommand {\beamer@subsectionpages {42}{58}}
-\headcommand {\slideentry {7}{0}{27}{59/59}{}{0}}
+\headcommand {\slideentry {5}{0}{23}{59/59}{}{0}}
 \headcommand {\beamer@framepages {59}{59}}
-\headcommand {\slideentry {7}{0}{28}{60/60}{}{0}}
+\headcommand {\slideentry {5}{0}{24}{60/60}{}{0}}
 \headcommand {\beamer@framepages {60}{60}}
-\headcommand {\sectionentry {8}{Conclusiones y trabajo futuro}{61}{Conclusiones y trabajo futuro}{0}}
-\headcommand {\beamer@sectionpages {59}{60}}
-\headcommand {\beamer@subsectionpages {59}{60}}
-\headcommand {\slideentry {8}{0}{29}{61/61}{}{0}}
+\headcommand {\slideentry {5}{0}{25}{61/61}{}{0}}
 \headcommand {\beamer@framepages {61}{61}}
-\headcommand {\slideentry {8}{0}{30}{62/62}{}{0}}
+\headcommand {\slideentry {5}{0}{26}{62/62}{}{0}}
 \headcommand {\beamer@framepages {62}{62}}
-\headcommand {\beamer@partpages {1}{62}}
-\headcommand {\beamer@subsectionpages {61}{62}}
-\headcommand {\beamer@sectionpages {61}{62}}
-\headcommand {\beamer@documentpages {62}}
-\headcommand {\def \inserttotalframenumber {30}}
+\headcommand {\slideentry {5}{0}{27}{63/63}{}{0}}
+\headcommand {\beamer@framepages {63}{63}}
+\headcommand {\sectionentry {6}{Planificador de viajes compartidos en l\IeC {\'\i }nea}{64}{Planificador de viajes compartidos en l\IeC {\'\i }nea}{0}}
+\headcommand {\beamer@sectionpages {45}{63}}
+\headcommand {\beamer@subsectionpages {45}{63}}
+\headcommand {\slideentry {6}{0}{28}{64/64}{}{0}}
+\headcommand {\beamer@framepages {64}{64}}
+\headcommand {\slideentry {6}{0}{29}{65/65}{}{0}}
+\headcommand {\beamer@framepages {65}{65}}
+\headcommand {\sectionentry {7}{Conclusiones y trabajo futuro}{66}{Conclusiones y trabajo futuro}{0}}
+\headcommand {\beamer@sectionpages {64}{65}}
+\headcommand {\beamer@subsectionpages {64}{65}}
+\headcommand {\slideentry {7}{0}{30}{66/66}{}{0}}
+\headcommand {\beamer@framepages {66}{66}}
+\headcommand {\slideentry {7}{0}{31}{67/67}{}{0}}
+\headcommand {\beamer@framepages {67}{67}}
+\headcommand {\beamer@partpages {1}{67}}
+\headcommand {\beamer@subsectionpages {66}{67}}
+\headcommand {\beamer@sectionpages {66}{67}}
+\headcommand {\beamer@documentpages {67}}
+\headcommand {\def \inserttotalframenumber {31}}
