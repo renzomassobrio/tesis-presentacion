@@ -4,7 +4,7 @@
 \beamer@sectionintoc {2}{Definici\IeC {\'o}n del problema}{6}{0}{2}
 \beamer@sectionintoc {3}{Algoritmos evolutivos}{23}{0}{3}
 \beamer@sectionintoc {4}{Trabajo relacionado}{30}{0}{4}
-\beamer@sectionintoc {5}{Implementaci\IeC {\'o}n}{32}{0}{5}
-\beamer@sectionintoc {6}{Evaluaci\IeC {\'o}n experimental}{34}{0}{6}
-\beamer@sectionintoc {7}{Planificador de viajes compartidos en l\IeC {\'\i }nea}{51}{0}{7}
-\beamer@sectionintoc {8}{Conclusiones y trabajo futuro}{53}{0}{8}
+\beamer@sectionintoc {5}{Implementaci\IeC {\'o}n}{36}{0}{5}
+\beamer@sectionintoc {6}{Evaluaci\IeC {\'o}n experimental}{42}{0}{6}
+\beamer@sectionintoc {7}{Planificador de viajes compartidos en l\IeC {\'\i }nea}{59}{0}{7}
+\beamer@sectionintoc {8}{Conclusiones y trabajo futuro}{61}{0}{8}

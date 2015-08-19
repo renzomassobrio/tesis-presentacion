@@ -117,7 +117,8 @@ Montevideo, Uruguay}
 		\begin{itemize}
 			\item Cada taxi puede trasladar a un número limitado de pasajeros.\pause
 			\item el número máximo de taxis para $N$ pasajeros es $N$.\pause
-			\item Costo de un taxi = \textbf{costo inicial} (“bajada de bandera”) $+$ \textbf{costo determinado por la distancia} recorrida desde el origen hasta el destino final, pasando por cada uno de los destinos intermedios.\pause
+			\item Costo de un taxi = \textbf{costo inicial} (“bajada de bandera”) $+$ \textbf{costo determinado por la distancia}.% recorrida %desde el origen hasta el destino final, pasando por cada uno de los destinos intermedios.
+			\pause
 			\item No se consideran otros posibles costos (e.g. esperas, propinas, peajes).
 		\end{itemize}		
 	\end{block}
@@ -140,29 +141,29 @@ Montevideo, Uruguay}
 	\end{equation*}
 }
 
-\frame{
-	\frametitle{Variante multiobjetivo del PVCT}
-	\begin{block}{Motivación}
-		La decisión de un usuario puede estar condicionada a la demora que debe experimentar por compartir su viaje. 
-		%Por tal motivo, es de interés estudiar 
-		La variante multiobjetivo del problema minimiza simultáneamente el \alert{costo del grupo} de usuarios y la \alert{demora percibida} por cada uno de ellos.
-	\end{block}
+% \frame{
+% 	\frametitle{Variante multiobjetivo del PVCT}
+% 	\begin{block}{Motivación}
+% 		La decisión de un usuario puede estar condicionada a la demora que debe experimentar por compartir su viaje. 
+% 		%Por tal motivo, es de interés estudiar 
+% 		La variante multiobjetivo del problema minimiza simultáneamente el \alert{costo del grupo} de usuarios y la \alert{demora percibida} por cada uno de ellos.
+% 	\end{block}
 	
-	\pause
+% 	\pause
 	
-	\begin{block}{Descripción}
-		Se agrega un \textbf{``nivel de apuro''} asociado a cada pasajero, que denota la demora que está dispuesto a tolerar un usuario por compartir su viaje.
+% 	\begin{block}{Descripción}
+% 		Se agrega un \textbf{``nivel de apuro''} asociado a cada pasajero, que denota la demora que está dispuesto a tolerar un usuario por compartir su viaje.
 	
-		Se contemplan \textbf{vehículos de distintas capacidades}, aportando mayor realismo a la formulación.
-	\end{block}
-}
+% 		Se contemplan \textbf{vehículos de distintas capacidades}, aportando mayor realismo a la formulación.
+% 	\end{block}
+% }
 
 \frame{
 	\frametitle{Variante multiobjetivo del PVCT: formulación matemática}
-	Se busca minimizar simultáneamente el \alert{costo total} y la \alert{demora total}.
+	Se busca minimizar simultáneamente el \alert{costo total} y la \alert{demora total}.\pause
 	\begin{equation*}
 			CT  =  \sum\limits_{t_{i}, C(t_{i})\neq0} \Bigg[B+\sum\limits_{j=1}^{C(t_{i})}cost\bigg(dist\overbrace{\Big(dest\big(f^{-1}(t_{i},j-1)\big),dest\big(f^{-1}(t_{i},j)\big)\Big)}^{\text{destinos consecutivos en el recorrido del taxi } t_i}\bigg)\Bigg]
-	\end{equation*}
+	\end{equation*}\pause
 	\begin{equation*}
 		\begin{split}
 			DT = \sum\limits_{t_{i}} \Bigg[\sum\limits_{j=1}^{C(t_{i})}\bigg[ &  \overbrace{\sum\limits_{h=1}^{j} time\Big(dest\big(f^{-1}(t_{i},h-1)\big), dest\big(f^{-1}(t_{i},h)\big)\Big)}^{\text{tiempo efectivo de traslado del pasajero en la posición } j \text{ del taxi } t_i} \\
@@ -179,11 +180,11 @@ Montevideo, Uruguay}
 \frame{
 	\frametitle{Complejidad del PVCT}
 	\begin{block}{Complejidad}
-	El PVCT tiene varios puntos en común con dos conocidos problemas: el \textit{Car Pooling Problem (CPP)} y el \textit{Vehicle Routing Problem (VRP)}.
+	%El PVCT tiene varios puntos en común con dos conocidos problemas: el \textit{Car Pooling Problem (CPP)} y el \textit{Vehicle Routing Problem (VRP)}.
 
-	Baldacci et al. (2004) estudiaron una variante del \textit{CPP} donde trabajadores desean compartir vehículos hacia y desde el lugar de trabajo. 
+	Baldacci et al. (2004) estudiaron una variante del \textit{Car Pooling Problem (CPP)} donde trabajadores desean compartir vehículos hacia y desde el lugar de trabajo. 
 	
-	Esta variante es un caso particular del \textit{VRP} con demanda unitaria, el cual es $\mathcal{NP}$--difícil [Letcheford et al. (2002)].
+	Esta variante es un caso particular del \textit{Vehicle Routing Problem (VRP)} con demanda unitaria, el cual es $\mathcal{NP}$--difícil [Letcheford et al. (2002)].
 	\end{block}
 	\pause
 	\begin{block}{Estrategias de resolución}
@@ -202,60 +203,72 @@ Montevideo, Uruguay}
 \frame{\tableofcontents[currentsection]}
 
 \frame{
-	\frametitle{Algoritmos evolutivos}
+	\frametitle{Algoritmos evolutivos (AE)}
 	\begin{block}{Definición}
-		Los \textit{algoritmos evolutivos} (AE) son técnicas estocásticas que emulan el proceso de evolución natural de las especies para resolver problemas de optimización, búsqueda y aprendizaje.
+		Técnicas estocásticas que emulan el proceso de evolución natural de las especies para resolver problemas de optimización, búsqueda y aprendizaje.
 	\end{block}
 	\pause
 	\begin{block}{Modelos paralelos en AE}
-		Las implementaciones paralelas permiten mejorar el desempe\~no de los AE. 
-		Modelo de subpoblaciones distribuidas: se divide la poblaci\'on en islas que ejecutan un AE secuencial e intercambian individuos mediante \textbf{migración}.
+		Buscan \textbf{mejorar el desempe\~no} de los AE.\\
+		\alert{Modelo de subpoblaciones distribuidas}: divide la poblaci\'on en \textbf{islas} que ejecutan un AE secuencial e intercambian individuos mediante \textbf{migración}.
 	\end{block}
 	\pause
-	\begin{block}{
-		El algoritmo evolutivo paralelo con micro--población (\textit{p$\mu$EA})}
-		\begin{columns}
-			\column{0.6\textwidth}
+	\begin{columns}[totalwidth=\textwidth]
+	\column{0.6\textwidth}
+			\begin{block}{AE paralelo con micro--población (\textit{p$\mu$EA})}
 				Los AE con subpoblaciones distribuidas suelen perder diversidad. %, convergiendo a soluciones sub-óptimas del problema.
-				\textit{p$\mu$EA} hace uso de poblaciones pequeñas e incluye un operador específico de diversidad.% para mitigar este problema.
-			\column{0.3\textwidth}
-				\includegraphics[width=.9\textwidth]{migracion.png}
-		\end{columns}
-	\end{block}
+				\textit{p$\mu$EA} hace uso de \textbf{poblaciones pequeñas} e incluye un \textbf{operador específico de diversidad}.% para mitigar este problema.
+			\end{block}
+	\column{0.4\textwidth}
+		\centering
+		\only<1>{\mbox{\phantom{\includegraphics[width=0.8\textwidth]{migracion.png}}}}%
+		\includegraphics<3->[width=0.8\textwidth]{migracion.png}
+		%\includegraphics[width=.9\textwidth]{migracion.png}
+	\end{columns}
 }
 
 \frame{
 	\frametitle{AE para optimización multiobjetivo (MOEA)}
-	\begin{block}{Propósitos en MOEA}
-		\begin{columns}
-			\column{0.6\textwidth}
-			Acercarse al frente de Pareto del problema (\textbf{convergencia}) y muestrear adecuadamente el frente de soluciones (\textbf{diversidad}).
-			\column{0.3\textwidth}
-				\includegraphics[width=.8\textwidth]{paretto.png}
-		\end{columns}
-	\end{block}
+	\begin{columns}[totalwidth=\textwidth]
+	\column{0.6\textwidth}
+		\begin{block}{Propósitos en MOEA}
+				Acercarse al frente de Pareto del problema (\textbf{convergencia}) y muestrear adecuadamente el frente de soluciones (\textbf{diversidad}).
+		\end{block}
+	\column{0.4\textwidth}
+		\centering
+		\includegraphics[width=.6\textwidth]{paretto.png}
+	\end{columns}
+
 	\pause
-	\begin{block}{\textit{p$\mu$MOEA/D}}
-		\begin{columns}
-			\column{0.6\textwidth}
-			\begin{itemize}
-			\item micro--poblaciones distribuidas
-			\item aplica un esquema de agregación lineal para los objetivos
-			\end{itemize}
-			\column{0.3\textwidth}
-				\includegraphics[width=.8\textwidth]{pmuMOEAD.png}
-		\end{columns}
-	\end{block}
+	\begin{columns}[totalwidth=\textwidth]
+	\column{0.6\textwidth}
+		\begin{block}{\textit{p$\mu$MOEA/D}}
+				\begin{itemize}
+				\item micro--poblaciones distribuidas
+				\item agregación lineal de los objetivos
+				\end{itemize}
+		\end{block}
+	\column{0.4\textwidth}
+		\centering
+		\only<1>{\mbox{\phantom{\includegraphics[width=0.6\textwidth]{pmuMOEAD.png}}}}%
+		\includegraphics<2->[width=0.6\textwidth]{pmuMOEAD.png}
+		%\includegraphics[width=.8\textwidth]{pmuMOEAD.png}
+	\end{columns}
 	\pause
-	\begin{block}{\textit{NSGA--II}}
-			\begin{itemize}
-			\item utiliza un ordenamiento no--dominado y elitista
-			\item utiliza \textit{crowding} para preservar la diversidad de la población
-			\end{itemize}
-	\end{block}
-
-
-
+	\begin{columns}[totalwidth=\textwidth]
+	\column{0.6\textwidth}
+		\begin{block}{\textit{NSGA--II}}
+				\begin{itemize}
+					\item ordenamiento no--dominado y elitista
+					\item \textit{crowding} para preservar la diversidad
+				\end{itemize}
+		\end{block}
+	\column{0.4\textwidth}
+		\centering
+		\only<1,2>{\mbox{\phantom{\includegraphics[width=0.6\textwidth]{nsga_rangos.png}}}}%
+		\includegraphics<3->[width=0.6\textwidth]{nsga_rangos.png}
+		%\includegraphics[width=.8\textwidth]{pmuMOEAD.png}
+	\end{columns}
 }
 
 
@@ -268,6 +281,25 @@ Montevideo, Uruguay}
 \frame{
 	\frametitle{Trabajo relacionado}
 
+	\begin{block}{Car pooling problem (CPP)}
+	Yan et al. (2011) \textbf{CPP con histórico de viajes} (relajación lagrangeana). %Converge a menos de 3\% del óptimo en $\sim$1 hora (600 a 1400 pasajeros). 
+	\end{block}
+	\pause
+	\begin{block}{Dial--a--ride problem (DARP)}
+	Cordeau et al. (2003) \textbf{DARP estático con ventanas de tiempo}. \\\hspace{1cm} {\small Búsqueda tabú con tiempos de ejecución de hasta 90 minutos.}
+	\end{block}
+
+
+	\pause
+	\begin{block}{Taxi pooling problem (TPP)}
+	Tao et al. (2007) Heurísticas ávidas para \textbf{one--to--many} y many--to--one. \\ \hspace{1cm}{\small Las mejoras se reportan en términos absolutos.}
+
+	Ma et al. (2013) TPP dinámico con pedidos en tiempo real. 13\% de ahorro en distancia con un algoritmo ávido en \textbf{instancias realistas}.\pause
+	\end{block}
+	\pause
+	\begin{block}{Resumen}
+	Pocos trabajos \alert{centrados en el usuario} y con un enfoque \alert{multiobjetivo}.
+	\end{block}
 }
 
 
@@ -278,7 +310,40 @@ Montevideo, Uruguay}
 \frame{\tableofcontents[currentsection]}
 
 \frame{
-	\frametitle{Implementación}
+	\frametitle{AE para el PVCT monoobjetivo}
+	\begin{columns}[totalwidth=\linewidth]
+	\column{0.43\linewidth}
+		\begin{block}{Aspectos comunes}
+		\begin{itemize}
+		\item Tuplas de largo $2N-1$ siendo $N$ la cantidad de pasajeros.
+		\pause
+		
+		\item Inicialización: aleatoria y ávida.
+		\pause
+
+		\item Función correctiva: desplaza ceros para romper secuencias de dígitos inválidas.
+		\pause
+		
+		\item Cruzamiento basado en posición (PBX) + función correctiva.
+
+		\pause
+		\item Mutación por intercambio (EM) + función correctiva.
+		\end{itemize}
+		\end{block}
+
+	\column{0.57\linewidth}
+		\centering
+		\includegraphics[width=.8\textwidth]{distribucion.png}
+
+		\only<1,2>{\mbox{\phantom{\includegraphics[width=0.4\textwidth]{temporal.png}}}}%
+		\includegraphics<3->[width=0.4\textwidth]{temporal.png}
+
+		\only<1-3>{\mbox{\phantom{\includegraphics[width=0.7\textwidth]{pbx_simple.png}}}}%
+		\includegraphics<4->[width=0.7\textwidth]{pbx_simple.png}
+
+		\only<1-4>{\mbox{\phantom{\includegraphics[width=0.6\textwidth]{em.png}}}}%
+		\includegraphics<5->[width=0.6\textwidth]{em.png}
+	\end{columns}
 
 }
 
