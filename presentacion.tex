@@ -308,7 +308,7 @@ Montevideo, Uruguay}
 				%Los AE con subpoblaciones distribuidas suelen perder diversidad. %, convergiendo a soluciones sub-óptimas del problema.
 				\begin{itemize}
 				\item Poblaciones pequeñas.% e incluye un \textbf{operador específico de diversidad}.% para mitigar este problema.
-				\item Selección por torneo.
+				\item Selección por torneo $(m,k)$.
 				\item Migración asíncrona.
 				\item Topología de anillo unidireccional.
 				%\item Individuos a migrar seleccionados por torneo (reemplazan a los peores de la isla vecina).
@@ -385,14 +385,25 @@ Montevideo, Uruguay}
 
 \frame{
 	\frametitle{PVCT monoobjetivo}
-	
-	
+	\begin{block}{Entorno de ejecución}
+		\begin{itemize}
+		\item La evaluación experimental fue realizada en el Cluster FING.
+		\item \textit{seqEA}: Dell Power Edge 2950, \textbf{1 núcleo} de Intel Xeon E5430 2.66GHz, 8GB RAM.
+		\item \textit{p$mu$EA}: HP Proliant DL585, \textbf{24 núcleos} de AMD Opteron 2.09GHz, 48GB RAM.
+		\end{itemize}
+	\end{block}
+	\begin{block}{Configuración paramétrica}
+	\begin{itemize}
+	\item \textbf{seqEA}: 20 ejecuciones de 2000 generaciones sobre 3 instancias.\\{\small $\text{\#\textit{P}} \in \lbrace 150, 200, \alert{250}\rbrace$; $p_C \in \lbrace \alert{0.6}, 0.75, 0.95\rbrace$; $p_M \in \lbrace 0.001, 0.01, \alert{0.1}\rbrace$.}\\
+	\item \textbf{p$mu$EA}: micro--población de 15 individuos, torneo ($m=2$, $k=1$), migración cada 500 generaciones. \\20 ejecuciones de 100.000 generaciones sobre 5 instancias.\\{\small $p_C \in \lbrace 0.6, \alert{0.75}, 0.95\rbrace$; $p_M \in \lbrace 0.001, 0.01, \alert{0.1}\rbrace$.}
+	\end{itemize}
+	\end{block}
 
 }
 
 \frame{	
 	\frametitle{Algoritmo ávido}
-	Bla bla bla...
+	Utiliza ideas de los trabajos relacionados. Toma \textbf{decisiones localmente óptimas} y emula el comportamiento de un grupo de usuarios humanos.
 	\includegraphics[width=1.\linewidth]<1>{greedy_costo_1}
 	\includegraphics[width=1.\linewidth]<2>{greedy_costo_2}
 	\includegraphics[width=1.\linewidth]<3>{greedy_costo_3}
@@ -401,6 +412,7 @@ Montevideo, Uruguay}
 	\includegraphics[width=1.\linewidth]<6>{greedy_costo_6}
 	\includegraphics[width=1.\linewidth]<7>{greedy_costo_7}
 	\includegraphics[width=1.\linewidth]<8>{greedy_costo_8}
+
 }
 
 \frame{
