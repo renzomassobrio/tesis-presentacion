@@ -419,18 +419,22 @@ Montevideo, Uruguay}
 }
 
 \frame{
-	\frametitle{Evaluación experimental}
-	
-}
-
-\frame{
-	\frametitle{Evaluación experimental}
-
-}
-
-\frame{
 	\frametitle{Comparativa de métodos de inicialización}
-	% Falta completar
+	\begin{block}{Metodología}
+		\begin{itemize}
+			\item Shapiro--Wilk afirma que los resultados no siguen una distribución normal.
+			\item Se utilizó Kruskal--Wallis para comparar ambas inicializaciones.
+			\item Kruskal--Wallis permite afirmar con un nivel de confianza del 95\% que una de las inicializaciones obtuvo mejores resultados que la otra.
+		\end{itemize}
+	\end{block}
+	
+	\begin{block}{\textit{seqEA} con inicialización aleatoria vs. incialización ávida}
+		La inicialización ávida supera a la inicialización aleatoria en \alert{10} instancias de prueba, mientras que la inicialización aleatoria lo hace en tan solo \alert{2}.
+	\end{block}
+	
+	\begin{block}{\textit{p$\mu$EA} con inicialización aleatoria vs. incialización ávida}
+		La inicialización ávida super a la inicialización aleatoria en \alert{11} instancias de prueba, mientras que no hubo instancias en las que se pueda afirmar que la inicialización aleatoria haya alcanzado mejores soluciones.
+	\end{block}
 }
 
 \frame{
@@ -441,7 +445,7 @@ Montevideo, Uruguay}
 
 \frame{
 	\frametitle{Mejora \textit{p$\mu$EA} sobre algoritmo ávido}
-	Se alcanzaron mejores valores en \textbf{todas} las instancias. En el mejor caso se superó el costo del algoritmo ávido en un \alert{41\%}.
+	Se alcanzaron mejores valores en \textbf{todas} las instancias. En el mejor caso se superó el costo del algoritmo ávido en un \alert{41.0\%}.
 	\input{./evaluacion_experimental/mejoras_greedy_alio/imagenes.tex}
 }
 
@@ -456,8 +460,10 @@ Montevideo, Uruguay}
 }
 
 \frame{
-	\frametitle{Evaluación experimental}
-
+	\frametitle{Evolución del costo a lo largo de la ejecución}
+	\textit{p$\mu$EA} alcanza mejores soluciones que \textit{seqEA} en menos tiempo. En el mejor caso la aceleración es de $7.5$x ($4.6$x en promedio).
+	
+	\input{./evaluacion_experimental/fitness_sobre_tiempo/imagenes.tex}
 }
 
 
