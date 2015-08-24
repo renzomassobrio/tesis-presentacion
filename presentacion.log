@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.8.16)  19 AUG 2015 21:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.8.16)  24 AUG 2015 19:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -721,10 +721,60 @@ Package: beamerinnerthemerounded 2010/06/17  (rcs-revision d02a7cf4d8ae)
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/themes/outer/beamerouterthemein
 folines.sty
 Package: beamerouterthemeinfolines 2012/10/16  (rcs-revision 51a8c72084af)
-)) (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+)) (/usr/share/texlive/texmf-dist/tex/latex/adjustbox/adjustbox.sty
+Package: adjustbox 2012/05/21 v1.0 Adjusting TeX boxes (trim, clip, ...)
+
+(/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2014/05/25 v2.7 package option processing (HA)
+
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks43
+\XKV@tempa@toks=\toks44
+)
+\XKV@depth=\count153
+File: xkeyval.tex 2014/05/25 v2.7 key=value parser (HA)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/adjustbox/adjcalc.sty
+Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back
+-ends (calc, etex, pgfmath)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/adjustbox/trimclip.sty
+Package: trimclip 2012/05/16 v1.0 Trim and clip general TeX material
+
+(/usr/share/texlive/texmf-dist/tex/latex/collectbox/collectbox.sty
+Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
+\collectedbox=\box53
+)
+\tc@llx=\dimen188
+\tc@lly=\dimen189
+\tc@urx=\dimen190
+\tc@ury=\dimen191
+Package trimclip Info: Using driver 'tc-pdftex.def'.
+
+(/usr/share/texlive/texmf-dist/tex/latex/adjustbox/tc-pdftex.def
+File: tc-pdftex.def 2012/05/13 v1.0 Clipping driver for pdftex
+))
+\adjbox@Width=\dimen192
+\adjbox@Height=\dimen193
+\adjbox@Depth=\dimen194
+\adjbox@Totalheight=\dimen195
+
+(/usr/share/texlive/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
+Package: ifoddpage 2011/09/13 v1.0 Conditionals for odd/even page detection
+\c@checkoddpage=\count154
+)
+(/usr/share/texlive/texmf-dist/tex/latex/varwidth/varwidth.sty
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box54
+\sift@deathcycles=\count155
+\@vwid@loff=\dimen196
+\@vwid@roff=\dimen197
+))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2014/04/30 v1.2b Input encoding file
-\inpenc@prehook=\toks43
-\inpenc@posthook=\toks44
+\inpenc@prehook=\toks45
+\inpenc@posthook=\toks46
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2014/09/29 v1.1m UTF-8 support for inputenc
@@ -948,57 +998,60 @@ Language: spanish.ldf 2014/04/24 v5.0n Spanish support from the babel system
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2014/09/25 3.9l Babel common definitions
-\babel@savecnt=\count153
-\U@D=\dimen188
+\babel@savecnt=\count156
+\U@D=\dimen198
 LaTeX Info: Redefining \textlatin on input line 1431.
 )
-\es@quottoks=\toks45
-\es@quotdepth=\count154
+\es@quottoks=\toks47
+\es@quotdepth=\count157
 Package babel Info: Making " an active character on input line 516.
 Package babel Info: Making . an active character on input line 617.
 Package babel Info: Making < an active character on input line 662.
 Package babel Info: Making > an active character on input line 662.
 ))
+(/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
+\bigstrutjot=\dimen199
+)
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 57.
-\captionmargin=\dimen189
-\captionmargin@=\dimen190
-\captionwidth=\dimen191
-\caption@tempdima=\dimen192
-\caption@indent=\dimen193
-\caption@parindent=\dimen194
-\caption@hangindent=\dimen195
+\captionmargin=\dimen200
+\captionmargin@=\dimen201
+\captionwidth=\dimen202
+\caption@tempdima=\dimen203
+\caption@indent=\dimen204
+\caption@parindent=\dimen205
+\caption@hangindent=\dimen206
 )
-\c@ContinuedFloat=\count155
+\c@ContinuedFloat=\count158
 Package caption Info: beamer document class.
 Package caption Info: hyperref package is loaded.
 Package caption Info: Hyperref support is turned off
 (caption)             because hyperref has stopped early.
 )
 (./presentacion.aux
-LaTeX Info: Redefining \. on input line 25.
-LaTeX Info: Redefining \% on input line 25.
+LaTeX Info: Redefining \. on input line 26.
+LaTeX Info: Redefining \% on input line 26.
 )
 \openout1 = `presentacion.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1036,17 +1089,17 @@ LaTeX Font Info:    ... okay on input line 54.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count156
-\scratchdimen=\dimen196
-\scratchbox=\box53
-\nofMPsegments=\count157
-\nofMParguments=\count158
-\everyMPshowfont=\toks46
-\MPscratchCnt=\count159
-\MPscratchDim=\dimen197
-\MPnumerator=\count160
-\makeMPintoPDFobject=\count161
-\everyMPtoPDFconversion=\toks47
+\scratchcounter=\count159
+\scratchdimen=\dimen207
+\scratchbox=\box55
+\nofMPsegments=\count160
+\nofMParguments=\count161
+\everyMPshowfont=\toks48
+\MPscratchCnt=\count162
+\MPscratchDim=\dimen208
+\MPnumerator=\count163
+\makeMPintoPDFobject=\count164
+\everyMPtoPDFconversion=\toks49
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
@@ -1063,8 +1116,8 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 ABD: EveryShipout initializing macros
-\AtBeginShipoutBox=\box54
-Package hyperref Info: Link coloring OFF on input line 54.
+\AtBeginShipoutBox=\box56
+Package hyperref Info: Link coloring OFF on input line 56.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -1072,68 +1125,68 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count162
+\c@section@level=\count165
 )
-LaTeX Info: Redefining \ref on input line 54.
-LaTeX Info: Redefining \pageref on input line 54.
-LaTeX Info: Redefining \nameref on input line 54.
+LaTeX Info: Redefining \ref on input line 56.
+LaTeX Info: Redefining \pageref on input line 56.
+LaTeX Info: Redefining \nameref on input line 56.
 
 (./presentacion.out) (./presentacion.out)
 \@outlinefile=\write5
 \openout5 = `presentacion.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 54.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 56.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 54.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 56.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 54.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 54.
+(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 56.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 56.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 54.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 56.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 54.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 54.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 56.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 56.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 54.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 56.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 54.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 54.
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 56.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 56.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 54.
+(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 56.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 54.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 54.
+(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 56.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 56.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 54.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 56.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 54.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 56.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 54.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 56.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 54.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 56.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmr/bx/n on input line 54.
+(Font)                  OT1/cmss/bx/n --> OT1/cmr/bx/n on input line 56.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/bx/n on input line 54.
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/bx/n on input line 56.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 54.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 56.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 54.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 56.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/bx/n on input line 54.
-LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 54.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/bx/n on input line 56.
+LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 56.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `normal'
 (Font)                  OT1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 5
-4.
+6.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  OT1/cmss/bx/it --> OT1/mathkerncmss/m/sl on input line 
-54.
+56.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  OT1/mathkerncmss/m/sl --> OT1/mathkerncmss/bx/sl on inp
-ut line 54.
+ut line 56.
 
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/translator/dicts/translator-bas
 ic-dictionary/translator-basic-dictionary-English.dict
@@ -1159,9 +1212,9 @@ Dictionary: translator-numbers-dictionary, Language: English
 orem-dictionary/translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-LaTeX Info: Redefining \includegraphics on input line 54.
-LaTeX Info: Redefining \. on input line 54.
-LaTeX Info: Redefining \% on input line 54.
+LaTeX Info: Redefining \includegraphics on input line 56.
+LaTeX Info: Redefining \. on input line 56.
+LaTeX Info: Redefining \% on input line 56.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: Incompatible package detected (regarding \caption).
 (caption)             \caption = macro:->\ifx \@captype \@undefined \@latex@err
@@ -1177,17 +1230,17 @@ See the caption package documentation for explanation.
 
 Package caption Info: End \AtBeginDocument code.
 (./presentacion.nav)
-Overfull \hbox (4.85695pt too wide) in paragraph at lines 54--54
+Overfull \hbox (4.85695pt too wide) in paragraph at lines 56--56
 [][]  
  []
 
 
 Package hyperref Warning: Option `pdfauthor' has already been used,
-(hyperref)                setting the option has no effect on input line 56.
+(hyperref)                setting the option has no effect on input line 58.
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
-(Font)              size <5> substituted on input line 65.
+(Font)              size <5> substituted on input line 67.
 
 
 Overfull \hbox (4.85695pt too wide) has occurred while \output is active
@@ -1218,17 +1271,17 @@ Overfull \hbox (4.85695pt too wide) has occurred while \output is active
 [3
 
 ]
-LaTeX Font Info:    Try loading font information for U+msa on input line 97.
+LaTeX Font Info:    Try loading font information for U+msa on input line 99.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 97.
+LaTeX Font Info:    Try loading font information for U+msb on input line 99.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Try loading font information for OT1+mathkerncmss on input 
-line 97.
+line 99.
 
 (/usr/share/texlive/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
 File: ot1mathkerncmss.fd 2013/03/27 Fontinst v1.933 font definitions for OT1/ma
@@ -1293,7 +1346,7 @@ Overfull \hbox (4.85695pt too wide) has occurred while \output is active
 [11
 
 ]
-Overfull \hbox (13.02092pt too wide) detected at line 142
+Overfull \hbox (13.02092pt too wide) detected at line 144
 \OT1/mathkerncmss/m/sl/10.95 CT \OT1/cmss/m/n/10.95 = [] []\OT1/mathkerncmss/m/
 sl/10.95 B \OT1/cmss/m/n/10.95 + [] \OT1/mathkerncmss/m/sl/10.95 cost[]dist [] 
 [][]
@@ -1307,7 +1360,7 @@ Overfull \hbox (4.85695pt too wide) has occurred while \output is active
 [12
 
 ]
-Overfull \hbox (13.02092pt too wide) detected at line 142
+Overfull \hbox (13.02092pt too wide) detected at line 144
 \OT1/mathkerncmss/m/sl/10.95 CT \OT1/cmss/m/n/10.95 = [] []\OT1/mathkerncmss/m/
 sl/10.95 B \OT1/cmss/m/n/10.95 + [] \OT1/mathkerncmss/m/sl/10.95 cost[]dist [] 
 [][]
@@ -1321,7 +1374,7 @@ Overfull \hbox (4.85695pt too wide) has occurred while \output is active
 [13
 
 ]
-Overfull \hbox (13.02092pt too wide) detected at line 142
+Overfull \hbox (13.02092pt too wide) detected at line 144
 \OT1/mathkerncmss/m/sl/10.95 CT \OT1/cmss/m/n/10.95 = [] []\OT1/mathkerncmss/m/
 sl/10.95 B \OT1/cmss/m/n/10.95 + [] \OT1/mathkerncmss/m/sl/10.95 cost[]dist [] 
 [][]
@@ -1335,7 +1388,7 @@ Overfull \hbox (4.85695pt too wide) has occurred while \output is active
 [14
 
 ]
-Overfull \hbox (13.02092pt too wide) detected at line 142
+Overfull \hbox (13.02092pt too wide) detected at line 144
 \OT1/mathkerncmss/m/sl/10.95 CT \OT1/cmss/m/n/10.95 = [] []\OT1/mathkerncmss/m/
 sl/10.95 B \OT1/cmss/m/n/10.95 + [] \OT1/mathkerncmss/m/sl/10.95 cost[]dist [] 
 [][]
@@ -1349,7 +1402,7 @@ Overfull \hbox (4.85695pt too wide) has occurred while \output is active
 [15
 
 ]
-Overfull \hbox (13.02092pt too wide) detected at line 142
+Overfull \hbox (13.02092pt too wide) detected at line 144
 \OT1/mathkerncmss/m/sl/10.95 CT \OT1/cmss/m/n/10.95 = [] []\OT1/mathkerncmss/m/
 sl/10.95 B \OT1/cmss/m/n/10.95 + [] \OT1/mathkerncmss/m/sl/10.95 cost[]dist [] 
 [][]
@@ -1363,7 +1416,7 @@ Overfull \hbox (4.85695pt too wide) has occurred while \output is active
 [16
 
 ]
-Overfull \hbox (13.02092pt too wide) detected at line 142
+Overfull \hbox (13.02092pt too wide) detected at line 144
 \OT1/mathkerncmss/m/sl/10.95 CT \OT1/cmss/m/n/10.95 = [] []\OT1/mathkerncmss/m/
 sl/10.95 B \OT1/cmss/m/n/10.95 + [] \OT1/mathkerncmss/m/sl/10.95 cost[]dist [] 
 [][]
@@ -1377,7 +1430,7 @@ Overfull \hbox (4.85695pt too wide) has occurred while \output is active
 [17
 
 ]
-Overfull \hbox (13.02092pt too wide) detected at line 178
+Overfull \hbox (13.02092pt too wide) detected at line 180
 \OT1/mathkerncmss/m/sl/10.95 CT \OT1/cmss/m/n/10.95 = [] []\OT1/mathkerncmss/m/
 sl/10.95 B \OT1/cmss/m/n/10.95 + [] \OT1/mathkerncmss/m/sl/10.95 cost[]dist [] 
 [][]
@@ -1391,7 +1444,7 @@ Overfull \hbox (4.85695pt too wide) has occurred while \output is active
 [18
 
 ]
-Overfull \hbox (13.02092pt too wide) detected at line 178
+Overfull \hbox (13.02092pt too wide) detected at line 180
 \OT1/mathkerncmss/m/sl/10.95 CT \OT1/cmss/m/n/10.95 = [] []\OT1/mathkerncmss/m/
 sl/10.95 B \OT1/cmss/m/n/10.95 + [] \OT1/mathkerncmss/m/sl/10.95 cost[]dist [] 
 [][]
@@ -1405,7 +1458,7 @@ Overfull \hbox (4.85695pt too wide) has occurred while \output is active
 [19
 
 ]
-Overfull \hbox (13.02092pt too wide) detected at line 178
+Overfull \hbox (13.02092pt too wide) detected at line 180
 \OT1/mathkerncmss/m/sl/10.95 CT \OT1/cmss/m/n/10.95 = [] []\OT1/mathkerncmss/m/
 sl/10.95 B \OT1/cmss/m/n/10.95 + [] \OT1/mathkerncmss/m/sl/10.95 cost[]dist [] 
 [][]
@@ -1443,6 +1496,10 @@ Overfull \hbox (4.85695pt too wide) has occurred while \output is active
 [23
 
 ]
+Overfull \vbox (10.93549pt too high) detected at line 228
+ []
+
+
 Overfull \hbox (4.85695pt too wide) has occurred while \output is active
 [][] 
  []
@@ -1450,6 +1507,10 @@ Overfull \hbox (4.85695pt too wide) has occurred while \output is active
 [24
 
 ]
+Overfull \vbox (10.93549pt too high) detected at line 228
+ []
+
+
 Overfull \hbox (4.85695pt too wide) has occurred while \output is active
 [][] 
  []
@@ -1457,6 +1518,10 @@ Overfull \hbox (4.85695pt too wide) has occurred while \output is active
 [25
 
 ]
+Overfull \vbox (10.93549pt too high) detected at line 228
+ []
+
+
 Overfull \hbox (4.85695pt too wide) has occurred while \output is active
 [][] 
  []
@@ -1464,6 +1529,10 @@ Overfull \hbox (4.85695pt too wide) has occurred while \output is active
 [26
 
 ]
+Overfull \vbox (10.93549pt too high) detected at line 228
+ []
+
+
 Overfull \hbox (4.85695pt too wide) has occurred while \output is active
 [][] 
  []
@@ -1471,6 +1540,10 @@ Overfull \hbox (4.85695pt too wide) has occurred while \output is active
 [27
 
 ]
+Overfull \vbox (10.93549pt too high) detected at line 228
+ []
+
+
 Overfull \hbox (4.85695pt too wide) has occurred while \output is active
 [][] 
  []
@@ -1494,28 +1567,28 @@ Overfull \hbox (4.85695pt too wide) has occurred while \output is active
 
 [30
 
-] <distribucion.png, id=279, 1196.21906pt x 416.30531pt>
+] <distribucion.png, id=271, 1196.21906pt x 416.30531pt>
 File: distribucion.png Graphic file (type png)
 
 <use distribucion.png>
-Package pdftex.def Info: distribucion.png used on input line 291.
+Package pdftex.def Info: distribucion.png used on input line 293.
 (pdftex.def)             Requested size: 156.08925pt x 54.3185pt.
- <pbx_simple.png, id=281, 1521.685pt x 371.3875pt>
+ <pbx_simple.png, id=273, 1521.685pt x 371.3875pt>
 File: pbx_simple.png Graphic file (type png)
 
 <use pbx_simple.png>
-Package pdftex.def Info: pbx_simple.png used on input line 291.
+Package pdftex.def Info: pbx_simple.png used on input line 293.
 (pdftex.def)             Requested size: 136.57698pt x 33.33275pt.
- <em.png, id=282, 1045.9878pt x 76.1244pt>
+ <em.png, id=274, 1045.9878pt x 76.1244pt>
 File: em.png Graphic file (type png)
  <use em.png>
-Package pdftex.def Info: em.png used on input line 291.
+Package pdftex.def Info: em.png used on input line 293.
 (pdftex.def)             Requested size: 117.06767pt x 8.51889pt.
 
-<temporal.png, id=283, 334.24875pt x 168.63pt>
+<temporal.png, id=275, 334.24875pt x 168.63pt>
 File: temporal.png Graphic file (type png)
  <use temporal.png>
-Package pdftex.def Info: temporal.png used on input line 291.
+Package pdftex.def Info: temporal.png used on input line 293.
 (pdftex.def)             Requested size: 78.04314pt x 39.3733pt.
 
 Overfull \hbox (4.85695pt too wide) has occurred while \output is active
@@ -1527,20 +1600,20 @@ Overfull \hbox (4.85695pt too wide) has occurred while \output is active
  <./distribucion.png>]
 File: distribucion.png Graphic file (type png)
  <use distribucion.png>
-Package pdftex.def Info: distribucion.png used on input line 291.
+Package pdftex.def Info: distribucion.png used on input line 293.
 (pdftex.def)             Requested size: 156.08925pt x 54.3185pt.
 File: pbx_simple.png Graphic file (type png)
  <use pbx_simple.png>
-Package pdftex.def Info: pbx_simple.png used on input line 291.
+Package pdftex.def Info: pbx_simple.png used on input line 293.
 (pdftex.def)             Requested size: 136.57698pt x 33.33275pt.
 File: em.png Graphic file (type png)
 
 <use em.png>
-Package pdftex.def Info: em.png used on input line 291.
+Package pdftex.def Info: em.png used on input line 293.
 (pdftex.def)             Requested size: 117.06767pt x 8.51889pt.
 File: temporal.png Graphic file (type png)
  <use temporal.png>
-Package pdftex.def Info: temporal.png used on input line 291.
+Package pdftex.def Info: temporal.png used on input line 293.
 (pdftex.def)             Requested size: 78.04314pt x 39.3733pt.
 
 Overfull \hbox (4.85695pt too wide) has occurred while \output is active
@@ -1552,20 +1625,20 @@ Overfull \hbox (4.85695pt too wide) has occurred while \output is active
 ]
 File: distribucion.png Graphic file (type png)
  <use distribucion.png>
-Package pdftex.def Info: distribucion.png used on input line 291.
+Package pdftex.def Info: distribucion.png used on input line 293.
 (pdftex.def)             Requested size: 156.08925pt x 54.3185pt.
 File: pbx_simple.png Graphic file (type png)
  <use pbx_simple.png>
-Package pdftex.def Info: pbx_simple.png used on input line 291.
+Package pdftex.def Info: pbx_simple.png used on input line 293.
 (pdftex.def)             Requested size: 136.57698pt x 33.33275pt.
 File: em.png Graphic file (type png)
  <use em.png>
-Package pdftex.def Info: em.png used on input line 291.
+Package pdftex.def Info: em.png used on input line 293.
 (pdftex.def)             Requested size: 117.06767pt x 8.51889pt.
 File: temporal.png Graphic file (type png)
 
 <use temporal.png>
-Package pdftex.def Info: temporal.png used on input line 291.
+Package pdftex.def Info: temporal.png used on input line 293.
 (pdftex.def)             Requested size: 78.04314pt x 39.3733pt.
 
 Overfull \hbox (4.85695pt too wide) has occurred while \output is active
@@ -1577,20 +1650,20 @@ Overfull \hbox (4.85695pt too wide) has occurred while \output is active
  <./pbx_simple.png>]
 File: distribucion.png Graphic file (type png)
  <use distribucion.png>
-Package pdftex.def Info: distribucion.png used on input line 291.
+Package pdftex.def Info: distribucion.png used on input line 293.
 (pdftex.def)             Requested size: 156.08925pt x 54.3185pt.
 File: pbx_simple.png Graphic file (type png)
  <use pbx_simple.png>
-Package pdftex.def Info: pbx_simple.png used on input line 291.
+Package pdftex.def Info: pbx_simple.png used on input line 293.
 (pdftex.def)             Requested size: 136.57698pt x 33.33275pt.
 File: em.png Graphic file (type png)
 
 <use em.png>
-Package pdftex.def Info: em.png used on input line 291.
+Package pdftex.def Info: em.png used on input line 293.
 (pdftex.def)             Requested size: 117.06767pt x 8.51889pt.
 File: temporal.png Graphic file (type png)
  <use temporal.png>
-Package pdftex.def Info: temporal.png used on input line 291.
+Package pdftex.def Info: temporal.png used on input line 293.
 (pdftex.def)             Requested size: 78.04314pt x 39.3733pt.
 
 Overfull \hbox (4.85695pt too wide) has occurred while \output is active
@@ -1602,20 +1675,20 @@ Overfull \hbox (4.85695pt too wide) has occurred while \output is active
  <./em.png>]
 File: distribucion.png Graphic file (type png)
  <use distribucion.png>
-Package pdftex.def Info: distribucion.png used on input line 291.
+Package pdftex.def Info: distribucion.png used on input line 293.
 (pdftex.def)             Requested size: 156.08925pt x 54.3185pt.
 File: pbx_simple.png Graphic file (type png)
  <use pbx_simple.png>
-Package pdftex.def Info: pbx_simple.png used on input line 291.
+Package pdftex.def Info: pbx_simple.png used on input line 293.
 (pdftex.def)             Requested size: 136.57698pt x 33.33275pt.
 File: em.png Graphic file (type png)
  <use em.png>
-Package pdftex.def Info: em.png used on input line 291.
+Package pdftex.def Info: em.png used on input line 293.
 (pdftex.def)             Requested size: 117.06767pt x 8.51889pt.
 File: temporal.png Graphic file (type png)
 
 <use temporal.png>
-Package pdftex.def Info: temporal.png used on input line 291.
+Package pdftex.def Info: temporal.png used on input line 293.
 (pdftex.def)             Requested size: 78.04314pt x 39.3733pt.
 
 Overfull \hbox (4.85695pt too wide) has occurred while \output is active
@@ -1627,20 +1700,20 @@ Overfull \hbox (4.85695pt too wide) has occurred while \output is active
  <./temporal.png>]
 File: distribucion.png Graphic file (type png)
  <use distribucion.png>
-Package pdftex.def Info: distribucion.png used on input line 291.
+Package pdftex.def Info: distribucion.png used on input line 293.
 (pdftex.def)             Requested size: 156.08925pt x 54.3185pt.
 File: pbx_simple.png Graphic file (type png)
  <use pbx_simple.png>
-Package pdftex.def Info: pbx_simple.png used on input line 291.
+Package pdftex.def Info: pbx_simple.png used on input line 293.
 (pdftex.def)             Requested size: 136.57698pt x 33.33275pt.
 File: em.png Graphic file (type png)
  <use em.png>
-Package pdftex.def Info: em.png used on input line 291.
+Package pdftex.def Info: em.png used on input line 293.
 (pdftex.def)             Requested size: 117.06767pt x 8.51889pt.
 File: temporal.png Graphic file (type png)
 
 <use temporal.png>
-Package pdftex.def Info: temporal.png used on input line 291.
+Package pdftex.def Info: temporal.png used on input line 293.
 (pdftex.def)             Requested size: 78.04314pt x 39.3733pt.
 
 Overfull \hbox (4.85695pt too wide) has occurred while \output is active
@@ -1649,10 +1722,10 @@ Overfull \hbox (4.85695pt too wide) has occurred while \output is active
 
 [36
 
-] <migracion.png, id=319, 2007.5pt x 1282.7925pt>
+] <migracion.png, id=311, 2007.5pt x 1282.7925pt>
 File: migracion.png Graphic file (type png)
  <use migracion.png>
-Package pdftex.def Info: migracion.png used on input line 323.
+Package pdftex.def Info: migracion.png used on input line 325.
 (pdftex.def)             Requested size: 109.53323pt x 69.97636pt.
 
 Overfull \hbox (4.85695pt too wide) has occurred while \output is active
@@ -1664,7 +1737,7 @@ Overfull \hbox (4.85695pt too wide) has occurred while \output is active
 ]
 File: migracion.png Graphic file (type png)
  <use migracion.png>
-Package pdftex.def Info: migracion.png used on input line 323.
+Package pdftex.def Info: migracion.png used on input line 325.
 (pdftex.def)             Requested size: 109.53323pt x 69.97636pt.
 
 Overfull \hbox (4.85695pt too wide) has occurred while \output is active
@@ -1676,7 +1749,7 @@ Overfull \hbox (4.85695pt too wide) has occurred while \output is active
 ]
 File: migracion.png Graphic file (type png)
  <use migracion.png>
-Package pdftex.def Info: migracion.png used on input line 323.
+Package pdftex.def Info: migracion.png used on input line 325.
 (pdftex.def)             Requested size: 109.53323pt x 69.97636pt.
 
 Overfull \hbox (4.85695pt too wide) has occurred while \output is active
@@ -1685,11 +1758,11 @@ Overfull \hbox (4.85695pt too wide) has occurred while \output is active
 
 [39
 
- <./migracion.png>] <pmuMOEAD.png, id=339, 1622.06pt x 1119.18124pt>
+ <./migracion.png>] <pmuMOEAD.png, id=331, 1622.06pt x 1119.18124pt>
 File: pmuMOEAD.png Graphic file (type png)
 
 <use pmuMOEAD.png>
-Package pdftex.def Info: pmuMOEAD.png used on input line 355.
+Package pdftex.def Info: pmuMOEAD.png used on input line 357.
 (pdftex.def)             Requested size: 95.84079pt x 66.12334pt.
 
 Overfull \hbox (4.85695pt too wide) has occurred while \output is active
@@ -1701,7 +1774,7 @@ Overfull \hbox (4.85695pt too wide) has occurred while \output is active
 ]
 File: pmuMOEAD.png Graphic file (type png)
  <use pmuMOEAD.png>
-Package pdftex.def Info: pmuMOEAD.png used on input line 355.
+Package pdftex.def Info: pmuMOEAD.png used on input line 357.
 (pdftex.def)             Requested size: 95.84079pt x 66.12334pt.
 
 Overfull \hbox (4.85695pt too wide) has occurred while \output is active
@@ -1713,7 +1786,7 @@ Overfull \hbox (4.85695pt too wide) has occurred while \output is active
  <./pmuMOEAD.png>]
 File: pmuMOEAD.png Graphic file (type png)
  <use pmuMOEAD.png>
-Package pdftex.def Info: pmuMOEAD.png used on input line 355.
+Package pdftex.def Info: pmuMOEAD.png used on input line 357.
 (pdftex.def)             Requested size: 95.84079pt x 66.12334pt.
 
 Overfull \hbox (4.85695pt too wide) has occurred while \output is active
@@ -1725,7 +1798,7 @@ Overfull \hbox (4.85695pt too wide) has occurred while \output is active
 ]
 File: pmuMOEAD.png Graphic file (type png)
  <use pmuMOEAD.png>
-Package pdftex.def Info: pmuMOEAD.png used on input line 355.
+Package pdftex.def Info: pmuMOEAD.png used on input line 357.
 (pdftex.def)             Requested size: 95.84079pt x 66.12334pt.
 
 Overfull \hbox (4.85695pt too wide) has occurred while \output is active
@@ -1737,7 +1810,7 @@ Overfull \hbox (4.85695pt too wide) has occurred while \output is active
 ]
 File: pmuMOEAD.png Graphic file (type png)
  <use pmuMOEAD.png>
-Package pdftex.def Info: pmuMOEAD.png used on input line 355.
+Package pdftex.def Info: pmuMOEAD.png used on input line 357.
 (pdftex.def)             Requested size: 95.84079pt x 66.12334pt.
 
 Overfull \hbox (4.85695pt too wide) has occurred while \output is active
@@ -1777,11 +1850,11 @@ Overfull \hbox (4.85695pt too wide) has occurred while \output is active
 
 [48
 
-] <greedy_costo_1.png, id=394, 717.68124pt x 364.36125pt>
+] <greedy_costo_1.png, id=386, 717.68124pt x 364.36125pt>
 File: greedy_costo_1.png Graphic file (type png)
 
 <use greedy_costo_1.png>
-Package pdftex.def Info: greedy_costo_1.png used on input line 416.
+Package pdftex.def Info: greedy_costo_1.png used on input line 418.
 (pdftex.def)             Requested size: 342.2953pt x 173.78502pt.
 
 Overfull \hbox (4.85695pt too wide) has occurred while \output is active
@@ -1791,11 +1864,11 @@ Overfull \hbox (4.85695pt too wide) has occurred while \output is active
 [49
 
  <./greedy_costo_1.png>]
-<greedy_costo_2.png, id=401, 717.68124pt x 364.36125pt>
+<greedy_costo_2.png, id=393, 717.68124pt x 364.36125pt>
 File: greedy_costo_2.png Graphic file (type png)
 
 <use greedy_costo_2.png>
-Package pdftex.def Info: greedy_costo_2.png used on input line 416.
+Package pdftex.def Info: greedy_costo_2.png used on input line 418.
 (pdftex.def)             Requested size: 342.2953pt x 173.78502pt.
 
 Overfull \hbox (4.85695pt too wide) has occurred while \output is active
@@ -1805,11 +1878,11 @@ Overfull \hbox (4.85695pt too wide) has occurred while \output is active
 [50
 
  <./greedy_costo_2.png>]
-<greedy_costo_3.png, id=408, 717.68124pt x 364.36125pt>
+<greedy_costo_3.png, id=400, 717.68124pt x 364.36125pt>
 File: greedy_costo_3.png Graphic file (type png)
 
 <use greedy_costo_3.png>
-Package pdftex.def Info: greedy_costo_3.png used on input line 416.
+Package pdftex.def Info: greedy_costo_3.png used on input line 418.
 (pdftex.def)             Requested size: 342.2953pt x 173.78502pt.
 
 Overfull \hbox (4.85695pt too wide) has occurred while \output is active
@@ -1819,11 +1892,11 @@ Overfull \hbox (4.85695pt too wide) has occurred while \output is active
 [51
 
  <./greedy_costo_3.png>]
-<greedy_costo_4.png, id=415, 717.68124pt x 364.36125pt>
+<greedy_costo_4.png, id=407, 717.68124pt x 364.36125pt>
 File: greedy_costo_4.png Graphic file (type png)
 
 <use greedy_costo_4.png>
-Package pdftex.def Info: greedy_costo_4.png used on input line 416.
+Package pdftex.def Info: greedy_costo_4.png used on input line 418.
 (pdftex.def)             Requested size: 342.2953pt x 173.78502pt.
 
 Overfull \hbox (4.85695pt too wide) has occurred while \output is active
@@ -1833,11 +1906,11 @@ Overfull \hbox (4.85695pt too wide) has occurred while \output is active
 [52
 
  <./greedy_costo_4.png>]
-<greedy_costo_5.png, id=422, 717.68124pt x 364.36125pt>
+<greedy_costo_5.png, id=414, 717.68124pt x 364.36125pt>
 File: greedy_costo_5.png Graphic file (type png)
 
 <use greedy_costo_5.png>
-Package pdftex.def Info: greedy_costo_5.png used on input line 416.
+Package pdftex.def Info: greedy_costo_5.png used on input line 418.
 (pdftex.def)             Requested size: 342.2953pt x 173.78502pt.
 
 Overfull \hbox (4.85695pt too wide) has occurred while \output is active
@@ -1847,11 +1920,11 @@ Overfull \hbox (4.85695pt too wide) has occurred while \output is active
 [53
 
  <./greedy_costo_5.png>]
-<greedy_costo_6.png, id=429, 717.68124pt x 364.36125pt>
+<greedy_costo_6.png, id=421, 717.68124pt x 364.36125pt>
 File: greedy_costo_6.png Graphic file (type png)
 
 <use greedy_costo_6.png>
-Package pdftex.def Info: greedy_costo_6.png used on input line 416.
+Package pdftex.def Info: greedy_costo_6.png used on input line 418.
 (pdftex.def)             Requested size: 342.2953pt x 173.78502pt.
 
 Overfull \hbox (4.85695pt too wide) has occurred while \output is active
@@ -1861,11 +1934,11 @@ Overfull \hbox (4.85695pt too wide) has occurred while \output is active
 [54
 
  <./greedy_costo_6.png>]
-<greedy_costo_7.png, id=436, 717.68124pt x 364.36125pt>
+<greedy_costo_7.png, id=428, 717.68124pt x 364.36125pt>
 File: greedy_costo_7.png Graphic file (type png)
 
 <use greedy_costo_7.png>
-Package pdftex.def Info: greedy_costo_7.png used on input line 416.
+Package pdftex.def Info: greedy_costo_7.png used on input line 418.
 (pdftex.def)             Requested size: 342.2953pt x 173.78502pt.
 
 Overfull \hbox (4.85695pt too wide) has occurred while \output is active
@@ -1875,11 +1948,11 @@ Overfull \hbox (4.85695pt too wide) has occurred while \output is active
 [55
 
  <./greedy_costo_7.png>]
-<greedy_costo_8.png, id=444, 717.68124pt x 364.36125pt>
+<greedy_costo_8.png, id=436, 717.68124pt x 364.36125pt>
 File: greedy_costo_8.png Graphic file (type png)
 
 <use greedy_costo_8.png>
-Package pdftex.def Info: greedy_costo_8.png used on input line 416.
+Package pdftex.def Info: greedy_costo_8.png used on input line 418.
 (pdftex.def)             Requested size: 342.2953pt x 173.78502pt.
 
 Overfull \hbox (4.85695pt too wide) has occurred while \output is active
@@ -1909,121 +1982,166 @@ Overfull \hbox (4.85695pt too wide) has occurred while \output is active
 
 [59
 
-]
+] (./evaluacion_experimental/mejoras_greedy_clei/imagenes.tex
+<./evaluacion_experimental/mejoras_greedy_clei/greedy_costo_Chicas.png, id=459,
+ 507.35pt x 429.97pt>
+File: ./evaluacion_experimental/mejoras_greedy_clei/greedy_costo_Chicas.png Gra
+phic file (type png)
+
+<use ./evaluacion_experimental/mejoras_greedy_clei/greedy_costo_Chicas.png>
+Package pdftex.def Info: ./evaluacion_experimental/mejoras_greedy_clei/greedy_c
+osto_Chicas.png used on input line 4.
+(pdftex.def)             Requested size: 142.25832pt x 99.5799pt.
+
+<./evaluacion_experimental/mejoras_greedy_clei/greedy_costo_Medianas.png, id=46
+0, 507.35pt x 429.97pt>
+File: ./evaluacion_experimental/mejoras_greedy_clei/greedy_costo_Medianas.png G
+raphic file (type png)
+
+<use ./evaluacion_experimental/mejoras_greedy_clei/greedy_costo_Medianas.png>
+Package pdftex.def Info: ./evaluacion_experimental/mejoras_greedy_clei/greedy_c
+osto_Medianas.png used on input line 5.
+(pdftex.def)             Requested size: 142.25832pt x 99.5799pt.
+
+<./evaluacion_experimental/mejoras_greedy_clei/greedy_costo_Grandes.png, id=461
+, 507.35pt x 429.97pt>
+File: ./evaluacion_experimental/mejoras_greedy_clei/greedy_costo_Grandes.png Gr
+aphic file (type png)
+
+<use ./evaluacion_experimental/mejoras_greedy_clei/greedy_costo_Grandes.png>
+Package pdftex.def Info: ./evaluacion_experimental/mejoras_greedy_clei/greedy_c
+osto_Grandes.png used on input line 8.
+(pdftex.def)             Requested size: 142.25832pt x 99.5799pt.
+
+<./evaluacion_experimental/mejoras_greedy_clei/greedy_costo_Montevideo.png, id=
+462, 507.35pt x 429.97pt>
+File: ./evaluacion_experimental/mejoras_greedy_clei/greedy_costo_Montevideo.png
+ Graphic file (type png)
+
+<use ./evaluacion_experimental/mejoras_greedy_clei/greedy_costo_Montevideo.png>
+Package pdftex.def Info: ./evaluacion_experimental/mejoras_greedy_clei/greedy_c
+osto_Montevideo.png used on input line 9.
+(pdftex.def)             Requested size: 142.25832pt x 99.5799pt.
+)
+Overfull \vbox (0.41838pt too high) detected at line 439
+ []
+
+
 Overfull \hbox (4.85695pt too wide) has occurred while \output is active
 [][] 
  []
 
 [60
 
-]
+ <./evaluacion_experimental/mejoras_greedy_clei/greedy_costo_Chicas.png> <./eva
+luacion_experimental/mejoras_greedy_clei/greedy_costo_Medianas.png> <./evaluaci
+on_experimental/mejoras_greedy_clei/greedy_costo_Grandes.png> <./evaluacion_exp
+erimental/mejoras_greedy_clei/greedy_costo_Montevideo.png>]
+(./evaluacion_experimental/mejoras_greedy_alio/imagenes.tex
+<./evaluacion_experimental/mejoras_greedy_alio/greedy_costo_Chicas.png, id=472,
+ 514.65pt x 432.89pt>
+File: ./evaluacion_experimental/mejoras_greedy_alio/greedy_costo_Chicas.png Gra
+phic file (type png)
+
+<use ./evaluacion_experimental/mejoras_greedy_alio/greedy_costo_Chicas.png>
+Package pdftex.def Info: ./evaluacion_experimental/mejoras_greedy_alio/greedy_c
+osto_Chicas.png used on input line 4.
+(pdftex.def)             Requested size: 142.26343pt x 99.58241pt.
+
+<./evaluacion_experimental/mejoras_greedy_alio/greedy_costo_Medianas.png, id=47
+3, 514.65pt x 432.89pt>
+File: ./evaluacion_experimental/mejoras_greedy_alio/greedy_costo_Medianas.png G
+raphic file (type png)
+
+<use ./evaluacion_experimental/mejoras_greedy_alio/greedy_costo_Medianas.png>
+Package pdftex.def Info: ./evaluacion_experimental/mejoras_greedy_alio/greedy_c
+osto_Medianas.png used on input line 5.
+(pdftex.def)             Requested size: 142.26343pt x 99.58241pt.
+
+<./evaluacion_experimental/mejoras_greedy_alio/greedy_costo_Grandes.png, id=474
+, 514.65pt x 432.89pt>
+File: ./evaluacion_experimental/mejoras_greedy_alio/greedy_costo_Grandes.png Gr
+aphic file (type png)
+
+<use ./evaluacion_experimental/mejoras_greedy_alio/greedy_costo_Grandes.png>
+Package pdftex.def Info: ./evaluacion_experimental/mejoras_greedy_alio/greedy_c
+osto_Grandes.png used on input line 8.
+(pdftex.def)             Requested size: 142.26343pt x 99.58241pt.
+
+<./evaluacion_experimental/mejoras_greedy_alio/greedy_costo_Montevideo.png, id=
+475, 514.65pt x 432.89pt>
+File: ./evaluacion_experimental/mejoras_greedy_alio/greedy_costo_Montevideo.png
+ Graphic file (type png)
+
+<use ./evaluacion_experimental/mejoras_greedy_alio/greedy_costo_Montevideo.png>
+Package pdftex.def Info: ./evaluacion_experimental/mejoras_greedy_alio/greedy_c
+osto_Montevideo.png used on input line 9.
+(pdftex.def)             Requested size: 142.26343pt x 99.58241pt.
+)
+Overfull \vbox (0.42342pt too high) detected at line 445
+ []
+
+
 Overfull \hbox (4.85695pt too wide) has occurred while \output is active
 [][] 
  []
 
 [61
 
-]
-Overfull \hbox (4.85695pt too wide) has occurred while \output is active
-[][] 
- []
+ <./evaluacion_experimental/mejoras_greedy_alio/greedy_costo_Chicas.png> <./eva
+luacion_experimental/mejoras_greedy_alio/greedy_costo_Medianas.png> <./evaluaci
+on_experimental/mejoras_greedy_alio/greedy_costo_Grandes.png> <./evaluacion_exp
+erimental/mejoras_greedy_alio/greedy_costo_Montevideo.png>]
+(./evaluacion_experimental/comparativa_clei_alio.tex
 
-[62
+! LaTeX Error: Something's wrong--perhaps a missing \item.
 
-]
-Overfull \hbox (4.85695pt too wide) has occurred while \output is active
-[][] 
- []
-
-[63
-
-] (./presentacion.toc
-LaTeX Info: Redefining \. on input line 2.
-LaTeX Info: Redefining \% on input line 2.
-)
-Overfull \hbox (4.85695pt too wide) has occurred while \output is active
-[][] 
- []
-
-[64
-
-]
-Overfull \hbox (4.85695pt too wide) has occurred while \output is active
-[][] 
- []
-
-[65
-
-] (./presentacion.toc
-LaTeX Info: Redefining \. on input line 2.
-LaTeX Info: Redefining \% on input line 2.
-)
-Overfull \hbox (4.85695pt too wide) has occurred while \output is active
-[][] 
- []
-
-[66
-
-]
-Overfull \hbox (4.85695pt too wide) has occurred while \output is active
-[][] 
- []
-
-[67
-
-]
-\tf@nav=\write6
-\openout6 = `presentacion.nav'.
-
-\tf@toc=\write7
-\openout7 = `presentacion.toc'.
-
-\tf@snm=\write8
-\openout8 = `presentacion.snm'.
-
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 473.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 473.
- (./presentacion.aux
-LaTeX Info: Redefining \. on input line 25.
-LaTeX Info: Redefining \% on input line 25.
-)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 473.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 473.
-Package rerunfilecheck Info: File `presentacion.out' has not changed.
-(rerunfilecheck)             Checksum: 1264BDED0707061D0346142A42A71996;423.
-
-
-LaTeX Font Warning: Size substitutions with differences
-(Font)              up to 1.0pt have occurred.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 473.
- ) 
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4 \begin
+          {tabular}{ccrrrrr}
+? ^^[[A^^[[B
+Type <return> to proceed, S to scroll future error messages,
+R to run without stopping, Q to run quietly,
+I to insert something, E to edit your file,
+1 or ... or 9 to ignore the next 1 to 9 tokens of input,
+H for help, X to quit.
+? X
+ 
 Here is how much of TeX's memory you used:
- 19009 strings out of 493105
- 356875 string characters out of 6137072
- 445353 words of memory out of 5000000
- 21866 multiletter control sequences out of 15000+600000
- 17908 words of font info for 64 fonts, out of 8000000 for 9000
+ 19787 strings out of 493105
+ 372056 string characters out of 6137072
+ 459680 words of memory out of 5000000
+ 22608 multiletter control sequences out of 15000+600000
+ 20211 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 56i,27n,62p,423b,892s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmssi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmssi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on presentacion.pdf (67 pages, 1600389 bytes).
+ 57i,27n,96p,423b,997s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{Navigation66} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{Navigation64} has been referenced but does not exis
+t, replaced by a fixed one
+
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmssi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmssi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+sy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on presentacion.pdf (61 pages, 1764614 bytes).
 PDF statistics:
- 604 PDF objects out of 1000 (max. 8388607)
- 467 compressed objects within 5 object streams
- 142 named destinations out of 1000 (max. 500000)
- 264 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 567 PDF objects out of 1000 (max. 8388607)
+ 417 compressed objects within 5 object streams
+ 130 named destinations out of 1000 (max. 500000)
+ 276 words of extra memory for PDF output out of 10000 (max. 10000000)
 
