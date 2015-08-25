@@ -489,10 +489,20 @@ Montevideo, Uruguay}
 }
 
 \frame{
-	\frametitle{Algoritmo ávido para minimizar demora}
-		
-	\textbf{FALTA}
+	\frametitle{Algoritmos ávidos}
 	
+	\begin{block}{Algoritmo ávido para minimizar el costo}
+		Se utilizó el mismo algoritmo detallado previamente, tomando en cuenta las distintas capacidades de los vehículos y su disponibilidad.
+	\end{block}
+
+	\begin{block}{Algoritmo ávido para minimizar la demora}
+		\begin{itemize}
+		\item En primera instancia, se crea un taxi vacío para cada uno de los pasajeros con mayor nivel de apuro. 
+		\item Se ubica a cada pasajero con mayor nivel de apuro en la primera posición del taxi.
+		\item Luego, se recorre la lista de pasajeros no asignados en orden de apuro, colocándolos en el taxi que minimice su demora.
+		\item Si el taxi completa la máxima capacidad disponible, se lo considera \textit{completo} y no acepta más pasajeros.
+		\end{itemize}
+	\end{block}
 }
 
 \frame{
