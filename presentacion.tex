@@ -469,6 +469,7 @@ Montevideo, Uruguay}
 
 \frame{
 	\frametitle{PVCT multiobjetivo}
+
 	\begin{block}{Entorno de ejecución}
 		\begin{itemize}
 			\item La evaluación experimental fue realizada en el Cluster FING.
@@ -485,6 +486,48 @@ Montevideo, Uruguay}
 	\end{block}
 }
 
+\frame{
+	\frametitle{Algoritmo ávido para minimizar demora}
+		
+	\textbf{FALTA}
+	
+}
+
+\frame{
+	\frametitle{Métricas multiobjetivo}
+		
+	\begin{block}{\textit{p$\mu$MOEA/D}}
+		Se logra una buena convergencia y diversidad. Sin embargo, la cantidad de soluciones no dominadas es baja, indicando que se puede mejorar.
+
+		%La baja distancia generacional y el spread indican buena convergencia y diversidad. El hipervolumen refuerza estas afirmaciones, aunque la cantidad de soluciones no dominadas resulta baja.
+
+		\input{./evaluacion_experimental/metricas_mo_resumen_maeb.tex}
+	\end{block}
+
+	\begin{block}{\textit{NSGA--II}}
+		La cantidad de puntos no dominados es mayor. La distancia generacional indica una buena convergencia y se logra una mayor dispersión.
+	
+		\input{./evaluacion_experimental/metricas_mo_resumen_mic.tex}
+	\end{block}	
+	
+}
+
+\frame{
+	\frametitle{Mejora frente a algoritmos ávidos vs. tiempo de ejecución}
+	El enfoque multiobjetivo explícito de \textit{NSGA--II} permite alcanzar mejores resultados que el enfoque por descomposición de dominio aplicado en \textit{p$\mu$MOEA/D}. Sin embargo, los tiempos de ejecución son significativamente mayores.
+
+	\input{./evaluacion_experimental/tradeoff_maeb_mic/imagenes.tex}
+	
+}
+
+\frame{
+	\frametitle{Frentes de Pareto: p$\mu$MOEA/D vs. NSGA--II}
+	\alert{\textit{NSGA--II} alcanza mejores soluciones} con una mayor cantidad de puntos no dominados distribuidos homogéneamente a lo largo del frente.
+	
+	\input{./evaluacion_experimental/fp_comparacion/imagenes.tex}
+	
+}
+
 
 % Slide - Planificador de viajes compartidos en línea ==============================================================
 \section{Planificador de viajes compartidos en línea} 
@@ -492,7 +535,28 @@ Montevideo, Uruguay}
 
 \frame{
 	\frametitle{Planificador de viajes compartidos en línea}
-
+	\begin{columns}[totalwidth=\textwidth]
+	\column{0.5\textwidth}
+	\begin{itemize}
+	\item Se ingresa el origen, los destinos y la tarifa (diurna/nocturna).
+	\end{itemize}
+	\centering
+	\includegraphics[width=.6\textwidth]{mapa.png}
+	\begin{itemize}\pause
+	\item Se ejecuta el AE y se muestra la planificación calculada.
+	\end{itemize}
+	\only<1>{\mbox{\phantom{\includegraphics[width=.6\textwidth]{res_total.png}}}}%
+	\includegraphics<2->[width=.6\textwidth]{res_total.png}
+	\column{0.5\textwidth}\pause
+	\centering
+	\only<1-2>{\mbox{\phantom{\includegraphics[width=.6\textwidth]{arquitectura.png}}}}%
+	\includegraphics<3->[width=.6\textwidth]{arquitectura.png}
+	\begin{itemize}
+	\item Servidor implementado en Ruby on Rails siguiendo MVC.
+	\item Las aplicaciones móviles consumen la API del servidor.
+	\item Aplicaciones móviles: desarrollo híbrido vs. desarrollo nativo.
+	\end{itemize}
+	\end{columns}
 }
 
 
@@ -519,13 +583,16 @@ Montevideo, Uruguay}
 \frame{
 	\frametitle{Trabajo futuro}
 	\begin{itemize}
-	\item Implementar NSGA--II con subpoblaciones distribuidas.
-	\item Incorporar datos realistas del tráfico para considerar rutas alternativas.
-	\item Incorporar datos en tiempo real de la disponibilidad de los taxis.
-	\item Mejorar la experiencia de los usuarios en el planificador de viajes compartidos.
-	\item Desarrollar versiones para dispositivos móviles Android y Windows Phone.
-	\item Soportar la variante multiobjetivo en el planificador de viajes compartidos.
-	\item Estudiar la aplicabilidad de los AE a otros escenarios.
+	\item Implementar NSGA--II con subpoblaciones distribuidas.\pause
+	\item Incorporar \textbf{datos realistas del tráfico} para considerar rutas alternativas.\pause
+	\item Incorporar datos de la \textbf{disponibilidad de los taxis} en tiempo real.\pause
+	\item Mejoras en el planificador de viajes compartidos:\pause
+	\begin{itemize}
+	\item Mejorar la experiencia de los usuarios.\pause
+	\item Desarrollar versiones para dispositivos móviles Android y Windows Phone.\pause
+	\item Soportar la variante multiobjetivo.\pause
+	\end{itemize}
+	\item Estudiar la aplicabilidad de los AE a otros escenarios.\pause
 	\item Estudiar otras variantes del problema (e.g., many--to--one, many--to--many).
 	\end{itemize}
 }
