@@ -391,14 +391,15 @@ Montevideo, Uruguay}
 	\begin{block}{Entorno de ejecución}
 		\begin{itemize}
 		\item La evaluación experimental fue realizada en el Cluster FING.
-		\item \textit{seqEA}: Dell Power Edge 2950, \textbf{1 núcleo} de Intel Xeon E5430 2.66GHz, 8GB RAM.
-		\item \textit{p$mu$EA}: HP Proliant DL585, \textbf{24 núcleos} de AMD Opteron 2.09GHz, 48GB RAM.
+		\item \textbf{seqEA}: Dell Power Edge 2950, \textbf{1 núcleo} de Intel Xeon E5430 2.66GHz, 8GB RAM.
+		\item \textbf{p$\mu$EA}: HP Proliant DL585, \textbf{24 núcleos} de AMD Opteron 2.09GHz, 48GB RAM.
 		\end{itemize}
 	\end{block}
 	\begin{block}{Configuración paramétrica}
 	\begin{itemize}
-	\item \textbf{seqEA}: 20 ejecuciones de 2000 generaciones sobre 3 instancias.\\{\small $\text{\#\textit{P}} \in \lbrace 150, 200, \alert{250}\rbrace$; $p_C \in \lbrace \alert{0.6}, 0.75, 0.95\rbrace$; $p_M \in \lbrace 0.001, 0.01, \alert{0.1}\rbrace$.}\\
-	\item \textbf{p$mu$EA}: micro--población de 15 individuos, torneo ($m=2$, $k=1$), migración cada 500 generaciones. \\20 ejecuciones de 100.000 generaciones sobre 5 instancias.\\{\small $p_C \in \lbrace 0.6, \alert{0.75}, 0.95\rbrace$; $p_M \in \lbrace 0.001, 0.01, \alert{0.1}\rbrace$.}
+		\item \textbf{seqEA}: 20 ejecuciones de 2000 generaciones sobre 3 instancias.\\{\small $\text{\#\textit{P}} \in \lbrace 150, 200, \alert{250}\rbrace$; $p_C \in \lbrace \alert{0.6}, 0.75, 0.95\rbrace$; $p_M \in \lbrace 0.001, 0.01, \alert{0.1}\rbrace$.}\\
+	
+		\item \textbf{p$\mu$EA}: micro--población de 15 individuos, torneo ($m=2$, $k=1$), migración cada 500 generaciones. \\20 ejecuciones de 100.000 generaciones sobre 5 instancias.\\{\small $p_C \in \lbrace 0.6, \alert{0.75}, 0.95\rbrace$; $p_M \in \lbrace 0.001, 0.01, \alert{0.1}\rbrace$.}
 	\end{itemize}
 	\end{block}
 
@@ -419,18 +420,22 @@ Montevideo, Uruguay}
 }
 
 \frame{
-	\frametitle{Evaluación experimental}
-	
-}
-
-\frame{
-	\frametitle{Evaluación experimental}
-
-}
-
-\frame{
 	\frametitle{Comparativa de métodos de inicialización}
-	% Falta completar
+	\begin{block}{Metodología}
+		\begin{itemize}
+			\item Shapiro--Wilk afirma que los resultados no siguen una distribución normal.
+			\item Se utilizó Kruskal--Wallis para comparar ambas inicializaciones.
+			\item Kruskal--Wallis permite afirmar con un nivel de confianza del 95\% que una de las inicializaciones obtuvo mejores resultados que la otra.
+		\end{itemize}
+	\end{block}
+	
+	\begin{block}{\textit{seqEA} con inicialización aleatoria vs. incialización ávida}
+		La inicialización ávida supera a la inicialización aleatoria en \alert{10} instancias de prueba, mientras que la inicialización aleatoria lo hace en tan solo \alert{2}.
+	\end{block}
+	
+	\begin{block}{\textit{p$\mu$EA} con inicialización aleatoria vs. incialización ávida}
+		La inicialización ávida super a la inicialización aleatoria en \alert{11} instancias de prueba, mientras que no hubo instancias en las que se pueda afirmar que la inicialización aleatoria haya alcanzado mejores soluciones.
+	\end{block}
 }
 
 \frame{
@@ -441,7 +446,7 @@ Montevideo, Uruguay}
 
 \frame{
 	\frametitle{Mejora \textit{p$\mu$EA} sobre algoritmo ávido}
-	Se alcanzaron mejores valores en \textbf{todas} las instancias. En el mejor caso se superó el costo del algoritmo ávido en un \alert{41\%}.
+	Se alcanzaron mejores valores en \textbf{todas} las instancias. En el mejor caso se superó el costo del algoritmo ávido en un \alert{41.0\%}.
 	\input{./evaluacion_experimental/mejoras_greedy_alio/imagenes.tex}
 }
 
@@ -456,8 +461,28 @@ Montevideo, Uruguay}
 }
 
 \frame{
-	\frametitle{Evaluación experimental}
+	\frametitle{Evolución del costo a lo largo de la ejecución}
+	\textit{p$\mu$EA} alcanza mejores soluciones que \textit{seqEA} en menos tiempo. En el mejor caso la aceleración es de $7.5$x ($4.6$x en promedio).
+	
+	\input{./evaluacion_experimental/fitness_sobre_tiempo/imagenes.tex}
+}
 
+\frame{
+	\frametitle{PVCT multiobjetivo}
+	\begin{block}{Entorno de ejecución}
+		\begin{itemize}
+			\item La evaluación experimental fue realizada en el Cluster FING.
+			\item \textbf{p$\mu$MOEA/D}: HP Proliant DL585, \textbf{24 núcleos} de AMD Opteron 2.09GHz, 48GB RAM.
+			\item \textbf{NSGA--II}: HP Proliant DL385 G7, \textbf{1 núcleo} de AMD Opteron 6172 2.10GHz, 72GB RAM.
+		\end{itemize}
+	\end{block}
+	
+	\begin{block}{Configuración paramétrica}
+		\begin{itemize}
+			\item \textbf{p$\mu$MOEA/D}: 30 ejecuciones de 20000 generaciones sobre 4 instancias. \\{\small $P=15$; $p_C \in \lbrace 0.6, \alert{0.75}, 0.95\rbrace$; $p_M \in \lbrace 0.001, 0.01, \alert{0.1}\rbrace$; operador de migración cada 1000 generaciones.}\\
+			\item \textbf{NSGA--II}: 30 ejecuciones de 5000 generaciones sobre 4 instancias. \\{\small $P=80$; $p_C \in \lbrace 0.6, \alert{0.75}, 0.95\rbrace$; $p_M \in \lbrace 0.001, 0.01, \alert{0.1}\rbrace$.}\\
+		\end{itemize}
+	\end{block}
 }
 
 
@@ -478,15 +503,14 @@ Montevideo, Uruguay}
 \frame{
 	\frametitle{Conclusiones}
 	\begin{itemize}
-	\item Se relevó la literatura relacionada (CPP, DARP, TPP) y se presentaron dos variantes del problema.
-	\item Se implementaron \textbf{cuatro} AE: dos para cada variante del problema.
-	\item El análisis experimental se realizó sobre instancias realistas.
-	\item Los AE implementados fueron comparados contra algoritmos ávidos.
-	\item Variante monoobjetivo: mejoras de hasta 35.9\% (seqEA) y 41.0\% (p$\mu$EA) sobre algoritmo ávido.
-	\item Variante multiobjetivo: mejoras de hasta 72.8\% y 101.2\% (p$\mu$MOEA/D); 105.2\% y 75.1\% (NSGA--II) en costo y demora sobre algoritmos ávidos.
-
-	\item Se implementó el planificador de viajes compartidos en taxis, disponible públicamente en \url{www.mepaseaste.uy}.
-	\item Se publicaron \textbf{cuatro} artículos en conferencias internacionales.
+	\item Se relevó la literatura relacionada (CPP, DARP, TPP) y se presentaron dos variantes del problema.\pause
+	\item Se implementaron \textbf{cuatro} AE: dos para cada variante del problema.\pause
+	\item El análisis experimental se realizó sobre \textbf{instancias realistas}.\pause
+	\item Los AE implementados fueron comparados contra algoritmos ávidos.\pause
+	\item Variante monoobjetivo: mejoras en costo de hasta \alert{35.9\%} (seqEA) y \alert{41.0\%} (p$\mu$EA) sobre algoritmo ávido.\pause
+	\item Variante multiobjetivo: mejoras de hasta \alert{72.8\%} y \alert{101.2\%} (p$\mu$MOEA/D); \alert{75.1\%} y \alert{105.2\%} (NSGA--II) en costo y demora sobre algoritmos ávidos.\pause
+	\item Planificador de viajes compartidos en taxis, disponible públicamente en \url{www.mepaseaste.uy}.\pause
+	\item \textbf{Cuatro} artículos en conferencias internacionales.\pause
 	\item \textbf{Primer premio} del jurado en ``Ingeniería deMuestra 2014'' .
 	\end{itemize}
 }
@@ -494,7 +518,16 @@ Montevideo, Uruguay}
 
 \frame{
 	\frametitle{Trabajo futuro}
-
+	\begin{itemize}
+	\item Implementar NSGA--II con subpoblaciones distribuidas.
+	\item Incorporar datos realistas del tráfico para considerar rutas alternativas.
+	\item Incorporar datos en tiempo real de la disponibilidad de los taxis.
+	\item Mejorar la experiencia de los usuarios en el planificador de viajes compartidos.
+	\item Desarrollar versiones para dispositivos móviles Android y Windows Phone.
+	\item Soportar la variante multiobjetivo en el planificador de viajes compartidos.
+	\item Estudiar la aplicabilidad de los AE a otros escenarios.
+	\item Estudiar otras variantes del problema (e.g., many--to--one, many--to--many).
+	\end{itemize}
 }
 
 \end{document}\grid
