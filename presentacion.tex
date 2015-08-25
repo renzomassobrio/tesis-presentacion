@@ -119,9 +119,8 @@ Montevideo, Uruguay}
 	\begin{block}{Consideraciones}
 		\begin{itemize}
 			\item Cada taxi puede trasladar a un número limitado de pasajeros.\pause
-			\item el número máximo de taxis para $N$ pasajeros es $N$.\pause
-			\item Costo de un taxi = \textbf{costo inicial} (“bajada de bandera”) $+$ \textbf{costo determinado por la distancia}.% recorrida %desde el origen hasta el destino final, pasando por cada uno de los destinos intermedios.
-			\pause
+			\item El número máximo de taxis para $N$ pasajeros es $N$.\pause
+			\item Costo de un taxi = \textbf{costo inicial} (“bajada de bandera”) $+$ \textbf{costo determinado por la distancia}. \pause
 			\item No se consideran otros posibles costos (e.g. esperas, propinas, peajes).
 		\end{itemize}		
 	\end{block}
@@ -130,12 +129,16 @@ Montevideo, Uruguay}
 \frame{
 	\frametitle{Formulación del problema}
 	\begin{itemize}
-		\item un conjunto de pasajeros $P = \{p_1,p_2,\ldots,p_N\}$ que viajan desde un origen común $O$ a un conjunto de destinos $D = \{d_1,d_2,\ldots,d_N\}$.\pause
-		\item un conjunto de taxis $T = \{t_1,t_2,\ldots,t_M\}$; con $M \leq N$; y una función $C:T\rightarrow\{0,1,\ldots,C_{MAX}\}$ que indica la cantidad de pasajeros en un taxi. $C_{MAX}$ es la capacidad máxima permitida en un mismo taxi.\pause
-		\item una constante $B$ indica el costo inicial del taxi (``bajada de bandera'').\pause
-		\item una función de distancia, $dist: \lbrace \lbrace O \rbrace \cup D \rbrace \times D \rightarrow \mathbb{R}^+_0$.\pause
-		\item una función de costo asociado a la distancia recorrida por cada taxi, $cost: \mathbb{R}^+_0 \rightarrow \mathbb{R}^+_0$.\pause
-	\end{itemize}
+		\item Un conjunto de pasajeros $P = \{p_1,p_2,\ldots,p_N\}$ que viajan desde un origen común $O$ a un conjunto de destinos $D = \{d_1,d_2,\ldots,d_N\}$.\pause
+
+		\item Un conjunto de taxis $T = \{t_1,t_2,\ldots,t_M\}$; con $M \leq N$; y una función $C:T\rightarrow\{0,1,\ldots,C_{MAX}\}$ que indica la cantidad de pasajeros en un taxi. $C_{MAX}$ es la capacidad máxima permitida en un mismo taxi.\pause
+
+		\item Una constante $B$ indica el costo inicial del taxi (``bajada de bandera'')\pause
+		
+		\item Una función de distancia, $dist: \lbrace \lbrace O \rbrace \cup D \rbrace \times D \rightarrow \mathbb{R}^+_0$.\pause
+		
+		\item Una función de costo asociado a la distancia recorrida por cada taxi, $cost: \mathbb{R}^+_0 \rightarrow \mathbb{R}^+_0$.
+	\end{itemize}\pause
 
 	Se desea hallar la planificación $f:P \rightarrow T \times \lbrace 1, \ldots,C_{MAX} \rbrace$
 	que \alert{minimice la función de costo total ($CT$)}.
@@ -189,7 +192,9 @@ Montevideo, Uruguay}
 	
 	Esta variante es un caso particular del \textit{Vehicle Routing Problem (VRP)} con demanda unitaria, el cual es $\mathcal{NP}$--difícil [Letcheford et al. (2002)].
 	\end{block}
+
 	\pause
+
 	\begin{block}{Estrategias de resolución}
 	Cuando se utilizan instancias de tamaños realistas, los algoritmos exactos tradicionales no resultan útiles para una planificación eficiente.
 
@@ -220,8 +225,9 @@ Montevideo, Uruguay}
 	\begin{block}{Taxi pooling problem (TPP)}
 	Tao et al. (2007) Heurísticas ávidas para \textbf{one--to--many} y many--to--one. \\ \hspace{.8cm}{\small Las mejoras se reportan en términos absolutos.}
 
-	Ma et al. (2013) TPP dinámico con pedidos en tiempo real.\\ \hspace{.8cm}{\small 13\% de ahorro en distancia con un algoritmo ávido en \textbf{instancias realistas}.}\pause
+	Ma et al. (2013) TPP dinámico con pedidos en tiempo real.\\ \hspace{.8cm}{\small 13\% de ahorro en distancia con un algoritmo ávido en \textbf{instancias realistas}.}
 	\end{block}
+
 	\pause
 	\begin{block}{Resumen}
 	Pocos trabajos \alert{centrados en el usuario} y con un enfoque \alert{multiobjetivo}.
