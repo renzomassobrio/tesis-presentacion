@@ -469,6 +469,7 @@ Montevideo, Uruguay}
 
 \frame{
 	\frametitle{PVCT multiobjetivo}
+
 	\begin{block}{Entorno de ejecución}
 		\begin{itemize}
 			\item La evaluación experimental fue realizada en el Cluster FING.
@@ -483,6 +484,32 @@ Montevideo, Uruguay}
 			\item \textbf{NSGA--II}: 30 ejecuciones de 5000 generaciones sobre 4 instancias. \\{\small $P=80$; $p_C \in \lbrace 0.6, \alert{0.75}, 0.95\rbrace$; $p_M \in \lbrace 0.001, 0.01, \alert{0.1}\rbrace$.}\\
 		\end{itemize}
 	\end{block}
+}
+
+\frame{
+	\frametitle{Algoritmo ávido para minimizar demora}
+		
+	\textbf{FALTA}
+	
+}
+
+\frame{
+	\frametitle{Métricas multiobjetivo}
+		
+	\begin{block}{\textit{p$\mu$MOEA/D}}
+		Se logra una buena convergencia y diversidad. Sin embargo, la cantidad de soluciones no dominadas es baja, indicando que se puede mejorar.
+
+		%La baja distancia generacional y el spread indican buena convergencia y diversidad. El hipervolumen refuerza estas afirmaciones, aunque la cantidad de soluciones no dominadas resulta baja.
+
+		\input{./evaluacion_experimental/metricas_mo_resumen_maeb.tex}
+	\end{block}
+
+	\begin{block}{\textit{NSGA--II}}
+		La cantidad de puntos no dominados es mayor. La distancia generacional indica una buena convergencia y se logra una mayor dispersión.
+	
+		\input{./evaluacion_experimental/metricas_mo_resumen_mic.tex}
+	\end{block}	
+	
 }
 
 
