@@ -373,9 +373,9 @@ Montevideo, Uruguay}
 	
 	\begin{block}{Generación de puntos realistas en el mapa}
 		\begin{itemize}
-		\item Generador de Pedidos de Taxis (TQG) con datos de GPS de taxis de Beijing (Ma et al., 2013).
-		\item Script para obtener instancias de un origen a muchos destinos.
-		\item Instancias en Montevideo generadas manualmente.
+		\item Generador de Pedidos de Taxis (TQG) con datos de GPS de taxis de Beijing (Ma et al., 2013).\pause
+		\item Script para obtener instancias de un origen a muchos destinos.\pause
+		\item Instancias en Montevideo generadas manualmente.\pause
 		\item API para obtener tarifas TaxiFareFinder (TFF).
 		\end{itemize}
 	\end{block}
@@ -389,7 +389,7 @@ Montevideo, Uruguay}
 		\item \textbf{4 en Montevideo:} 8 y 17 pasajeros (Montevideo).
 	\end{itemize}
 	
-	\alert{22} instancias para el PVCT monoobjetivo, y un total de \alert{88} para el multiobjetivo, considerando distintas capacidades y tolerancias.
+	\alert{22} instancias para el PVCT monoobjetivo y \alert{88} para el multiobjetivo, considerando distintas capacidades y tolerancias.
 	
 	\end{block}
 
@@ -403,11 +403,10 @@ Montevideo, Uruguay}
 		\item \textbf{seqEA}: Dell Power Edge 2950, \textbf{1 núcleo} de Intel Xeon E5430 2.66GHz, 8GB RAM.
 		\item \textbf{p$\mu$EA}: HP Proliant DL585, \textbf{24 núcleos} de AMD Opteron 2.09GHz, 48GB RAM.
 		\end{itemize}
-	\end{block}
+	\end{block}\pause
 	\begin{block}{Configuración paramétrica}
 	\begin{itemize}
-		\item \textbf{seqEA}: 20 ejecuciones de 2000 generaciones sobre 3 instancias.\\{\small $\text{\#\textit{P}} \in \lbrace 150, 200, \alert{250}\rbrace$; $p_C \in \lbrace \alert{0.6}, 0.75, 0.95\rbrace$; $p_M \in \lbrace 0.001, 0.01, \alert{0.1}\rbrace$.}\\
-	
+		\item \textbf{seqEA}: 20 ejecuciones de 2000 generaciones sobre 3 instancias.\\{\small $\text{\#\textit{P}} \in \lbrace 150, 200, \alert{250}\rbrace$; $p_C \in \lbrace \alert{0.6}, 0.75, 0.95\rbrace$; $p_M \in \lbrace 0.001, 0.01, \alert{0.1}\rbrace$.}\pause	
 		\item \textbf{p$\mu$EA}: micro--población de 15 individuos, torneo ($m=2$, $k=1$), migración cada 500 generaciones. \\20 ejecuciones de 100.000 generaciones sobre 5 instancias.\\{\small $p_C \in \lbrace 0.6, \alert{0.75}, 0.95\rbrace$; $p_M \in \lbrace 0.001, 0.01, \alert{0.1}\rbrace$.}
 	\end{itemize}
 	\end{block}
@@ -432,36 +431,37 @@ Montevideo, Uruguay}
 	\frametitle{Comparativa de métodos de inicialización}
 	\begin{block}{Metodología}
 		\begin{itemize}
-			\item Shapiro--Wilk afirma que los resultados no siguen una distribución normal.
+			\item 30 ejecuciones independientes de 10.000 generaciones cada una.
+			\item Los resultados no siguen una distribución normal (Shapiro--Wilk, $\alpha=0.05$).
 			\item Se utilizó Kruskal--Wallis para comparar ambas inicializaciones.
-			\item Kruskal--Wallis permite afirmar con un nivel de confianza del 95\% que una de las inicializaciones obtuvo mejores resultados que la otra.
+			%\item Kruskal--Wallis permite afirmar con un nivel de confianza del 95\% que una de las inicializaciones obtuvo mejores resultados que la otra.
 		\end{itemize}
 	\end{block}
 	
-	\begin{block}{\textit{seqEA} con inicialización aleatoria vs. incialización ávida}
+	\begin{block}{\textit{seqEA}: inicialización aleatoria vs. incialización ávida}
 		La inicialización ávida supera a la inicialización aleatoria en \alert{10} instancias de prueba, mientras que la inicialización aleatoria lo hace en tan solo \alert{2}.
 	\end{block}
 	
-	\begin{block}{\textit{p$\mu$EA} con inicialización aleatoria vs. incialización ávida}
-		La inicialización ávida super a la inicialización aleatoria en \alert{11} instancias de prueba, mientras que no hubo instancias en las que se pueda afirmar que la inicialización aleatoria haya alcanzado mejores soluciones.
+	\begin{block}{\textit{p$\mu$EA}: inicialización aleatoria vs. incialización ávida}
+		La inicialización ávida supera la inicialización aleatoria en \alert{11} instancias de prueba. No hay instancias en las que se pueda afirmar que la inicialización aleatoria alcance mejores soluciones.
 	\end{block}
 }
 
 \frame{
-	\frametitle{Mejora \textit{seqEA} sobre algoritmo ávido}
-	Se alcanzaron mejores valores en \textbf{todas} las instancias. En el mejor caso se superó el costo del algoritmo ávido en un \alert{35.9\%}.
+	\frametitle{Mejoras \textit{seqEA} sobre algoritmo ávido}
+	Se alcanzaron mejoras en \textbf{todas} las instancias. En el mejor caso se superó el costo del algoritmo ávido en un \alert{35.9\%}.
 	\input{./evaluacion_experimental/mejoras_greedy_clei/imagenes.tex}
 }
 
 \frame{
-	\frametitle{Mejora \textit{p$\mu$EA} sobre algoritmo ávido}
-	Se alcanzaron mejores valores en \textbf{todas} las instancias. En el mejor caso se superó el costo del algoritmo ávido en un \alert{41.0\%}.
+	\frametitle{Mejoras \textit{p$\mu$EA} sobre algoritmo ávido}
+	Se alcanzaron mejoras en \textbf{todas} las instancias. En el mejor caso se superó el costo del algoritmo ávido en un \alert{41.0\%}.
 	\input{./evaluacion_experimental/mejoras_greedy_alio/imagenes.tex}
 }
 
 \frame{
 	\frametitle{Comparativa \textit{seqEA} vs. \textit{p$\mu$EA}}
-	Sobre un total de 22 instancias, \textit{p$\mu$EA} es capaz de encontrar mejores resultados que \textit{seqEA} en \alert{17}. Únicamente en \alert{1} instancia de prueba \textit{seqEA} alcanzó mejores soluciones que \textit{p$\mu$EA}.
+	\textit{p$\mu$EA} supera a \textit{seqEA} en \alert{17 de 22} instancas. Únicamente en \alert{1} instancia \textit{seqEA} supera a \textit{p$\mu$EA} (Kruskal--Wallis, $\alpha=0.05$).
 	
 	\vspace{0.15cm}
 	
@@ -470,8 +470,8 @@ Montevideo, Uruguay}
 }
 
 \frame{
-	\frametitle{Evolución del costo a lo largo de la ejecución}
-	\textit{p$\mu$EA} alcanza mejores soluciones que \textit{seqEA} en menos tiempo. En el mejor caso la aceleración es de $7.5$x ($4.6$x en promedio).
+	\frametitle{Evolución del costo a lo largo de una ejecución}
+	\textit{p$\mu$EA} alcanza mejores soluciones que \textit{seqEA} en menos tiempo. En el mejor caso alcanza una \alert{aceleración de $7.5$x} ($4.6$x en promedio).
 	
 	\input{./evaluacion_experimental/fitness_sobre_tiempo/imagenes.tex}
 }
@@ -481,15 +481,15 @@ Montevideo, Uruguay}
 
 	\begin{block}{Entorno de ejecución}
 		\begin{itemize}
-			\item La evaluación experimental fue realizada en el Cluster FING.
+			\item La evaluación experimental fue realizada en Cluster FING.
 			\item \textbf{p$\mu$MOEA/D}: HP Proliant DL585, \textbf{24 núcleos} de AMD Opteron 2.09GHz, 48GB RAM.
 			\item \textbf{NSGA--II}: HP Proliant DL385 G7, \textbf{1 núcleo} de AMD Opteron 6172 2.10GHz, 72GB RAM.
 		\end{itemize}
-	\end{block}
+	\end{block}\pause
 	
 	\begin{block}{Configuración paramétrica}
 		\begin{itemize}
-			\item \textbf{p$\mu$MOEA/D}: 30 ejecuciones de 20000 generaciones sobre 4 instancias. \\{\small $P=15$; $p_C \in \lbrace 0.6, \alert{0.75}, 0.95\rbrace$; $p_M \in \lbrace 0.001, 0.01, \alert{0.1}\rbrace$; operador de migración cada 1000 generaciones.}\\
+			\item \textbf{p$\mu$MOEA/D}: 30 ejecuciones de 20000 generaciones sobre 4 instancias. \\{\small $P=15$; $p_C \in \lbrace 0.6, \alert{0.75}, 0.95\rbrace$; $p_M \in \lbrace 0.001, 0.01, \alert{0.1}\rbrace$; migración cada 1000 generaciones con selección por torneo ($m=2,k=1$).}\\
 			\item \textbf{NSGA--II}: 30 ejecuciones de 5000 generaciones sobre 4 instancias. \\{\small $P=80$; $p_C \in \lbrace 0.6, \alert{0.75}, 0.95\rbrace$; $p_M \in \lbrace 0.001, 0.01, \alert{0.1}\rbrace$.}\\
 		\end{itemize}
 	\end{block}
@@ -500,14 +500,14 @@ Montevideo, Uruguay}
 	
 	\begin{block}{Algoritmo ávido para minimizar el costo}
 		Se utilizó el mismo algoritmo detallado previamente, tomando en cuenta las distintas capacidades de los vehículos y su disponibilidad.
-	\end{block}
+	\end{block}\pause
 
 	\begin{block}{Algoritmo ávido para minimizar la demora}
 		\begin{itemize}
-		\item En primera instancia, se crea un taxi vacío para cada uno de los pasajeros con mayor nivel de apuro. 
-		\item Se ubica a cada pasajero con mayor nivel de apuro en la primera posición del taxi.
+		\item Se crea un taxi vacío para cada pasajero con nivel máximo de apuro y se los ubica en la primera posición. 
+		%\item Se ubica a cada pasajero con mayor nivel de apuro en la primera posición del taxi.
 		\item Luego, se recorre la lista de pasajeros no asignados en orden de apuro, colocándolos en el taxi que minimice su demora.
-		\item Si el taxi completa la máxima capacidad disponible, se lo considera \textit{completo} y no acepta más pasajeros.
+		\item Si el taxi alcanza la máxima capacidad disponible, se lo considera \textit{completo} y no acepta más pasajeros.
 		\end{itemize}
 	\end{block}
 }
@@ -516,34 +516,33 @@ Montevideo, Uruguay}
 	\frametitle{Métricas multiobjetivo}
 		
 	\begin{block}{\textit{p$\mu$MOEA/D}}
-		Se logra una buena convergencia y diversidad. Sin embargo, la cantidad de soluciones no dominadas es baja, indicando que se puede mejorar.
-
+		Buena convergencia y diversidad. La cantidad de soluciones no dominadas es baja.
 		%La baja distancia generacional y el spread indican buena convergencia y diversidad. El hipervolumen refuerza estas afirmaciones, aunque la cantidad de soluciones no dominadas resulta baja.
-
 		\input{./evaluacion_experimental/metricas_mo_resumen_maeb.tex}
 	\end{block}
 
 	\begin{block}{\textit{NSGA--II}}
-		La cantidad de puntos no dominados es mayor. La distancia generacional indica una buena convergencia y se logra una mayor dispersión.
-	
+		Mayor cantidad de puntos no dominados (hasta 67/80). Buena convergencia y diversidad en las soluciones encontradas.	
 		\input{./evaluacion_experimental/metricas_mo_resumen_mic.tex}
 	\end{block}	
 	
 }
 
-\frame{
-	\frametitle{Mejora frente a algoritmos ávidos vs. tiempo de ejecución}
-	El enfoque multiobjetivo explícito de \textit{NSGA--II} permite alcanzar mejores resultados que el enfoque por descomposición de dominio aplicado en \textit{p$\mu$MOEA/D}. Sin embargo, los tiempos de ejecución son significativamente mayores.
 
-	\input{./evaluacion_experimental/tradeoff_maeb_mic/imagenes.tex}
+\frame{
+	\frametitle{Frentes de Pareto: p$\mu$MOEA/D vs. NSGA--II}
+	\alert{\textit{NSGA--II} alcanza mejores soluciones}: mayor cantidad de puntos no dominados distribuidos homogéneamente.
+	
+	\input{./evaluacion_experimental/fp_comparacion/imagenes.tex}
 	
 }
 
 \frame{
-	\frametitle{Frentes de Pareto: p$\mu$MOEA/D vs. NSGA--II}
-	\alert{\textit{NSGA--II} alcanza mejores soluciones} con una mayor cantidad de puntos no dominados distribuidos homogéneamente a lo largo del frente.
-	
-	\input{./evaluacion_experimental/fp_comparacion/imagenes.tex}
+	\frametitle{Mejora frente a algoritmos ávidos vs. tiempo de ejecución}
+	%El enfoque multiobjetivo explícito de \textit{NSGA--II} permite alcanzar mejores resultados que el enfoque por descomposición de dominio aplicado en \textit{p$\mu$MOEA/D}. Sin embargo, los tiempos de ejecución son significativamente mayores.
+
+	\textit{NSGA--II} alcanza mejores soluciones pero requiere de un mayor tiempo de ejecución que \textit{p$\mu$MOEA/D}.
+	\input{./evaluacion_experimental/tradeoff_maeb_mic/imagenes.tex}
 	
 }
 
@@ -601,19 +600,26 @@ Montevideo, Uruguay}
 
 \frame{
 	\frametitle{Trabajo futuro}
+	\begin{block}{Mejoras en los AE}
 	\begin{itemize}
-	\item Implementar NSGA--II con subpoblaciones distribuidas.\pause
-	\item Incorporar \textbf{datos realistas del tráfico} para considerar rutas alternativas.\pause
-	\item Incorporar datos de la \textbf{disponibilidad de los taxis} en tiempo real.\pause
-	\item Mejoras en el planificador de viajes compartidos:\pause
+		\item Implementar NSGA--II con subpoblaciones distribuidas.\pause
+		\item Incorporar \textbf{datos realistas del tráfico} para considerar rutas alternativas.\pause
+		\item Incorporar datos de la \textbf{disponibilidad de los taxis} en tiempo real.\pause
+	\end{itemize}
+	\end{block}
+	\begin{block}{Mejoras en el planificador de viajes compartidos}
 	\begin{itemize}
 		\item Mejorar la experiencia de los usuarios.\pause
-		\item Desarrollar versiones para dispositivos móviles Android y Windows Phone.\pause
-		\item Soportar la variante multiobjetivo.
-	\end{itemize}\pause
-	\item Estudiar la aplicabilidad de los AE a otros escenarios.\pause
-	\item Estudiar otras variantes del problema (e.g., many--to--one, many--to--many).
+		\item Desarrollar versiones para Android y Windows Phone.\pause
+		\item Soportar la variante multiobjetivo.\pause
 	\end{itemize}
+	\end{block}
+	\begin{block}{Problemas relacionados}
+	\begin{itemize}
+	\item Estudiar la aplicabilidad de los AE a otros escenarios.\pause
+	\item Estudiar otras variantes del problema (many--to--one, many--to--many).
+	\end{itemize}
+	\end{block}
 }
 
 \end{document}\grid
