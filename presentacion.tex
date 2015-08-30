@@ -173,7 +173,14 @@ Montevideo, Uruguay}
 \frame{
 	\frametitle{Variante multiobjetivo del PVCT: formulación matemática}
 	\pause
-	Se busca minimizar simultáneamente el \alert{costo total} y la \alert{demora total}.\pause
+		\begin{itemize}
+		\item Se busca minimizar simultáneamente el \alert{costo total} y la \alert{demora total}.\pause
+		\item Se añadió realismo con dos variables más:\pause
+		\begin{itemize}
+			\item Cada pasajero tiene un \alert{``nivel de apuro''} asociado.\pause
+			\item Se consideran vehículos con \alert{diferentes capacidades}.
+		\end{itemize}
+	\end{itemize}\pause
 	\begin{equation*}
 			CT  =  \sum\limits_{t_{i}, C(t_{i})\neq0} \Bigg[B+\sum\limits_{j=1}^{C(t_{i})}cost\bigg(dist\overbrace{\Big(dest\big(f^{-1}(t_{i},j-1)\big),dest\big(f^{-1}(t_{i},j)\big)\Big)}^{\text{destinos consecutivos en el recorrido del taxi } t_i}\bigg)\Bigg]
 	\end{equation*}\pause
@@ -183,11 +190,6 @@ Montevideo, Uruguay}
 			& - \bigg( \underbrace{tol\big(f^{-1}(t_{i},j)\big) + time\Big(O, dest\big(f^{-1}(t_{i},j))\Big)\bigg)}_{\text{tiempo tolerado por el pasajero en la posición } j \text{ del taxi } t_i}\bigg]\Bigg]
 		\end{split}	
 	\end{equation*}
-
-	\begin{itemize}
-		\item Cada pasajero tiene un \alert{``nivel de apuro''} asociado.
-		\item Se consideran vehículos con \alert{diferentes capacidades}.
-	\end{itemize}
 }
 
 \frame{
