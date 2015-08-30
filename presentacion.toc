@@ -5,5 +5,5 @@
 \beamer@sectionintoc {3}{Trabajo relacionado}{23}{0}{3}
 \beamer@sectionintoc {4}{Implementaci\IeC {\'o}n}{28}{0}{4}
 \beamer@sectionintoc {5}{Evaluaci\IeC {\'o}n experimental}{46}{0}{5}
-\beamer@sectionintoc {6}{Planificador de viajes compartidos en l\IeC {\'\i }nea}{75}{0}{6}
-\beamer@sectionintoc {7}{Conclusiones y trabajo futuro}{79}{0}{7}
+\beamer@sectionintoc {6}{Planificador de viajes compartidos en l\IeC {\'\i }nea}{82}{0}{6}
+\beamer@sectionintoc {7}{Conclusiones y trabajo futuro}{86}{0}{7}
