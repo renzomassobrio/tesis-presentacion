@@ -407,7 +407,7 @@ Montevideo, Uruguay}
 	\begin{block}{Entorno de ejecución}
 		\begin{itemize}
 		\item Evaluación experimental realizada en el Cluster FING.
-		\item La infraestructura fue utilizada de modo exclusivo para evitar interferencias.
+		\item Sin compartir recursos para evitar interferencias.
 		\end{itemize}
 	\end{block}
 	\column{0.5\textwidth}
@@ -415,10 +415,14 @@ Montevideo, Uruguay}
 		\includegraphics[width=.85\textwidth]{cluster}
 	\end{columns}
 	\pause
-	\begin{block}{Comparación de resultados}
+	\begin{block}{Ejecuciones}
 	\begin{itemize}\setlength\itemsep{1pt}
 		\item \alert{30 ejecuciones independientes} de cada algoritmo sobre cada instancia.
 		\item Criterio de parada: \textbf{10.000 generaciones}.
+	\end{itemize}
+	\end{block}\pause
+	\begin{block}{Comparación de resultados}
+	\begin{itemize}
 		\item Tests estadísticos sobre las distribuciones de resultados:
 		\begin{itemize}
 		\item Shapiro--Wilk sobre cada muestra para contrastar normalidad.
