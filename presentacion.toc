@@ -4,6 +4,6 @@
 \beamer@sectionintoc {2}{Definici\IeC {\'o}n del problema}{6}{0}{2}
 \beamer@sectionintoc {3}{Trabajo relacionado}{27}{0}{3}
 \beamer@sectionintoc {4}{Implementaci\IeC {\'o}n}{32}{0}{4}
-\beamer@sectionintoc {5}{Evaluaci\IeC {\'o}n experimental}{52}{0}{5}
-\beamer@sectionintoc {6}{Planificador de viajes compartidos en l\IeC {\'\i }nea}{89}{0}{6}
-\beamer@sectionintoc {7}{Conclusiones y trabajo futuro}{93}{0}{7}
+\beamer@sectionintoc {5}{Evaluaci\IeC {\'o}n experimental}{56}{0}{5}
+\beamer@sectionintoc {6}{Planificador de viajes compartidos en l\IeC {\'\i }nea}{94}{0}{6}
+\beamer@sectionintoc {7}{Conclusiones y trabajo futuro}{98}{0}{7}
