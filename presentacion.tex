@@ -314,65 +314,76 @@ Montevideo, Uruguay}
 
 \frame{
 	\frametitle{AE para el PVCT monoobjetivo}
-	\begin{block}{\textit{seqEA}}
-	AE \textbf{secuencial}. Utiliza selección proporcional.
+	\begin{block}{AE Secuencial \textit{(seqEA)}}
+		\begin{itemize}
+			\item Selección proporcional.
+		\end{itemize}
 	\end{block}
 	\pause
-	\begin{block}{Modelos paralelos en AE}
-		Buscan \textbf{mejorar el desempe\~no} de los AE.\\
-		\alert{Modelo de subpoblaciones distribuidas}: divide la poblaci\'on en \textbf{islas} % que ejecutan un AE secuencial e 
-		que intercambian individuos mediante \textbf{migración}.
+
+	\begin{block}{AE Paralelo (\textit{p$\mu$EA})}
+		\begin{itemize}
+%			\item Modelos paralelos.
+%			\begin{itemize}
+			\item Se busca \textbf{mejorar el desempe\~no} mediante el paralelismo.\pause
+			\item \alert{Modelo de subpoblaciones distribuidas}: divide la poblaci\'on en \textbf{islas} que intercambian individuos mediante \textbf{migración}.\pause
+%			\end{itemize}
+			
+			\item Poblaciones pequeñas.\pause
+			\item Selección por torneo $(m,k)$.\pause
+			\item Migración asíncrona, con topología de anillo unidireccional.
+
+		\end{itemize}
+		
+%		\begin{itemize}
+%			\begin{columns}[totalwidth=\textwidth]
+%			\column{0.4\textwidth}
+%			\column{0.4\textwidth}
+				\centering
+				\only<1-5>{\mbox{\phantom{\includegraphics[width=0.5\textwidth]{migracion.png}}}}
+				\includegraphics<6->[width=0.5\textwidth]{migracion.png}
+%			\end{columns}
+%		\end{itemize}
 	\end{block}
-	\pause
-	\begin{columns}[totalwidth=\textwidth]
-	\column{0.6\textwidth}
-			\begin{block}{AE paralelo con micro--población (\textit{p$\mu$EA})}
-				%Los AE con subpoblaciones distribuidas suelen perder diversidad. %, convergiendo a soluciones sub-óptimas del problema.
-				\begin{itemize}
-				\item Poblaciones pequeñas.% e incluye un \textbf{operador específico de diversidad}.% para mitigar este problema.
-				\item Selección por torneo $(m,k)$.
-				\item Migración asíncrona.
-				\item Topología de anillo unidireccional.
-				%\item Individuos a migrar seleccionados por torneo (reemplazan a los peores de la isla vecina).
-				\end{itemize}
-			\end{block}
-	\column{0.4\textwidth}
-		\centering
-		\only<1,2>{\mbox{\phantom{\includegraphics[width=1\textwidth]{migracion.png}}}}%
-		\includegraphics<3->[width=1\textwidth]{migracion.png}
-		%\includegraphics[width=.9\textwidth]{migracion.png}
-	\end{columns}
 }
 
 
 \frame{
 	\frametitle{AE para el PVCT multiobjetivo}
-	\begin{block}{Propósitos en AE multiobjetivos (MOEA)}
-			Acercarse al frente de Pareto del problema (\textbf{convergencia}) y muestrear adecuadamente el frente de soluciones (\textbf{diversidad}).
+	\begin{block}{Aspectos comunes}
+		\begin{itemize}
+			\item Propósitos en AEs multiobjetivos:
+			\begin{itemize}
+				\item Acercarse al frente de Pareto del problema (\textbf{convergencia}).
+				\item Muestrear adecuadamente el frente de soluciones (\textbf{diversidad}).
+			\end{itemize}\pause
+			\item Función correctiva considera vehículos de distintas capacidades.\pause
+			\item Inicialización de la población ávida y selección por torneo.
+		\end{itemize}
 	\end{block}
+
 
 	\pause
 	\begin{columns}[totalwidth=\textwidth]
-	\column{0.6\textwidth}
-		\begin{block}{\textit{p$\mu$MOEA/D}}
-		%Micro--poblaciones distribuidas con agregación lineal de los objetivos.
-		$F = w_C\times CT + w_D \times DT$,\\\hspace{1cm} {\tiny$w_C = [0:\frac{1}{\#islas}:1]$, $w_D = 1 - w_C$}.
+	\column{0.65\textwidth}
+		\begin{block}{AE Multiobjetivo Distribuido (\textit{p$\mu$MOEA/D})}
+		%Micro--poblaciones distribuidas con
+		Agregación lineal de los objetivos:
+		$F = w_C\times CT + w_D \times DT$, \small \\\hspace{1cm}{\tiny$w_C = [0:\frac{1}{\#islas}:1]$, $w_D = 1 - w_C$}.
 		\end{block}
-	\column{0.4\textwidth}
+	\column{0.35\textwidth}
 		\centering
-		\only<1>{\mbox{\phantom{\includegraphics[width=0.9\textwidth]{pmuMOEAD.png}}}}%
-		\includegraphics<2->[width=0.9\textwidth]{pmuMOEAD.png}
+		\only<1-3>{\mbox{\phantom{\includegraphics[width=0.75\textwidth]{pmuMOEAD.png}}}}
+		\includegraphics<4->[width=0.75\textwidth]{pmuMOEAD.png}
 	\end{columns}
 	\pause
-	\begin{block}{\textit{NSGA--II}}
-		Ordenamiento no--dominado (elitista) y \textit{crowding} para preservar diversidad.
-	\end{block}
-	\pause
-	\begin{block}{Aspectos comunes}
-		Función correctiva considera vehículos de distintas capacidades.
-		Inicialización de la población ávida y selección por torneo.
-	\end{block}
 
+	\begin{block}{AE Multiobjetivo Explícito (\textit{NSGA--II})}
+		\begin{itemize}
+			\item Ordenamiento no--dominado (elitista).
+			\item \textit{Crowding} para preservar diversidad.
+		\end{itemize}
+	\end{block}
 }
 
 % Slide - Evaluación Experimental ==============================================================
@@ -685,6 +696,13 @@ Montevideo, Uruguay}
 	\item Estudiar la aplicabilidad de los AE a otros escenarios.
 	\end{itemize}
 	\end{block}
+}
+
+\frame{
+	\frametitle{Trabajo futuro}
+	\centering
+	\huge Gracias
+	
 }
 
 \end{document}\grid
