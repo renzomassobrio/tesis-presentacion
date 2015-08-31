@@ -366,10 +366,10 @@ Montevideo, Uruguay}
 	\pause
 	\begin{columns}[totalwidth=\textwidth]
 	\column{0.65\textwidth}
-		\begin{block}{AE Multiobjetivo Distribuido (\textit{p$\mu$MOEA/D})}
+		\begin{block}{MOEA con Descomposición de Dominio (\textit{p$\mu$MOEA/D})}
 		%Micro--poblaciones distribuidas con
 		Agregación lineal de los objetivos:
-		$F = w_C\times CT + w_D \times DT$, \small \\\hspace{1cm}{\tiny$w_C = [0:\frac{1}{\#islas}:1]$, $w_D = 1 - w_C$}.
+		\\\hspace{1.5cm}$F = w_C\times CT + w_D \times DT$, \small \\\hspace{2.3cm}{\tiny$w_C = [0:\frac{1}{\#islas}:1]$, $w_D = 1 - w_C$}.
 		\end{block}
 	\column{0.35\textwidth}
 		\centering
@@ -378,11 +378,8 @@ Montevideo, Uruguay}
 	\end{columns}
 	\pause
 
-	\begin{block}{AE Multiobjetivo Explícito (\textit{NSGA--II})}
-		\begin{itemize}
-			\item Ordenamiento no--dominado (elitista).
-			\item \textit{Crowding} para preservar diversidad.
-		\end{itemize}
+	\begin{block}{MOEA Explícito (\textit{NSGA--II})}
+		Ordenamiento no--dominado (elitista), \textit{crowding} para preservar diversidad.
 	\end{block}
 }
 
