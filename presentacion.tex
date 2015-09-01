@@ -142,7 +142,7 @@ Montevideo, Uruguay}
 
 		\item Una constante $B$ que determina el costo inicial del taxi.
 		
-		\item Una función de distancia, $dist: \lbrace \lbrace O \rbrace \cup D \rbrace \times D \rightarrow \mathbb{R}^+_0$, y una función de costo asociado a la distancia recorrida por cada taxi, $cost: \mathbb{R}^+_0 \rightarrow \mathbb{R}^+_0$.
+		\item Una función de distancia, $dist: \lbrace \lbrace O \rbrace \cup D \rbrace \times D \rightarrow \mathbb{R}^+_0$, y una función de costo asociado a la distancia, $cost: \mathbb{R}^+_0 \rightarrow \mathbb{R}^+_0$.
 		
 	\end{itemize}\pause
 
@@ -158,11 +158,11 @@ Montevideo, Uruguay}
 	\pause
 		\begin{itemize}
 		\item Se busca minimizar el \alert{costo total} y la \alert{demora total}.\pause
-		\item Se incorporan dos variables:
-		\begin{itemize}
-			\item Se consideran vehículos con \alert{diferentes capacidades}.
+		%\item Se incorporan dos variables:
+		%\begin{itemize}
+			\item Se consideran vehículos con \alert{diferentes capacidades}.\pause
 			\item Cada pasajero tiene un \alert{nivel de apuro} asociado.
-		\end{itemize}
+		%\end{itemize}
 	\end{itemize}\pause
 
 	\begin{equation*}
@@ -336,7 +336,7 @@ Montevideo, Uruguay}
 	\frametitle{AE para el PVCT multiobjetivo}
 	\begin{block}{Aspectos comunes}
 		\begin{itemize}
-			\item MOEA: Acercarse al frente de Pareto del problema (\textbf{convergencia}) y muestrear adecuadamente el frente de soluciones (\textbf{diversidad}).\pause
+			\item MOEA: acercarse al frente de Pareto del problema (\textbf{convergencia}) y muestrear adecuadamente el frente de soluciones (\textbf{diversidad}).\pause
 			\item Función correctiva considera vehículos de distintas capacidades.\pause
 			\item Inicialización de la población ávida y selección por torneo.
 		\end{itemize}
@@ -344,7 +344,7 @@ Montevideo, Uruguay}
 
 
 	\pause
-		\begin{block}{MOEA paralelo con micro--población y descomposición de dominio (\textit{p$\mu$MOEA/D})}
+		\begin{block}{Micro MOEA paralelo con descomposición de dominio (\textit{p$\mu$MOEA/D})}
 
 		\begin{columns}[totalwidth=\textwidth]
 		\column{0.50\textwidth}
