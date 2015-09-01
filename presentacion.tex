@@ -50,6 +50,8 @@
   \vskip0pt%
 }
 \makeatother
+%APAGAR SOMBRAS EN BLOQUES
+%\setbeamertemplate{blocks}[rounded][shadow=false]
 
 %Apagar el menu de presentacion
 \setbeamertemplate{navigation symbols}{}
@@ -432,7 +434,7 @@ Montevideo, Uruguay}
 	\begin{block}{Ejecuciones}
 	\begin{itemize}\setlength\itemsep{1pt}
 		\item \alert{30 ejecuciones independientes} de cada algoritmo sobre cada instancia.
-		\item Criterio de parada: \textbf{10.000 generaciones}.
+		\item Criterio de parada: \textbf{10.000 generaciones} (planificación en línea).
 	\end{itemize}
 	\end{block}\pause
 	\begin{block}{Comparación de resultados}
@@ -450,19 +452,19 @@ Montevideo, Uruguay}
 
 \frame{
 	\frametitle{PVCT monoobjetivo}
-	\begin{block}{Entorno de ejecución}
-		\begin{itemize}
-		%\item La evaluación experimental fue realizada en el Cluster FING.
-		\item \textbf{seqEA}: Dell Power Edge 2950, \textbf{1 núcleo} de Intel Xeon E5430 2.66GHz, 8GB RAM.
-		\item \textbf{p$\mu$EA}: HP Proliant DL585, \textbf{24 núcleos} de AMD Opteron 2.09GHz, 48GB RAM.
-		\end{itemize}
-	\end{block}\pause
+	% \begin{block}{Entorno de ejecución}
+	% 	\begin{itemize}
+	% 	%\item La evaluación experimental fue realizada en el Cluster FING.
+	% 	\item \textbf{seqEA}: Dell Power Edge 2950, \textbf{1 núcleo} de Intel Xeon E5430 2.66GHz, 8GB RAM.
+	% 	\item \textbf{p$\mu$EA}: HP Proliant DL585, \textbf{24 núcleos} de AMD Opteron 2.09GHz, 48GB RAM.
+	% 	\end{itemize}
+	% \end{block}\pause
 	\begin{block}{Configuración paramétrica}
 	\begin{itemize}
 		\item \textbf{seqEA}: %20 ejecuciones de 2000 generaciones sobre 3 instancias.\\
-		{\small $\text{\#\textit{P}} \in \lbrace 150, 200, \alert{250}\rbrace$; $p_C \in \lbrace \alert{0.6}, 0.75, 0.95\rbrace$; $p_M \in \lbrace 0.001, 0.01, \alert{0.1}\rbrace$.}\pause	
+		{\small $\text{\#\textit{P}} \in \lbrace 150; 200; \alert{250}\rbrace$; $p_C \in \lbrace \alert{0.6}; 0.75; 0.95\rbrace$; $p_M \in \lbrace 0.001; 0.01; \alert{0.1}\rbrace$.}\pause	
 		\item \textbf{p$\mu$EA}: micro--población de 15 individuos, torneo ($m=2$, $k=1$), migración cada 500 generaciones. \\%20 ejecuciones de 100.000 generaciones sobre 5 instancias.\\
-		{\small $p_C \in \lbrace 0.6, \alert{0.75}, 0.95\rbrace$; $p_M \in \lbrace 0.001, 0.01, \alert{0.1}\rbrace$.}
+		{\small $p_C \in \lbrace 0.6; \alert{0.75}; 0.95\rbrace$; $p_M \in \lbrace 0.001; 0.01; \alert{0.1}\rbrace$.}
 	\end{itemize}
 	\end{block}
 
@@ -510,7 +512,9 @@ Montevideo, Uruguay}
 	\frametitle{Mejoras \textit{seqEA} sobre algoritmo ávido}
 	\input{./evaluacion_experimental/mejoras_greedy_clei/imagenes.tex}
 	
-	Se alcanzaron mejoras en \textbf{todas} las instancias. En el mejor caso se mejoró el costo del algoritmo ávido en un \alert{35.9\%} (instancia grandes \#4).
+	Mejoras en \textbf{todas} las instancias sobre el algoritmo ávido (hasta \alert{35.9\%}).
+
+	\small{\textit{``Online taxi sharing optimization using evolutionary algorithms, CLEI, 2014''}}
 
 }
 
@@ -518,8 +522,9 @@ Montevideo, Uruguay}
 	\frametitle{Mejoras \textit{p$\mu$EA} sobre algoritmo ávido}
 	\input{./evaluacion_experimental/mejoras_greedy_alio/imagenes.tex}
 	
-	Se alcanzaron mejoras en \textbf{todas} las instancias. En el mejor caso se mejoró el costo del algoritmo ávido en un \alert{41.0\%} (instancia grandes \#4).
+	Mejoras en \textbf{todas} las instancias sobre el algoritmo ávido (hasta \alert{41.0\%}).
 
+	\small{\textit{``A parallel micro evolutionary algorithm for taxi sharing optimization, ALIO''}}
 }
 
 \frame{
@@ -535,29 +540,31 @@ Montevideo, Uruguay}
 	\frametitle{Evolución del costo a lo largo de una ejecución}	
 	\input{./evaluacion_experimental/fitness_sobre_tiempo/imagenes.tex}
 
-	\textit{p$\mu$EA} alcanza mejores soluciones que \textit{seqEA} en menos tiempo. En el mejor caso alcanza una \alert{aceleración de $7.5$x} ($4.6$x en promedio).
+	\textit{p$\mu$EA} alcanza mejores soluciones que \textit{seqEA} en menos tiempo. 
+
+	En el mejor caso alcanza una \alert{aceleración de $7.5$x} ($4.6$x en promedio).
 
 }
 
 \frame{
 	\frametitle{PVCT multiobjetivo}
 
-	\begin{block}{Entorno de ejecución}
-		\begin{itemize}
-			%\item La evaluación experimental fue realizada en Cluster FING.
-			\item \textbf{p$\mu$MOEA/D}: HP Proliant DL585, \textbf{24 núcleos} de AMD Opteron 6272 2.09GHz, 48GB RAM.
-			\item \textbf{NSGA--II}: HP Proliant DL385 G7, \textbf{1 núcleo} de AMD Opteron 6172 2.10GHz, 72GB RAM.
-		\end{itemize}
-	\end{block}\pause
+	% \begin{block}{Entorno de ejecución}
+	% 	\begin{itemize}
+	% 		%\item La evaluación experimental fue realizada en Cluster FING.
+	% 		\item \textbf{p$\mu$MOEA/D}: HP Proliant DL585, \textbf{24 núcleos} de AMD Opteron 6272 2.09GHz, 48GB RAM.
+	% 		\item \textbf{NSGA--II}: HP Proliant DL385 G7, \textbf{1 núcleo} de AMD Opteron 6172 2.10GHz, 72GB RAM.
+	% 	\end{itemize}
+	% \end{block}\pause
 	
 	\begin{block}{Configuración paramétrica}
 		\begin{itemize}
 			\item \textbf{p$\mu$MOEA/D}: %30 ejecuciones de 20000 generaciones sobre 4 instancias. \\
 			{\small $\#P=15$; selección por torneo ($m=2,k=1$); migración cada 1000 generaciones reemplazando a los peores individuos\\
-			$p_C \in \lbrace 0.6, \alert{0.75}, 0.95\rbrace$; $p_M \in \lbrace 0.001, 0.01, \alert{0.1}\rbrace$}\\\pause
+			$p_C \in \lbrace 0.6; \alert{0.75}; 0.95\rbrace$; $p_M \in \lbrace 0.001; 0.01; \alert{0.1}\rbrace$}\\\pause
 			\item \textbf{NSGA--II}: %30 ejecuciones de 5000 generaciones sobre 4 instancias. \\
 			{\small $\#P=80$; selección por torneo ($m=2,k=1$);\\
-			$p_C \in \lbrace 0.6, \alert{0.75}, 0.95\rbrace$; $p_M \in \lbrace 0.001, 0.01, \alert{0.1}\rbrace$.}\\
+			$p_C \in \lbrace 0.6; \alert{0.75}; 0.95\rbrace$; $p_M \in \lbrace 0.001; 0.01; \alert{0.1}\rbrace$.}\\
 		\end{itemize}
 	\end{block}
 }
@@ -581,14 +588,14 @@ Montevideo, Uruguay}
 \frame{
 	\frametitle{Resultados numéricos}
 		
-	\begin{block}{\textit{p$\mu$MOEA/D}}
+	\begin{block}{\scriptsize{\textit{p$\mu$MOEA/D}:} \tiny{``Planificación multiobjetivo de viajes compartidos en taxis utilizando un micro algoritmo evolutivo paralelo'' (MAEB)}}
 	Hasta \alert{101.2\%} de mejora en demora y \alert{72.8\%} en costo sobre ávidos.\pause
 		
 		\input{./evaluacion_experimental/metricas_mo_resumen_maeb.tex}
 		\small{Buena convergencia y diversidad. Pocas soluciones no dominadas.}
 	\end{block}
 	\pause
-	\begin{block}{\textit{NSGA--II}}
+	\begin{block}{\textit{NSGA--II:}}
 		Hasta \alert{105.2\%} de mejora en demora y \alert{75.1\%} en costo sobre ávidos.\pause
 		
 		\input{./evaluacion_experimental/metricas_mo_resumen_mic.tex}
