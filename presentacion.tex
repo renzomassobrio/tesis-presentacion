@@ -94,8 +94,6 @@ Montevideo, Uruguay}
 		\end{itemize}
 	\end{block}
 	
-	\pause 
-	
 	\begin{block}{Los viajes compartidos en taxis (\textit{Taxi Pooling})}
 		\begin{itemize}
 			\item Medio de transporte rápido y confiable.
@@ -117,12 +115,8 @@ Montevideo, Uruguay}
 	\frametitle{Descripción del problema}
 	\begin{block}{Problema de viajes compartidos en taxis (PVCT)}
 		Un grupo de personas en un \textbf{mismo lugar de origen}, desean viajar hacia \textbf{diferentes destinos} utilizando taxis de forma compartida. Hallar la cantidad de taxis y la asignación de pasajeros para minimizar el \alert{costo total}.
-
-		%Se busca determinar la cantidad de taxis, la asignación de pasajeros y las rutas a seguir, de forma de \alert{minimizar el costo total del grupo de pasajeros}.
 	\end{block}
-	
-	\pause
-	
+		
 	\begin{block}{Consideraciones}
 		\begin{itemize}
 			\item Cada taxi puede trasladar a un número limitado de pasajeros.
@@ -158,11 +152,11 @@ Montevideo, Uruguay}
 	\frametitle{Variante multiobjetivo del PVCT: formulación matemática}
 	\pause
 		\begin{itemize}
-		\item Se busca minimizar el \alert{costo total} y la \alert{demora total}.\pause
+		\item Se busca minimizar el \alert{costo total} y la \alert{demora total}.
 		%\item Se incorporan dos variables:
 		%\begin{itemize}
-			\item Se consideran vehículos con \alert{diferentes capacidades}.\pause
 			\item Cada pasajero tiene un \alert{nivel de apuro} asociado.
+			\item Se consideran vehículos con \alert{diferentes capacidades}.
 		%\end{itemize}
 	\end{itemize}\pause
 
@@ -180,8 +174,7 @@ Montevideo, Uruguay}
 \frame{
 	\frametitle{Complejidad del PVCT}
 	\begin{block}{Complejidad}
-	%El PVCT tiene varios puntos en común con dos conocidos problemas: el \textit{Car Pooling Problem (CPP)} y el \textit{Vehicle Routing Problem (VRP)}.
-
+	
 	\begin{itemize}
 	\item Baldacci et al. (2004):
 	\begin{itemize}
@@ -190,12 +183,9 @@ Montevideo, Uruguay}
 	\end{itemize}
 	
 	\item Caso especial del \textit{Vehicle Routing Problem (VRP)} con demanda unitaria: $\mathcal{NP}$--difícil [Letcheford et al. (2002)].
-	%\item Similitudes determinan que nuestro problema también es $\mathcal{NP}$--difícil.
 	\item El PVCT tiene grandes similitudes con el CPP.
 	\end{itemize}
 	\end{block}
-
-	\pause
 
 	\begin{block}{Estrategias de resolución}
 	\begin{itemize}
@@ -311,21 +301,22 @@ Montevideo, Uruguay}
 			\item Selección proporcional.
 		\end{itemize}
 	\end{block}
+
 	\pause
 
 	\begin{block}{Micro AE paralelo (\textit{p$\mu$EA})}
 		\begin{itemize}
-			\item Se busca \textbf{mejorar el desempe\~no} mediante el paralelismo.\pause
-			\item \alert{Modelo de subpoblaciones distribuidas}: divide la poblaci\'on en \textbf{islas} que intercambian individuos mediante \textbf{migración}.\pause
+			\item Se busca \textbf{mejorar el desempe\~no} mediante el paralelismo.
+			\item \alert{Modelo de subpoblaciones distribuidas}: divide la poblaci\'on en \textbf{islas} que intercambian individuos mediante \textbf{migración}.
 			
 			\begin{centering}
 				\centering
-				\only<1-2>{\mbox{\phantom{\includegraphics[width=0.5\textwidth]{migracion.png}}}}
-				\hspace{3cm} \includegraphics<3->[width=0.5\textwidth]{migracion.png}
+				\only<1>{\mbox{\phantom{\includegraphics[width=0.5\textwidth]{migracion.png}}}}
+				\hspace{3cm} \includegraphics<2->[width=0.5\textwidth]{migracion.png}
 			\end{centering}
 			
-			\item Poblaciones pequeñas.\pause
-			\item Selección por torneo $(m,k)$.\pause
+			\item Poblaciones pequeñas.
+			\item Selección por torneo $(m,k)$.
 			\item Migración asíncrona, con topología de anillo unidireccional.
 
 		\end{itemize}
@@ -337,8 +328,8 @@ Montevideo, Uruguay}
 	\frametitle{AE para el PVCT multiobjetivo}
 	\begin{block}{Aspectos comunes}
 		\begin{itemize}
-			\item MOEA: acercarse al frente de Pareto del problema (\textbf{convergencia}) y muestrear adecuadamente el frente de soluciones (\textbf{diversidad}).\pause
-			\item Función correctiva considera vehículos de distintas capacidades.\pause
+			\item MOEA: acercarse al frente de Pareto del problema (\textbf{convergencia}) y muestrear adecuadamente el frente de soluciones (\textbf{diversidad}).
+			\item Función correctiva considera vehículos de distintas capacidades.
 			\item Inicialización ávida y selección por torneo.
 		\end{itemize}
 	\end{block}
@@ -353,8 +344,8 @@ Montevideo, Uruguay}
 			\\\hspace{1.5cm}$F = w_C\times CT + w_D \times DT$, \small \\\hspace{2.3cm}{\tiny$w_C = [0:\frac{1}{\#islas}:1]$, $w_D = 1 - w_C$}.
 		\column{0.40\textwidth}
 			\centering
-			\only<1-3>{\mbox{\phantom{\includegraphics[width=1\textwidth]{pmuMOEAD.png}}}}
-			\includegraphics<4->[width=1\textwidth]{pmuMOEAD.png}
+			\only<1>{\mbox{\phantom{\includegraphics[width=1\textwidth]{pmuMOEAD.png}}}}
+			\includegraphics<2->[width=1\textwidth]{pmuMOEAD.png}
 		\end{columns}
 		\end{block}
 	\pause
