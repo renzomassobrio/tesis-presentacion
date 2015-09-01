@@ -87,9 +87,9 @@ Montevideo, Uruguay}
 			\item Beneficios ecológicos y económicos, individuales y colectivos.
 			\item Iniciativas:
 			\begin{itemize}
-			\item Carriles exclusivos
-			\item Campañas para compartir los viajes al trabajo
-			\item Aplicaciones para encontrar compañeros de viaje
+			\item carriles exclusivos
+			\item campañas para compartir los viajes al trabajo
+			\item aplicaciones para encontrar compañeros de viaje
 			\end{itemize}
 		\end{itemize}
 	\end{block}
@@ -98,7 +98,7 @@ Montevideo, Uruguay}
 	
 	\begin{block}{Los viajes compartidos en taxis (\textit{Taxi Pooling})}
 		\begin{itemize}
-			\item Taxis, medio de transporte rápido y confiable.
+			\item Medio de transporte rápido y confiable.
 			\item Raramente viajan a capacidad completa.
 			\item Tarifas altas desalientan a los usuarios.
 			\item Impactan en la congestión del tráfico y en la contaminación.
@@ -138,16 +138,17 @@ Montevideo, Uruguay}
 	\begin{itemize}
 		\item Un conjunto de pasajeros $P$ que viajan desde un origen $O$ a un conjunto de destinos $D$.
 
-		\item Un conjunto de taxis $T$ y una función $C:T\rightarrow\{0,1,\ldots,C_{MAX}\}$ con $C_{MAX}$ máxima capacidad permitida en un taxi.
+		\item Un conjunto de taxis $T$ y una función $C:T\rightarrow\{0,1,\ldots,C_{MAX}\}$ con $C_{MAX}$ máxima capacidad de un taxi.
 
-		\item Una constante $B$ que determina el costo inicial del taxi.
+		\item Una constante $B$: costo inicial del taxi (``bajada de bandera'').
 		
-		\item Una función de distancia, $dist: \lbrace \lbrace O \rbrace \cup D \rbrace \times D \rightarrow \mathbb{R}^+_0$, y una función de costo asociado a la distancia, $cost: \mathbb{R}^+_0 \rightarrow \mathbb{R}^+_0$.
+		\item Una función de distancia, $dist: \lbrace \lbrace O \rbrace \cup D \rbrace \times D \rightarrow \mathbb{R}^+_0$.
+		\item Una función de costo asociado a la distancia, $cost: \mathbb{R}^+_0 \rightarrow \mathbb{R}^+_0$.
 		
 	\end{itemize}\pause
 
-	\centering
 	\textbf{Se busca una planificación $f:P \rightarrow T \times \lbrace 1, \ldots,C_{MAX} \rbrace$ que \alert{minimice la función de costo total ($CT$)}.}
+	%\centering
 	\begin{equation*}
 			CT  =  \sum\limits_{t_{i}, C(t_{i})\neq0} \Bigg[B+\sum\limits_{j=1}^{C(t_{i})}cost\bigg(dist \underbrace{\Big(dest\big(f^{-1}(t_{i},j-1)\big),dest\big(f^{-1}(t_{i},j)\big)\Big)}_{\text{destinos consecutivos en el recorrido del taxi } t_i}\bigg)\Bigg]
 	\end{equation*}
@@ -212,7 +213,7 @@ Montevideo, Uruguay}
 \frame{\tableofcontents[currentsection]}
 
 \frame{
-	\frametitle{Trabajo relacionado}
+	\frametitle{Trabajos relacionados}
 
 	\begin{block}{Car pooling problem (CPP)}
 	Yan et al. (2011): \textbf{CPP con histórico de viajes} (relajación lagrangeana). 	\end{block}
@@ -264,7 +265,7 @@ Montevideo, Uruguay}
 	\column{0.43\linewidth}
 		\begin{block}{Aspectos comunes}
 		\begin{itemize}
-		\item Tuplas de largo $2N-1$\\
+		\item Individuos de largo $2N-1$\\
 		\hspace{.5cm}{\small$N=$ \#pasajeros.}
 		\pause
 		
@@ -338,7 +339,7 @@ Montevideo, Uruguay}
 		\begin{itemize}
 			\item MOEA: acercarse al frente de Pareto del problema (\textbf{convergencia}) y muestrear adecuadamente el frente de soluciones (\textbf{diversidad}).\pause
 			\item Función correctiva considera vehículos de distintas capacidades.\pause
-			\item Inicialización de la población ávida y selección por torneo.
+			\item Inicialización ávida y selección por torneo.
 		\end{itemize}
 	\end{block}
 
