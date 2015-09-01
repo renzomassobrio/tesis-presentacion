@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.8.16)  1 SEP 2015 18:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.8.16)  1 SEP 2015 18:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2570,11 +2570,11 @@ LaTeX Font Warning: Size substitutions with differences
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 714.
  ) 
 Here is how much of TeX's memory you used:
- 20108 strings out of 493105
- 379521 string characters out of 6137072
+ 20109 strings out of 493105
+ 379536 string characters out of 6137072
  470458 words of memory out of 5000000
- 22787 multiletter control sequences out of 15000+600000
- 22989 words of font info for 82 fonts, out of 8000000 for 9000
+ 22788 multiletter control sequences out of 15000+600000
+ 23340 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,27n,96p,423b,991s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></us
@@ -2595,7 +2595,7 @@ re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on presentacion.pdf (104 pages, 3283454 bytes).
+Output written on presentacion.pdf (104 pages, 3284237 bytes).
 PDF statistics:
  893 PDF objects out of 1000 (max. 8388607)
  664 compressed objects within 7 object streams
