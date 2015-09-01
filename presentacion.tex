@@ -510,8 +510,11 @@ Montevideo, Uruguay}
 \frame{
 	\frametitle{Comparativa \textit{seqEA} vs. \textit{p$\mu$EA}}
 	\input{./evaluacion_experimental/comparativa_clei_alio.tex}
-\vspace{0.15cm}
-	\textit{p$\mu$EA} supera a \textit{seqEA} en \alert{17 de 22} instancas. Únicamente en \alert{1} instancia \textit{seqEA} supera a \textit{p$\mu$EA}.
+\vspace{0.3cm}
+\centering
+	\textit{p$\mu$EA} supera a \textit{seqEA} en \alert{17 de 22} instancas.
+
+	Únicamente en \alert{1} instancia \textit{seqEA} supera a \textit{p$\mu$EA}.
 
 
 }
@@ -519,7 +522,7 @@ Montevideo, Uruguay}
 \frame{
 	\frametitle{Evolución del costo a lo largo de una ejecución}	
 	\input{./evaluacion_experimental/fitness_sobre_tiempo/imagenes.tex}
-
+	\centering
 	\textit{p$\mu$EA} alcanza mejores soluciones que \textit{seqEA} en menos tiempo. 
 
 	En el mejor caso alcanza una \alert{aceleración de $7.5$x} ($4.6$x en promedio).
@@ -568,18 +571,21 @@ Montevideo, Uruguay}
 \frame{
 	\frametitle{Resultados numéricos}
 		
-	\begin{block}{\scriptsize{\textit{p$\mu$MOEA/D}:} \tiny{``Planificación multiobjetivo de viajes compartidos en taxis utilizando un micro algoritmo evolutivo paralelo'' (MAEB)}}
+	\begin{block}{\scriptsize{\textit{p$\mu$MOEA/D}:} \scalebox{.7}{``Planificación multiobjetivo de viajes compartidos en taxis utilizando un micro algoritmo evolutivo paralelo'' (MAEB)}}
 	Hasta \alert{101.2\%} de mejora en demora y \alert{72.8\%} en costo sobre ávidos.\pause
 		
 		\input{./evaluacion_experimental/metricas_mo_resumen_maeb.tex}
 		\small{Buena convergencia y diversidad. Pocas soluciones no dominadas.}
 	\end{block}
 	\pause
-	\begin{block}{\textit{NSGA--II:}}
+	\begin{block}{\scriptsize{\textit{NSGA--II:}} \tiny{``Multiobjective taxi sharing optimization using the NSGA-II evolutionary algorithm'' (MIC)}}
 		Hasta \alert{105.2\%} de mejora en demora y \alert{75.1\%} en costo sobre ávidos.\pause
 		
 		\input{./evaluacion_experimental/metricas_mo_resumen_mic.tex}
-		\small{Mayor cantidad de puntos no dominados (hasta 67/80). Buena convergencia y diversidad en las soluciones encontradas.}
+		\centering
+		\small{Mayor cantidad de puntos no dominados (hasta 67/80). 
+
+		Buena convergencia y diversidad en las soluciones encontradas.}
 
 	\end{block}	
 	
@@ -599,7 +605,17 @@ Montevideo, Uruguay}
 	\frametitle{Mejora frente a algoritmos ávidos vs. tiempo de ejecución}
 	%El enfoque multiobjetivo explícito de \textit{NSGA--II} permite alcanzar mejores resultados que el enfoque por descomposición de dominio aplicado en \textit{p$\mu$MOEA/D}. Sin embargo, los tiempos de ejecución son significativamente mayores.
 
-	\input{./evaluacion_experimental/tradeoff_maeb_mic/imagenes.tex}
+	%\input{./evaluacion_experimental/tradeoff_maeb_mic/imagenes.tex}
+	\begin{columns}[t]
+	\column{.5\textwidth}
+	\centering
+		\includegraphics[width=\textwidth]{./evaluacion_experimental/tradeoff_maeb_mic/costo}\\
+		\small \textit{costo}
+	\column{.5\textwidth}
+	\centering
+		\includegraphics[width=\textwidth]{./evaluacion_experimental/tradeoff_maeb_mic/demora}\\
+		\small \textit{demora}
+	\end{columns}
 	\vspace{0.3cm}
 	\textit{NSGA--II} alcanza mejores soluciones pero requiere de un mayor tiempo de ejecución que \textit{p$\mu$MOEA/D}. %Es necesario tomar una decisión de compromiso.
 
@@ -619,24 +635,31 @@ Montevideo, Uruguay}
 	\item Se ingresa el origen, los destinos y la tarifa (diurna/nocturna).
 	\end{itemize}
 	\centering
-	\includegraphics[width=.6\textwidth]{mapa.png}
-	\begin{itemize}\pause
+	\includegraphics[width=\textwidth]{mapa.png}
+	\column{0.5\textwidth}\pause
+	\begin{itemize}
 	\item Se ejecuta el AE y se muestra la planificación calculada.
 	\end{itemize}
-	\only<1>{\mbox{\phantom{\includegraphics[width=.6\textwidth]{res_total.png}}}}%
-	\includegraphics<2->[width=.6\textwidth]{res_total.png}
-	\column{0.5\textwidth}\pause
 	\centering
-	\only<1-2>{\mbox{\phantom{\includegraphics[width=.6\textwidth]{arquitectura.png}}}}%
-	\includegraphics<3->[width=.6\textwidth]{arquitectura.png}
+	\only<1>{\mbox{\phantom{\includegraphics[width=.9\textwidth]{res_total.png}}}}%
+	\includegraphics<2->[width=.9\textwidth]{res_total.png}
+	\end{columns}
+}
+
+
+\frame {
+	\frametitle{Arquitectura del planificador de viajes compartidos en línea}
+	\centering
+	\includegraphics[width=.4\textwidth]{arquitectura.png}
+
+
+
 	\begin{itemize}
 	\item Servidor implementado en Ruby on Rails siguiendo MVC.
 	\item Las aplicaciones móviles consumen la API del servidor.
 	\item Aplicaciones móviles: desarrollo híbrido vs. desarrollo nativo.
 	\end{itemize}
-	\end{columns}
 }
-
 
 % Slide - Conclusiones y trabajo futuro ==============================================================
 \section{Conclusiones y trabajo futuro} 
@@ -645,13 +668,11 @@ Montevideo, Uruguay}
 \frame{
 	\frametitle{Conclusiones}
 	\begin{itemize}
-	\item Se relevó la literatura relacionada (CPP, DARP, TPP) y se presentaron \textbf{dos} variantes del problema.\pause
-	\item Se implementaron \textbf{cuatro} AE: dos para cada variante del problema.\pause
-	\item El análisis experimental se realizó sobre \textbf{instancias realistas}.\pause
-	\item Los AE implementados fueron comparados contra algoritmos ávidos.\pause
+	\item Se relevó la literatura relacionada, se presentaron \textbf{dos} variantes del problema y se implementaron \textbf{cuatro} AE.\pause
+	\item El análisis experimental se realizó sobre \textbf{instancias realistas} comparando contra algoritmos ávidos.\pause
 	\item Variante monoobjetivo: mejoras en costo de hasta \alert{35.9\%} (seqEA) y \alert{41.0\%} (p$\mu$EA) sobre algoritmo ávido.\pause
 	\item Variante multiobjetivo: mejoras de hasta \alert{72.8\%} y \alert{101.2\%} (p$\mu$MOEA/D); \alert{75.1\%} y \alert{105.2\%} (NSGA--II) en costo y demora sobre algoritmos ávidos.\pause
-	\item Planificador de viajes compartidos en taxis, disponible públicamente en \url{www.mepaseaste.uy}.\pause
+	\item Planificador de viajes compartidos en taxis (\url{www.mepaseaste.uy}).\pause
 	\item \textbf{Cuatro} artículos en conferencias internacionales.\pause
 	\item \textbf{Primer premio} del jurado en ``Ingeniería deMuestra 2014'' .
 	\end{itemize}
@@ -663,13 +684,13 @@ Montevideo, Uruguay}
 	\begin{block}{Mejoras en los AE}
 	\begin{itemize}
 		\item Implementar NSGA--II con subpoblaciones distribuidas.\pause
-		\item Incorporar \textbf{datos realistas del tráfico} para considerar rutas alternativas.\pause
+		\item Incorporar \textbf{datos realistas del tráfico}.\pause
 		\item Incorporar datos de la \textbf{disponibilidad de los taxis} en tiempo real.\pause
 	\end{itemize}
 	\end{block}
 	\begin{block}{Mejoras en el planificador de viajes compartidos}
 	\begin{itemize}
-		\item Mejorar la experiencia de los usuarios.\pause
+		\item Mejorar la experiencia de usuario.\pause
 		\item Desarrollar versiones para Android y Windows Phone.\pause
 		\item Soportar la variante multiobjetivo.\pause
 	\end{itemize}
@@ -683,7 +704,7 @@ Montevideo, Uruguay}
 }
 
 \frame{
-	\frametitle{Fin}
+	%\frametitle{Fin}
 	\centering
 	{\huge Gracias}
 
