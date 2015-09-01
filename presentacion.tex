@@ -82,7 +82,7 @@ Montevideo, Uruguay}
 	\frametitle{Motivación} 
 	\begin{block}{Los viajes compartidos (\textit{Car Pooling})}
 		\begin{itemize}
-			\item Beneficios en el plano ecológico y económico, individuales y colectivos.
+			\item Beneficios ecológicos y económicos, individuales y colectivos.
 			\item Iniciativas:
 			\begin{itemize}
 			\item Carriles exclusivos
@@ -96,11 +96,10 @@ Montevideo, Uruguay}
 	
 	\begin{block}{Los viajes compartidos en taxis (\textit{Taxi Pooling})}
 		\begin{itemize}
-			\item Los taxis son un medio de transporte rápido y confiable.%, especialmente en ciudades donde el transporte público es poco eficiente.
+			\item Taxis, medio de transporte rápido y confiable.
 			\item Raramente viajan a capacidad completa.
-			\item Impactan en la congestión del tráfico y en la contaminación.
 			\item Tarifas altas desalientan a los usuarios.
-			%\item \alert{15\%} de los accidentes fatales en Uruguay involucran a un conductor alcoholizado (UNASEV).
+			\item Impactan en la congestión del tráfico y en la contaminación.
 		\end{itemize}
 	\end{block}
 }
@@ -115,19 +114,19 @@ Montevideo, Uruguay}
 \frame{
 	\frametitle{Descripción del problema}
 	\begin{block}{Problema de viajes compartidos en taxis (PVCT)}
-		Un grupo de personas ubicadas en un \textbf{mismo lugar de origen}, desean viajar hacia \textbf{diferentes destinos} utilizando taxis de forma compartida.
+		Un grupo de personas en un \textbf{mismo lugar de origen}, desean viajar hacia \textbf{diferentes destinos} utilizando taxis de forma compartida. Hallar la cantidad de taxis y la asignación de pasajeros para minimizar el \alert{costo total}.
 
-		Se busca determinar la cantidad de taxis, la asignación de pasajeros y las rutas a seguir, de forma de \alert{minimizar el costo total del grupo de pasajeros}.
+		%Se busca determinar la cantidad de taxis, la asignación de pasajeros y las rutas a seguir, de forma de \alert{minimizar el costo total del grupo de pasajeros}.
 	\end{block}
 	
 	\pause
 	
 	\begin{block}{Consideraciones}
 		\begin{itemize}
-			\item Cada taxi puede trasladar a un número limitado de pasajeros.\pause
-			\item El número máximo de taxis para $N$ pasajeros es $N$.\pause
-			\item Costo de un taxi = \textbf{costo inicial} (“bajada de bandera”) $+$ \textbf{costo determinado por la distancia}. \pause
-			\item No se consideran otros posibles costos (e.g. esperas, propinas, peajes).
+			\item Cada taxi puede trasladar a un número limitado de pasajeros.
+			\item El número máximo de taxis para $N$ pasajeros es $N$.
+			\item Costo de un taxi = \textbf{costo inicial} $+$ \textbf{costo por trayectos}.
+			\item No se consideran otros costos (e.g. esperas, propinas, peajes).
 		\end{itemize}		
 	\end{block}
 }
@@ -135,52 +134,35 @@ Montevideo, Uruguay}
 \frame{
 	\frametitle{Formulación del problema}
 	\begin{itemize}
-		\item Un conjunto de pasajeros $P = \{p_1,p_2,\ldots,p_N\}$ que viajan desde un origen común $O$ a un conjunto de destinos $D = \{d_1,d_2,\ldots,d_N\}$.\pause
+		\item Un conjunto de pasajeros $P$ que viajan desde un origen $O$ a un conjunto de destinos $D$.
 
-		\item Un conjunto de taxis $T = \{t_1,t_2,\ldots,t_M\}$; con $M \leq N$; y una función $C:T\rightarrow\{0,1,\ldots,C_{MAX}\}$ que indica la cantidad de pasajeros en un taxi. $C_{MAX}$ es la capacidad máxima permitida en un mismo taxi.\pause
+		\item Un conjunto de taxis $T$ y una función $C:T\rightarrow\{0,1,\ldots,C_{MAX}\}$ con $C_{MAX}$ máxima capacidad permitida en un taxi.
 
-		\item Una constante $B$ indica el costo inicial del taxi (``bajada de bandera'')\pause
+		\item Una constante $B$ que determina el costo inicial del taxi.
 		
-		\item Una función de distancia, $dist: \lbrace \lbrace O \rbrace \cup D \rbrace \times D \rightarrow \mathbb{R}^+_0$.\pause
+		\item Una función de distancia, $dist: \lbrace \lbrace O \rbrace \cup D \rbrace \times D \rightarrow \mathbb{R}^+_0$, y una función de costo asociado a la distancia recorrida por cada taxi, $cost: \mathbb{R}^+_0 \rightarrow \mathbb{R}^+_0$.
 		
-		\item Una función de costo asociado a la distancia recorrida por cada taxi, $cost: \mathbb{R}^+_0 \rightarrow \mathbb{R}^+_0$.
 	\end{itemize}\pause
 
-	Se desea hallar la planificación $f:P \rightarrow T \times \lbrace 1, \ldots,C_{MAX} \rbrace$
-	que \alert{minimice la función de costo total ($CT$)}.
+	\centering
+	\textbf{Se busca una planificación $f:P \rightarrow T \times \lbrace 1, \ldots,C_{MAX} \rbrace$ que \alert{minimice la función de costo total ($CT$)}.}
 	\begin{equation*}
 			CT  =  \sum\limits_{t_{i}, C(t_{i})\neq0} \Bigg[B+\sum\limits_{j=1}^{C(t_{i})}cost\bigg(dist \underbrace{\Big(dest\big(f^{-1}(t_{i},j-1)\big),dest\big(f^{-1}(t_{i},j)\big)\Big)}_{\text{destinos consecutivos en el recorrido del taxi } t_i}\bigg)\Bigg]
 	\end{equation*}
 }
 
-% \frame{
-% 	\frametitle{Variante multiobjetivo del PVCT}
-% 	\begin{block}{Motivación}
-% 		La decisión de un usuario puede estar condicionada a la demora que debe experimentar por compartir su viaje. 
-% 		%Por tal motivo, es de interés estudiar 
-% 		La variante multiobjetivo del problema minimiza simultáneamente el \alert{costo del grupo} de usuarios y la \alert{demora percibida} por cada uno de ellos.
-% 	\end{block}
-	
-% 	\pause
-	
-% 	\begin{block}{Descripción}
-% 		Se agrega un \textbf{``nivel de apuro''} asociado a cada pasajero, que denota la demora que está dispuesto a tolerar un usuario por compartir su viaje.
-	
-% 		Se contemplan \textbf{vehículos de distintas capacidades}, aportando mayor realismo a la formulación.
-% 	\end{block}
-% }
-
 \frame{
 	\frametitle{Variante multiobjetivo del PVCT: formulación matemática}
 	\pause
 		\begin{itemize}
-		\item Se busca minimizar simultáneamente el \alert{costo total} y la \alert{demora total}.\pause
-		\item Se incorporan dos variables:\pause
+		\item Se busca minimizar el \alert{costo total} y la \alert{demora total}.\pause
+		\item Se incorporan dos variables:
 		\begin{itemize}
-			\item Cada pasajero tiene un \alert{``nivel de apuro''} asociado.\pause
 			\item Se consideran vehículos con \alert{diferentes capacidades}.
+			\item Cada pasajero tiene un \alert{nivel de apuro} asociado.
 		\end{itemize}
 	\end{itemize}\pause
+
 	\begin{equation*}
 			CT  =  \sum\limits_{t_{i}, C(t_{i})\neq0} \Bigg[B+\sum\limits_{j=1}^{C(t_{i})}cost\bigg(dist\overbrace{\Big(dest\big(f^{-1}(t_{i},j-1)\big),dest\big(f^{-1}(t_{i},j)\big)\Big)}^{\text{destinos consecutivos en el recorrido del taxi } t_i}\bigg)\Bigg]
 	\end{equation*}\pause
@@ -197,9 +179,19 @@ Montevideo, Uruguay}
 	\begin{block}{Complejidad}
 	%El PVCT tiene varios puntos en común con dos conocidos problemas: el \textit{Car Pooling Problem (CPP)} y el \textit{Vehicle Routing Problem (VRP)}.
 
-	Baldacci et al. (2004) estudiaron una variante del \textit{Car Pooling Problem (CPP)} donde trabajadores desean compartir vehículos hacia y desde el lugar de trabajo. 
+	\begin{itemize}
+	\item Baldacci et al. (2004):
+	\begin{itemize}
+		\item Variante del \textit{Car Pooling Problem (CPP)}.
+		\item Solución al problema de compartir vehículos en el trabajo.
+	\end{itemize}
 	
-	Esta variante es un caso particular del \textit{Vehicle Routing Problem (VRP)} con demanda unitaria, el cual es $\mathcal{NP}$--difícil [Letcheford et al. (2002)].
+	\item Caso especial del \textit{Vehicle Routing Problem (VRP)} con demanda unitaria:
+	\begin{itemize}
+		\item Letcheford et al. (2002) demostró que es $\mathcal{NP}$--difícil.
+	\end{itemize}
+	\item Similitudes determinan que nuestro problema también es $\mathcal{NP}$--difícil.
+	\end{itemize}
 	\end{block}
 
 	\pause
@@ -216,26 +208,25 @@ Montevideo, Uruguay}
 
 
 % Slide - Trabajo relacionado ==============================================================
-\section{Trabajo relacionado} 
+\section{Trabajos relacionados} 
 \frame{\tableofcontents[currentsection]}
 
 \frame{
 	\frametitle{Trabajo relacionado}
 
 	\begin{block}{Car pooling problem (CPP)}
-	Yan et al. (2011) \textbf{CPP con histórico de viajes} (relajación lagrangeana). %Converge a menos de 3\% del óptimo en $\sim$1 hora (600 a 1400 pasajeros). 
-	\end{block}
+	Yan et al. (2011): \textbf{CPP con histórico de viajes} (relajación lagrangeana). 	\end{block}
 	\pause
 	\begin{block}{Dial--a--ride problem (DARP)}
-	Cordeau et al. (2003) \textbf{DARP estático con ventanas de tiempo}. \\\hspace{.8cm} {\small Búsqueda tabú con tiempos de ejecución de hasta 90 minutos.}
+	Cordeau et al. (2003): \textbf{DARP estático con ventanas de tiempo}. \\\hspace{.8cm} {\small Búsqueda tabú con tiempos de ejecución de hasta 90 minutos.}
 	\end{block}
 
 
 	\pause
 	\begin{block}{Taxi pooling problem (TPP)}
-	Tao et al. (2007) Heurísticas ávidas para \textbf{one--to--many} y many--to--one. \\ \hspace{.8cm}{\small Las mejoras se reportan en términos absolutos.}
+	Tao et al. (2007): heurísticas ávidas para \textbf{one--to--many} y many--to--one. \\ \hspace{.8cm}{\small Las mejoras se reportan en términos absolutos.}
 
-	Ma et al. (2013) TPP dinámico con pedidos en tiempo real.\\ \hspace{.8cm}{\small 13\% de ahorro en distancia con un algoritmo ávido en \textbf{instancias realistas}.}
+	Ma et al. (2013): TPP dinámico con pedidos en tiempo real.\\ \hspace{.8cm}{\small 13\% de ahorro en distancia con un algoritmo ávido en \textbf{instancias realistas}.}
 	\end{block}
 
 	\pause
@@ -321,29 +312,22 @@ Montevideo, Uruguay}
 	\end{block}
 	\pause
 
-	\begin{block}{AE paralelo (\textit{p$\mu$EA})}
+	\begin{block}{Micro AE paralelo (\textit{p$\mu$EA})}
 		\begin{itemize}
-%			\item Modelos paralelos.
-%			\begin{itemize}
 			\item Se busca \textbf{mejorar el desempe\~no} mediante el paralelismo.\pause
 			\item \alert{Modelo de subpoblaciones distribuidas}: divide la poblaci\'on en \textbf{islas} que intercambian individuos mediante \textbf{migración}.\pause
-%			\end{itemize}
+			
+			\begin{centering}
+				\centering
+				\only<1-2>{\mbox{\phantom{\includegraphics[width=0.5\textwidth]{migracion.png}}}}
+				\hspace{3cm} \includegraphics<3->[width=0.5\textwidth]{migracion.png}
+			\end{centering}
 			
 			\item Poblaciones pequeñas.\pause
 			\item Selección por torneo $(m,k)$.\pause
 			\item Migración asíncrona, con topología de anillo unidireccional.
 
 		\end{itemize}
-		
-%		\begin{itemize}
-%			\begin{columns}[totalwidth=\textwidth]
-%			\column{0.4\textwidth}
-%			\column{0.4\textwidth}
-				\centering
-				\only<1-5>{\mbox{\phantom{\includegraphics[width=0.5\textwidth]{migracion.png}}}}
-				\includegraphics<6->[width=0.5\textwidth]{migracion.png}
-%			\end{columns}
-%		\end{itemize}
 	\end{block}
 }
 
@@ -352,11 +336,7 @@ Montevideo, Uruguay}
 	\frametitle{AE para el PVCT multiobjetivo}
 	\begin{block}{Aspectos comunes}
 		\begin{itemize}
-			\item Propósitos en AEs multiobjetivos:
-			\begin{itemize}
-				\item Acercarse al frente de Pareto del problema (\textbf{convergencia}).
-				\item Muestrear adecuadamente el frente de soluciones (\textbf{diversidad}).
-			\end{itemize}\pause
+			\item MOEA: Acercarse al frente de Pareto del problema (\textbf{convergencia}) y muestrear adecuadamente el frente de soluciones (\textbf{diversidad}).\pause
 			\item Función correctiva considera vehículos de distintas capacidades.\pause
 			\item Inicialización de la población ávida y selección por torneo.
 		\end{itemize}
@@ -364,18 +344,18 @@ Montevideo, Uruguay}
 
 
 	\pause
-	\begin{columns}[totalwidth=\textwidth]
-	\column{0.65\textwidth}
 		\begin{block}{MOEA paralelo con micro--población y descomposición de dominio (\textit{p$\mu$MOEA/D})}
-		%Micro--poblaciones distribuidas con
-		Agregación lineal de los objetivos:
-		\\\hspace{1.5cm}$F = w_C\times CT + w_D \times DT$, \small \\\hspace{2.3cm}{\tiny$w_C = [0:\frac{1}{\#islas}:1]$, $w_D = 1 - w_C$}.
+
+		\begin{columns}[totalwidth=\textwidth]
+		\column{0.50\textwidth}
+			Agregación lineal de los objetivos:
+			\\\hspace{1.5cm}$F = w_C\times CT + w_D \times DT$, \small \\\hspace{2.3cm}{\tiny$w_C = [0:\frac{1}{\#islas}:1]$, $w_D = 1 - w_C$}.
+		\column{0.40\textwidth}
+			\centering
+			\only<1-3>{\mbox{\phantom{\includegraphics[width=1\textwidth]{pmuMOEAD.png}}}}
+			\includegraphics<4->[width=1\textwidth]{pmuMOEAD.png}
+		\end{columns}
 		\end{block}
-	\column{0.35\textwidth}
-		\centering
-		\only<1-3>{\mbox{\phantom{\includegraphics[width=0.75\textwidth]{pmuMOEAD.png}}}}
-		\includegraphics<4->[width=0.75\textwidth]{pmuMOEAD.png}
-	\end{columns}
 	\pause
 
 	\begin{block}{MOEA explícito (\textit{NSGA--II})}
