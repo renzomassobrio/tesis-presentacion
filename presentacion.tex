@@ -415,13 +415,12 @@ Montevideo, Uruguay}
 
 	\begin{block}{Generación de puntos realistas en el mapa}
 		\begin{itemize}
-		\item Generador de Pedidos de Taxis (TQG) con datos de GPS de taxis de Beijing (Ma et al., 2013).\pause
-		\item Script para obtener instancias de un origen a muchos destinos.\pause
-		\item API para obtener tarifas TaxiFareFinder (TFF).\pause
+		\item Generador de Pedidos de Taxis (TQG) con datos de GPS de taxis de Beijing (Ma et al., 2013).
+		\item Script para obtener instancias de un origen a muchos destinos.
+		\item API para obtener tarifas TaxiFareFinder (TFF).
 		\item Instancias en Montevideo generadas manualmente.
 		\end{itemize}
 	\end{block}
-	\pause
 	\begin{block}{Instancias generadas}
 
 	\begin{itemize}\setlength\itemsep{1pt}
@@ -451,13 +450,12 @@ Montevideo, Uruguay}
 	\centering
 		\includegraphics[width=.85\textwidth]{cluster}
 	\end{columns}
-	\pause
 	\begin{block}{Ejecuciones}
 	\begin{itemize}\setlength\itemsep{1pt}
 		\item \alert{30 ejecuciones independientes} de cada algoritmo sobre cada instancia.
 		\item Criterio de parada: \textbf{10.000 generaciones} (planificación en línea).
 	\end{itemize}
-	\end{block}\pause
+	\end{block}
 	\begin{block}{Comparación de resultados}
 	\begin{itemize}
 		\item Tests estadísticos sobre las distribuciones de resultados:
@@ -483,7 +481,7 @@ Montevideo, Uruguay}
 	\begin{block}{Configuración paramétrica}
 	\begin{itemize}
 		\item \textbf{seqEA}: %20 ejecuciones de 2000 generaciones sobre 3 instancias.\\
-		{\small $\text{\#\textit{P}} \in \lbrace 150; 200; \alert{250}\rbrace$; $p_C \in \lbrace \alert{0.6}; 0.75; 0.95\rbrace$; $p_M \in \lbrace 0.001; 0.01; \alert{0.1}\rbrace$.}\pause	
+		{\small $\text{\#\textit{P}} \in \lbrace 150; 200; \alert{250}\rbrace$; $p_C \in \lbrace \alert{0.6}; 0.75; 0.95\rbrace$; $p_M \in \lbrace 0.001; 0.01; \alert{0.1}\rbrace$.}	
 		\item \textbf{p$\mu$EA}: micro--población de 15 individuos, torneo ($m=2$, $k=1$), migración cada 500 generaciones. \\%20 ejecuciones de 100.000 generaciones sobre 5 instancias.\\
 		{\small $p_C \in \lbrace 0.6; \alert{0.75}; 0.95\rbrace$; $p_M \in \lbrace 0.001; 0.01; \alert{0.1}\rbrace$.}
 	\end{itemize}
@@ -515,15 +513,13 @@ Montevideo, Uruguay}
 		\item No hay diferencias estadísticamente significativas en 10 instancias.
 	\end{itemize}
 	\end{block}
-	\pause
 	\begin{block}{Resultados \textit{p$\mu$EA}}
 	\begin{itemize}
 		\item Inicialización ávida supera a inicialización aleatoria en \alert{11} instancias.
-		\item No hay instancias en las que la inicialización aleatoria supere a la inicialización ávida.
+		\item Inicialización aleatoria nunca supera a inicialización ávida.
 		\item No hay diferencias estadísticamente significativas en 11 instancias.
 	\end{itemize}
 	\end{block}
-	\pause
 	\begin{block}{Conclusión}
 	Se utiliza la \alert{inicialización ávida} para el resto de la evaluación experimental.
 	\end{block}
@@ -585,7 +581,7 @@ Montevideo, Uruguay}
 		\begin{itemize}
 			\item \textbf{p$\mu$MOEA/D}: %30 ejecuciones de 20000 generaciones sobre 4 instancias. \\
 			{\small $\#P=15$; selección por torneo ($m=2,k=1$); migración cada 1000 generaciones reemplazando a los peores individuos\\
-			$p_C \in \lbrace 0.6; \alert{0.75}; 0.95\rbrace$; $p_M \in \lbrace 0.001; 0.01; \alert{0.1}\rbrace$}\\\pause
+			$p_C \in \lbrace 0.6; \alert{0.75}; 0.95\rbrace$; $p_M \in \lbrace 0.001; 0.01; \alert{0.1}\rbrace$}\\
 			\item \textbf{NSGA--II}: %30 ejecuciones de 5000 generaciones sobre 4 instancias. \\
 			{\small $\#P=80$; selección por torneo ($m=2,k=1$);\\
 			$p_C \in \lbrace 0.6; \alert{0.75}; 0.95\rbrace$; $p_M \in \lbrace 0.001; 0.01; \alert{0.1}\rbrace$.}\\
@@ -598,7 +594,7 @@ Montevideo, Uruguay}
 	
 	\begin{block}{Algoritmo ávido para minimizar el costo}
 		Similar al de la variante monoobjetivo pero considerando las distintas capacidades de los vehículos.
-	\end{block}\pause
+	\end{block}
 	\begin{block}{Algoritmo ávido para minimizar la demora}
 		\begin{itemize}
 		\item Se crea un taxi vacío para cada pasajero con nivel máximo de apuro y se los ubica en la primera posición. 
@@ -613,14 +609,14 @@ Montevideo, Uruguay}
 	\frametitle{Resultados numéricos}
 		
 	\begin{block}{\scriptsize{\textit{p$\mu$MOEA/D: \scalebox{.7}{``Planificación multiobjetivo de viajes compartidos en taxis utilizando un micro algoritmo evolutivo paralelo'' (MAEB)}}}}
-	Hasta \alert{101.2\%} de mejora en demora y \alert{72.8\%} en costo sobre ávidos.\pause
+	Hasta \alert{101.2\%} de mejora en demora y \alert{72.8\%} en costo sobre ávidos.
 		
 		\input{./evaluacion_experimental/metricas_mo_resumen_maeb.tex}
 		\small{Buena convergencia y diversidad. Pocas soluciones no dominadas.}
 	\end{block}
 	\pause
 	\begin{block}{\scriptsize{\textit{NSGA--II: \tiny{``Multiobjective taxi sharing optimization using the NSGA-II evolutionary algorithm'' (MIC)}}}}
-		Hasta \alert{105.2\%} de mejora en demora y \alert{75.1\%} en costo sobre ávidos.\pause
+		Hasta \alert{105.2\%} de mejora en demora y \alert{75.1\%} en costo sobre ávidos.
 		
 		\input{./evaluacion_experimental/metricas_mo_resumen_mic.tex}
 		\centering
@@ -709,13 +705,13 @@ Montevideo, Uruguay}
 \frame{
 	\frametitle{Conclusiones}
 	\begin{itemize}
-	\item Se relevó la literatura relacionada, se presentaron \textbf{dos} variantes del problema y se implementaron \textbf{cuatro} AE.\pause
+	\item Se relevó la literatura relacionada, se presentaron \textbf{dos} variantes del problema y se implementaron \textbf{cuatro} AE.
 	\item El análisis experimental se realizó sobre \textbf{instancias realistas} comparando contra algoritmos ávidos.\pause
-	\item Variante monoobjetivo: mejoras en costo de hasta \alert{35.9\%} (seqEA) y \alert{41.0\%} (p$\mu$EA) sobre algoritmo ávido.\pause
+	\item Variante monoobjetivo: mejoras en costo de hasta \alert{35.9\%} (seqEA) y \alert{41.0\%} (p$\mu$EA) sobre algoritmo ávido.
 	\item Variante multiobjetivo: mejoras de hasta \alert{72.8\%} y \alert{101.2\%} (p$\mu$MOEA/D); \alert{75.1\%} y \alert{105.2\%} (NSGA--II) en costo y demora sobre algoritmos ávidos.\pause
 	\item Planificador de viajes compartidos en taxis (\url{www.mepaseaste.uy}).\pause
-	\item \textbf{Cuatro} artículos en conferencias internacionales.\pause
-	\item \textbf{Primer premio} del jurado en ``Ingeniería deMuestra 2014'' .
+	\item \textbf{Cuatro} artículos en conferencias internacionales.
+	\item \textbf{Primer premio} del jurado en ``Ingeniería deMuestra 2014''.
 	\end{itemize}
 }
 
@@ -728,14 +724,14 @@ Montevideo, Uruguay}
 		\item Incorporar \textbf{datos realistas del tráfico}.
 		\item Incorporar datos de la \textbf{disponibilidad de los taxis} en tiempo real.
 	\end{itemize}
-	\end{block}\pause
+	\end{block}
 	\begin{block}{Mejoras en el planificador de viajes compartidos}
 	\begin{itemize}
 		\item Mejorar la experiencia de usuario.
 		\item Desarrollar versiones para Android y Windows Phone.
 		\item Soportar la variante multiobjetivo.
 	\end{itemize}
-	\end{block}\pause
+	\end{block}
 	\begin{block}{Problemas relacionados}
 	\begin{itemize}
 	\item Estudiar otras variantes del problema (many--to--one, many--to--many).
