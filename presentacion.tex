@@ -249,48 +249,99 @@ Montevideo, Uruguay}
 }
 
 
+%\frame{
+%	\frametitle{AE para el PVCT monoobjetivo}
+%	\begin{columns}[totalwidth=\linewidth]
+%	\column{0.43\linewidth}
+%		\begin{block}{Aspectos comunes}
+%		\begin{itemize}
+%		\item Individuos de largo $2N-1$\\
+%		\hspace{.5cm}{\small$N=$ \#pasajeros.}
+%		\pause
+%		
+%		\item Inicialización:\\
+%		\hspace{.5cm}{\small aleatoria y ávida.}
+%		\pause
+%		
+%		\item Cruzamiento basado en posición (PBX).% + función correctiva.
+%
+%		\pause
+%		\item Mutación por intercambio (EM).% + función correctiva.
+%		\pause
+%
+%
+%		\item Función correctiva:\\ \hspace{.5cm}{\small desplaza ceros para}\\ \hspace{.5cm}{\small romper secuencias de}\\ \hspace{.5cm}{\small dígitos inválidas.}
+%		\pause
+%
+%		\item Implementados en Malva.
+%		\end{itemize}
+%		\end{block}
+%
+%	\column{0.57\linewidth}
+%		\centering
+%
+%		\includegraphics[width=0.9\textwidth]{distribucion.png}
+%
+%		\only<1-2>{\mbox{\phantom{\includegraphics[width=0.9\textwidth]{pbx_simple.png}}}}
+%		\includegraphics<3->[width=0.9\textwidth]{pbx_simple.png}
+%
+%		\only<1-3>{\mbox{\phantom{\includegraphics[width=0.9\textwidth]{em.png}}}}%
+%		\includegraphics<4->[width=0.9\textwidth]{em.png}
+%
+%		\only<1-4>{\mbox{\phantom{\includegraphics[width=0.9\textwidth]{temporal.png}}}}%
+%		\includegraphics<5->[width=0.9\textwidth]{temporal.png}
+%	\end{columns}
+%}
+
 \frame{
 	\frametitle{AE para el PVCT monoobjetivo}
-	\begin{columns}[totalwidth=\linewidth]
-	\column{0.43\linewidth}
-		\begin{block}{Aspectos comunes}
+	\begin{block}{Aspectos comunes}
 		\begin{itemize}
-		\item Individuos de largo $2N-1$\\
-		\hspace{.5cm}{\small$N=$ \#pasajeros.}
+			\item Inicialización:
+			\begin{itemize}
+				\item basada en técnica aleatoria
+				\item basada en técnica ávida + permutaciones
+			\end{itemize}
 		\pause
-		
-		\item Inicialización:\\
-		\hspace{.5cm}{\small aleatoria y ávida.}
+			\item Implementados en Malva.
 		\pause
-		
-		\item Cruzamiento basado en posición (PBX).% + función correctiva.
+	
 
-		\pause
-		\item Mutación por intercambio (EM).% + función correctiva.
-		\pause
+		\item Función correctiva:\\ \hspace{.5cm}{\small desplaza ceros para romper secuencias de dígitos inválidas}	
 
-
-		\item Función correctiva:\\ \hspace{.5cm}{\small desplaza ceros para}\\ \hspace{.5cm}{\small romper secuencias de}\\ \hspace{.5cm}{\small dígitos inválidas.}
-		\pause
-
-		\item Implementados en Malva.
 		\end{itemize}
-		\end{block}
+	\end{block}
 
-	\column{0.57\linewidth}
-		\centering
+}
 
-		\includegraphics[width=0.9\textwidth]{distribucion.png}
+\frame{
+	\frametitle{AE para el PVCT monoobjetivo}
+	\begin{block}{Aspectos comunes}
+	\centering
+		Individuos de largo $2N-1$, \small$N=$ \#pasajeros.
+		\includegraphics[width=0.8\textwidth]{distribucion.png}
+	\end{block}
 
-		\only<1-2>{\mbox{\phantom{\includegraphics[width=0.9\textwidth]{pbx_simple.png}}}}
-		\includegraphics<3->[width=0.9\textwidth]{pbx_simple.png}
+}
 
-		\only<1-3>{\mbox{\phantom{\includegraphics[width=0.9\textwidth]{em.png}}}}%
-		\includegraphics<4->[width=0.9\textwidth]{em.png}
 
-		\only<1-4>{\mbox{\phantom{\includegraphics[width=0.9\textwidth]{temporal.png}}}}%
-		\includegraphics<5->[width=0.9\textwidth]{temporal.png}
-	\end{columns}
+\frame{
+	\frametitle{AE para el PVCT monoobjetivo}
+	\begin{block}{Aspectos comunes}
+	\centering
+		Cruzamiento basado en posición (PBX) + función correctiva.
+		\includegraphics[width=0.8\textwidth]{pbxaplicado.png}
+	\end{block}
+
+}
+
+\frame{
+	\frametitle{AE para el PVCT monoobjetivo}
+	\begin{block}{Aspectos comunes}
+	\centering
+		Mutación por intercambio (EM) + función correctiva.
+		\includegraphics[width=1\textwidth]{emaplicado.png}
+	\end{block}
 
 }
 
