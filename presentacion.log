@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.8.16)  2 SEP 2015 13:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.8.16)  2 SEP 2015 14:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1662,18 +1662,24 @@ Overfull \hbox (4.85695pt too wide) has occurred while \output is active
 
 [39
 
- <./cluster.jpg>]
+ <./cluster.jpg>] <./param3.png, id=351, 493.845pt x 314.67563pt>
+File: ./param3.png Graphic file (type png)
+
+<use ./param3.png>
+Package pdftex.def Info: ./param3.png used on input line 494.
+(pdftex.def)             Requested size: 171.14764pt x 109.05296pt.
+
 Overfull \hbox (4.85695pt too wide) has occurred while \output is active
 [][] 
  []
 
 [40
 
-] <greedy_costo_1.png, id=356, 717.68124pt x 364.36125pt>
+ <./param3.png>] <greedy_costo_1.png, id=357, 717.68124pt x 364.36125pt>
 File: greedy_costo_1.png Graphic file (type png)
 
 <use greedy_costo_1.png>
-Package pdftex.def Info: greedy_costo_1.png used on input line 504.
+Package pdftex.def Info: greedy_costo_1.png used on input line 508.
 (pdftex.def)             Requested size: 342.2953pt x 173.78502pt.
 
 Overfull \hbox (4.85695pt too wide) has occurred while \output is active
@@ -1683,11 +1689,11 @@ Overfull \hbox (4.85695pt too wide) has occurred while \output is active
 [41
 
  <./greedy_costo_1.png>]
-<greedy_costo_2.png, id=362, 717.68124pt x 364.36125pt>
+<greedy_costo_2.png, id=363, 717.68124pt x 364.36125pt>
 File: greedy_costo_2.png Graphic file (type png)
 
 <use greedy_costo_2.png>
-Package pdftex.def Info: greedy_costo_2.png used on input line 504.
+Package pdftex.def Info: greedy_costo_2.png used on input line 508.
 (pdftex.def)             Requested size: 342.2953pt x 173.78502pt.
 
 Overfull \hbox (4.85695pt too wide) has occurred while \output is active
@@ -1697,11 +1703,11 @@ Overfull \hbox (4.85695pt too wide) has occurred while \output is active
 [42
 
  <./greedy_costo_2.png>]
-<greedy_costo_3.png, id=369, 717.68124pt x 364.36125pt>
+<greedy_costo_3.png, id=370, 717.68124pt x 364.36125pt>
 File: greedy_costo_3.png Graphic file (type png)
 
 <use greedy_costo_3.png>
-Package pdftex.def Info: greedy_costo_3.png used on input line 504.
+Package pdftex.def Info: greedy_costo_3.png used on input line 508.
 (pdftex.def)             Requested size: 342.2953pt x 173.78502pt.
 
 Overfull \hbox (4.85695pt too wide) has occurred while \output is active
@@ -1711,11 +1717,11 @@ Overfull \hbox (4.85695pt too wide) has occurred while \output is active
 [43
 
  <./greedy_costo_3.png>]
-<greedy_costo_4.png, id=377, 717.68124pt x 364.36125pt>
+<greedy_costo_4.png, id=378, 717.68124pt x 364.36125pt>
 File: greedy_costo_4.png Graphic file (type png)
 
 <use greedy_costo_4.png>
-Package pdftex.def Info: greedy_costo_4.png used on input line 504.
+Package pdftex.def Info: greedy_costo_4.png used on input line 508.
 (pdftex.def)             Requested size: 342.2953pt x 173.78502pt.
 
 Overfull \hbox (4.85695pt too wide) has occurred while \output is active
@@ -1725,11 +1731,11 @@ Overfull \hbox (4.85695pt too wide) has occurred while \output is active
 [44
 
  <./greedy_costo_4.png>]
-<greedy_costo_5.png, id=384, 717.68124pt x 364.36125pt>
+<greedy_costo_5.png, id=385, 717.68124pt x 364.36125pt>
 File: greedy_costo_5.png Graphic file (type png)
 
 <use greedy_costo_5.png>
-Package pdftex.def Info: greedy_costo_5.png used on input line 504.
+Package pdftex.def Info: greedy_costo_5.png used on input line 508.
 (pdftex.def)             Requested size: 342.2953pt x 173.78502pt.
 
 Overfull \hbox (4.85695pt too wide) has occurred while \output is active
@@ -1739,11 +1745,11 @@ Overfull \hbox (4.85695pt too wide) has occurred while \output is active
 [45
 
  <./greedy_costo_5.png>]
-<greedy_costo_6.png, id=391, 717.68124pt x 364.36125pt>
+<greedy_costo_6.png, id=392, 717.68124pt x 364.36125pt>
 File: greedy_costo_6.png Graphic file (type png)
 
 <use greedy_costo_6.png>
-Package pdftex.def Info: greedy_costo_6.png used on input line 504.
+Package pdftex.def Info: greedy_costo_6.png used on input line 508.
 (pdftex.def)             Requested size: 342.2953pt x 173.78502pt.
 
 Overfull \hbox (4.85695pt too wide) has occurred while \output is active
@@ -1753,11 +1759,11 @@ Overfull \hbox (4.85695pt too wide) has occurred while \output is active
 [46
 
  <./greedy_costo_6.png>]
-<greedy_costo_7.png, id=398, 717.68124pt x 364.36125pt>
+<greedy_costo_7.png, id=399, 717.68124pt x 364.36125pt>
 File: greedy_costo_7.png Graphic file (type png)
 
 <use greedy_costo_7.png>
-Package pdftex.def Info: greedy_costo_7.png used on input line 504.
+Package pdftex.def Info: greedy_costo_7.png used on input line 508.
 (pdftex.def)             Requested size: 342.2953pt x 173.78502pt.
 
 Overfull \hbox (4.85695pt too wide) has occurred while \output is active
@@ -1767,11 +1773,11 @@ Overfull \hbox (4.85695pt too wide) has occurred while \output is active
 [47
 
  <./greedy_costo_7.png>]
-<greedy_costo_8.png, id=405, 717.68124pt x 364.36125pt>
+<greedy_costo_8.png, id=406, 717.68124pt x 364.36125pt>
 File: greedy_costo_8.png Graphic file (type png)
 
 <use greedy_costo_8.png>
-Package pdftex.def Info: greedy_costo_8.png used on input line 504.
+Package pdftex.def Info: greedy_costo_8.png used on input line 508.
 (pdftex.def)             Requested size: 342.2953pt x 173.78502pt.
 
 Overfull \hbox (4.85695pt too wide) has occurred while \output is active
@@ -1788,7 +1794,7 @@ Overfull \hbox (4.85695pt too wide) has occurred while \output is active
 [49
 
 ] (./evaluacion_experimental/mejoras_greedy_clei/imagenes.tex
-<./evaluacion_experimental/mejoras_greedy_clei/greedy_costo_Chicas.png, id=418,
+<./evaluacion_experimental/mejoras_greedy_clei/greedy_costo_Chicas.png, id=419,
  507.35pt x 429.97pt>
 File: ./evaluacion_experimental/mejoras_greedy_clei/greedy_costo_Chicas.png Gra
 phic file (type png)
@@ -1798,8 +1804,8 @@ Package pdftex.def Info: ./evaluacion_experimental/mejoras_greedy_clei/greedy_c
 osto_Chicas.png used on input line 4.
 (pdftex.def)             Requested size: 128.03712pt x 99.5799pt.
 
-<./evaluacion_experimental/mejoras_greedy_clei/greedy_costo_Medianas.png, id=41
-9, 507.35pt x 429.97pt>
+<./evaluacion_experimental/mejoras_greedy_clei/greedy_costo_Medianas.png, id=42
+0, 507.35pt x 429.97pt>
 File: ./evaluacion_experimental/mejoras_greedy_clei/greedy_costo_Medianas.png G
 raphic file (type png)
 
@@ -1808,7 +1814,7 @@ Package pdftex.def Info: ./evaluacion_experimental/mejoras_greedy_clei/greedy_c
 osto_Medianas.png used on input line 5.
 (pdftex.def)             Requested size: 128.03712pt x 99.5799pt.
 
-<./evaluacion_experimental/mejoras_greedy_clei/greedy_costo_Grandes.png, id=420
+<./evaluacion_experimental/mejoras_greedy_clei/greedy_costo_Grandes.png, id=421
 , 507.35pt x 429.97pt>
 File: ./evaluacion_experimental/mejoras_greedy_clei/greedy_costo_Grandes.png Gr
 aphic file (type png)
@@ -1819,7 +1825,7 @@ osto_Grandes.png used on input line 8.
 (pdftex.def)             Requested size: 128.03712pt x 99.5799pt.
 
 <./evaluacion_experimental/mejoras_greedy_clei/greedy_costo_Montevideo.png, id=
-421, 507.35pt x 429.97pt>
+422, 507.35pt x 429.97pt>
 File: ./evaluacion_experimental/mejoras_greedy_clei/greedy_costo_Montevideo.png
  Graphic file (type png)
 
@@ -1839,7 +1845,7 @@ luacion_experimental/mejoras_greedy_clei/greedy_costo_Medianas.png> <./evaluaci
 on_experimental/mejoras_greedy_clei/greedy_costo_Grandes.png> <./evaluacion_exp
 erimental/mejoras_greedy_clei/greedy_costo_Montevideo.png>]
 (./evaluacion_experimental/mejoras_greedy_alio/imagenes.tex
-<./evaluacion_experimental/mejoras_greedy_alio/greedy_costo_Chicas.png, id=431,
+<./evaluacion_experimental/mejoras_greedy_alio/greedy_costo_Chicas.png, id=432,
  514.65pt x 432.89pt>
 File: ./evaluacion_experimental/mejoras_greedy_alio/greedy_costo_Chicas.png Gra
 phic file (type png)
@@ -1850,7 +1856,7 @@ osto_Chicas.png used on input line 4.
 (pdftex.def)             Requested size: 128.03394pt x 99.58241pt.
 
 <./evaluacion_experimental/mejoras_greedy_alio/greedy_costo_Medianas.png, id=43
-2, 514.65pt x 432.89pt>
+3, 514.65pt x 432.89pt>
 File: ./evaluacion_experimental/mejoras_greedy_alio/greedy_costo_Medianas.png G
 raphic file (type png)
 
@@ -1859,7 +1865,7 @@ Package pdftex.def Info: ./evaluacion_experimental/mejoras_greedy_alio/greedy_c
 osto_Medianas.png used on input line 5.
 (pdftex.def)             Requested size: 128.03394pt x 99.58241pt.
 
-<./evaluacion_experimental/mejoras_greedy_alio/greedy_costo_Grandes.png, id=433
+<./evaluacion_experimental/mejoras_greedy_alio/greedy_costo_Grandes.png, id=434
 , 514.65pt x 432.89pt>
 File: ./evaluacion_experimental/mejoras_greedy_alio/greedy_costo_Grandes.png Gr
 aphic file (type png)
@@ -1870,7 +1876,7 @@ osto_Grandes.png used on input line 8.
 (pdftex.def)             Requested size: 128.03394pt x 99.58241pt.
 
 <./evaluacion_experimental/mejoras_greedy_alio/greedy_costo_Montevideo.png, id=
-434, 514.65pt x 432.89pt>
+435, 514.65pt x 432.89pt>
 File: ./evaluacion_experimental/mejoras_greedy_alio/greedy_costo_Montevideo.png
  Graphic file (type png)
 
@@ -1897,7 +1903,7 @@ Overfull \hbox (4.85695pt too wide) has occurred while \output is active
 [52
 
 ] (./evaluacion_experimental/fitness_sobre_tiempo/imagenes.tex
-<./evaluacion_experimental/fitness_sobre_tiempo/chicas_1.png, id=449, 578.16pt 
+<./evaluacion_experimental/fitness_sobre_tiempo/chicas_1.png, id=450, 578.16pt 
 x 433.62pt>
 File: ./evaluacion_experimental/fitness_sobre_tiempo/chicas_1.png Graphic file 
 (type png)
@@ -1906,7 +1912,7 @@ Package pdftex.def Info: ./evaluacion_experimental/fitness_sobre_tiempo/chicas_
 1.png used on input line 4.
 (pdftex.def)             Requested size: 128.03368pt x 99.58493pt.
 
-<./evaluacion_experimental/fitness_sobre_tiempo/medianas_2.png, id=450, 578.16p
+<./evaluacion_experimental/fitness_sobre_tiempo/medianas_2.png, id=451, 578.16p
 t x 433.62pt>
 File: ./evaluacion_experimental/fitness_sobre_tiempo/medianas_2.png Graphic fil
 e (type png)
@@ -1916,7 +1922,7 @@ Package pdftex.def Info: ./evaluacion_experimental/fitness_sobre_tiempo/mediana
 s_2.png used on input line 5.
 (pdftex.def)             Requested size: 128.03368pt x 99.58493pt.
 
-<./evaluacion_experimental/fitness_sobre_tiempo/grandes_2.png, id=451, 578.16pt
+<./evaluacion_experimental/fitness_sobre_tiempo/grandes_2.png, id=452, 578.16pt
  x 433.62pt>
 File: ./evaluacion_experimental/fitness_sobre_tiempo/grandes_2.png Graphic file
  (type png)
@@ -1926,7 +1932,7 @@ Package pdftex.def Info: ./evaluacion_experimental/fitness_sobre_tiempo/grandes
 _2.png used on input line 8.
 (pdftex.def)             Requested size: 128.03368pt x 99.58493pt.
 
-<./evaluacion_experimental/fitness_sobre_tiempo/montevideo_1.png, id=452, 578.1
+<./evaluacion_experimental/fitness_sobre_tiempo/montevideo_1.png, id=453, 578.1
 6pt x 433.62pt>
 File: ./evaluacion_experimental/fitness_sobre_tiempo/montevideo_1.png Graphic f
 ile (type png)
@@ -1945,14 +1951,26 @@ Overfull \hbox (4.85695pt too wide) has occurred while \output is active
  <./evaluacion_experimental/fitness_sobre_tiempo/chicas_1.png> <./evaluacion_ex
 perimental/fitness_sobre_tiempo/medianas_2.png> <./evaluacion_experimental/fitn
 ess_sobre_tiempo/grandes_2.png> <./evaluacion_experimental/fitness_sobre_tiempo
-/montevideo_1.png>]
+/montevideo_1.png>] <./conf_costo.png, id=463, 551.81157pt x 283.0575pt>
+File: ./conf_costo.png Graphic file (type png)
+
+<use ./conf_costo.png>
+Package pdftex.def Info: ./conf_costo.png used on input line 599.
+(pdftex.def)             Requested size: 171.14764pt x 87.7901pt.
+ <./conf_demora.png, id=464, 551.81157pt x 261.97874pt>
+File: ./conf_demora.png Graphic file (type png)
+
+<use ./conf_demora.png>
+Package pdftex.def Info: ./conf_demora.png used on input line 599.
+(pdftex.def)             Requested size: 171.14764pt x 81.25253pt.
+
 Overfull \hbox (4.85695pt too wide) has occurred while \output is active
 [][] 
  []
 
 [54
 
-]
+ <./conf_costo.png> <./conf_demora.png>]
 Overfull \hbox (4.85695pt too wide) has occurred while \output is active
 [][] 
  []
@@ -1976,7 +1994,7 @@ Overfull \hbox (4.85695pt too wide) has occurred while \output is active
 [57
 
 ] (./evaluacion_experimental/fp_comparacion/imagenes.tex
-<./evaluacion_experimental/fp_comparacion/Ch_6_1.png, id=487, 578.16pt x 433.62
+<./evaluacion_experimental/fp_comparacion/Ch_6_1.png, id=492, 578.16pt x 433.62
 pt>
 File: ./evaluacion_experimental/fp_comparacion/Ch_6_1.png Graphic file (type pn
 g)
@@ -1985,7 +2003,7 @@ Package pdftex.def Info: ./evaluacion_experimental/fp_comparacion/Ch_6_1.png us
 ed on input line 4.
 (pdftex.def)             Requested size: 128.03368pt x 99.58493pt.
 
-<./evaluacion_experimental/fp_comparacion/Me_5_3.png, id=488, 578.16pt x 433.62
+<./evaluacion_experimental/fp_comparacion/Me_5_3.png, id=493, 578.16pt x 433.62
 pt>
 File: ./evaluacion_experimental/fp_comparacion/Me_5_3.png Graphic file (type pn
 g)
@@ -1994,7 +2012,7 @@ Package pdftex.def Info: ./evaluacion_experimental/fp_comparacion/Me_5_3.png us
 ed on input line 5.
 (pdftex.def)             Requested size: 128.03368pt x 99.58493pt.
 
-<./evaluacion_experimental/fp_comparacion/Gr_5_2.png, id=489, 578.16pt x 433.62
+<./evaluacion_experimental/fp_comparacion/Gr_5_2.png, id=494, 578.16pt x 433.62
 pt>
 File: ./evaluacion_experimental/fp_comparacion/Gr_5_2.png Graphic file (type pn
 g)
@@ -2003,7 +2021,7 @@ Package pdftex.def Info: ./evaluacion_experimental/fp_comparacion/Gr_5_2.png us
 ed on input line 8.
 (pdftex.def)             Requested size: 128.03368pt x 99.58493pt.
 
-<./evaluacion_experimental/fp_comparacion/Mo_4_3.png, id=490, 578.16pt x 433.62
+<./evaluacion_experimental/fp_comparacion/Mo_4_3.png, id=495, 578.16pt x 433.62
 pt>
 File: ./evaluacion_experimental/fp_comparacion/Mo_4_3.png Graphic file (type pn
 g)
@@ -2021,22 +2039,22 @@ Overfull \hbox (4.85695pt too wide) has occurred while \output is active
  <./evaluacion_experimental/fp_comparacion/Ch_6_1.png> <./evaluacion_experiment
 al/fp_comparacion/Me_5_3.png> <./evaluacion_experimental/fp_comparacion/Gr_5_2.
 png> <./evaluacion_experimental/fp_comparacion/Mo_4_3.png>]
-<./evaluacion_experimental/tradeoff_maeb_mic/costo.png, id=500, 584.0pt x 438.0
+<./evaluacion_experimental/tradeoff_maeb_mic/costo.png, id=505, 584.0pt x 438.0
 pt>
 File: ./evaluacion_experimental/tradeoff_maeb_mic/costo.png Graphic file (type 
 png)
  <use ./evaluacion_experimental/tradeoff_maeb_mic/costo.png>
 Package pdftex.def Info: ./evaluacion_experimental/tradeoff_maeb_mic/costo.png 
-used on input line 660.
+used on input line 669.
 (pdftex.def)             Requested size: 171.14764pt x 128.36009pt.
 
-<./evaluacion_experimental/tradeoff_maeb_mic/demora.png, id=501, 584.0pt x 438.
+<./evaluacion_experimental/tradeoff_maeb_mic/demora.png, id=506, 584.0pt x 438.
 0pt>
 File: ./evaluacion_experimental/tradeoff_maeb_mic/demora.png Graphic file (type
  png)
  <use ./evaluacion_experimental/tradeoff_maeb_mic/demora.png>
 Package pdftex.def Info: ./evaluacion_experimental/tradeoff_maeb_mic/demora.png
- used on input line 660.
+ used on input line 669.
 (pdftex.def)             Requested size: 171.14764pt x 128.36009pt.
 
 Overfull \hbox (4.85695pt too wide) has occurred while \output is active
@@ -2056,16 +2074,16 @@ Overfull \hbox (4.85695pt too wide) has occurred while \output is active
 
 [60
 
-] <mapa.png, id=520, 1065.9825pt x 531.9875pt>
+] <mapa.png, id=525, 1065.9825pt x 531.9875pt>
 File: mapa.png Graphic file (type png)
  <use mapa.png>
-Package pdftex.def Info: mapa.png used on input line 684.
+Package pdftex.def Info: mapa.png used on input line 693.
 (pdftex.def)             Requested size: 171.14764pt x 85.41196pt.
 
-<res_total.png, id=521, 517.18219pt x 527.72156pt>
+<res_total.png, id=526, 517.18219pt x 527.72156pt>
 File: res_total.png Graphic file (type png)
  <use res_total.png>
-Package pdftex.def Info: res_total.png used on input line 684.
+Package pdftex.def Info: res_total.png used on input line 693.
 (pdftex.def)             Requested size: 154.03183pt x 157.1662pt.
 
 Overfull \hbox (4.85695pt too wide) has occurred while \output is active
@@ -2077,11 +2095,11 @@ Overfull \hbox (4.85695pt too wide) has occurred while \output is active
  <./mapa.png>]
 File: mapa.png Graphic file (type png)
  <use mapa.png>
-Package pdftex.def Info: mapa.png used on input line 684.
+Package pdftex.def Info: mapa.png used on input line 693.
 (pdftex.def)             Requested size: 171.14764pt x 85.41196pt.
 File: res_total.png Graphic file (type png)
  <use res_total.png>
-Package pdftex.def Info: res_total.png used on input line 684.
+Package pdftex.def Info: res_total.png used on input line 693.
 (pdftex.def)             Requested size: 154.03183pt x 157.1662pt.
 
 Overfull \hbox (4.85695pt too wide) has occurred while \output is active
@@ -2091,10 +2109,10 @@ Overfull \hbox (4.85695pt too wide) has occurred while \output is active
 [62
 
  <./res_total.png (PNG copy)>]
-<arquitectura.png, id=533, 669.91853pt x 593.58842pt>
+<arquitectura.png, id=538, 669.91853pt x 593.58842pt>
 File: arquitectura.png Graphic file (type png)
  <use arquitectura.png>
-Package pdftex.def Info: arquitectura.png used on input line 699.
+Package pdftex.def Info: arquitectura.png used on input line 708.
 (pdftex.def)             Requested size: 136.91603pt x 121.31505pt.
 
 Overfull \hbox (4.85695pt too wide) has occurred while \output is active
@@ -2148,11 +2166,11 @@ Overfull \hbox (4.85695pt too wide) has occurred while \output is active
 
 [69
 
-] <logo-mepaseaste.png, id=582, 240.35866pt x 185.14113pt>
+] <logo-mepaseaste.png, id=587, 240.35866pt x 185.14113pt>
 File: logo-mepaseaste.png Graphic file (type png)
 
 <use logo-mepaseaste.png>
-Package pdftex.def Info: logo-mepaseaste.png used on input line 754.
+Package pdftex.def Info: logo-mepaseaste.png used on input line 763.
 (pdftex.def)             Requested size: 102.68962pt x 79.10062pt.
 
 Overfull \hbox (4.85695pt too wide) has occurred while \output is active
@@ -2171,14 +2189,14 @@ Overfull \hbox (4.85695pt too wide) has occurred while \output is active
 \tf@snm=\write8
 \openout8 = `presentacion.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 756.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 756.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 765.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 765.
  (./presentacion.aux
 LaTeX Info: Redefining \. on input line 26.
 LaTeX Info: Redefining \% on input line 26.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 756.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 756.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 765.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 765.
 Package rerunfilecheck Info: File `presentacion.out' has not changed.
 (rerunfilecheck)             Checksum: 19057777D0AA828E4DEAFC9F959B1C7A;425.
 
@@ -2186,13 +2204,13 @@ Package rerunfilecheck Info: File `presentacion.out' has not changed.
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 756.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 765.
  ) 
 Here is how much of TeX's memory you used:
- 20034 strings out of 493105
- 378178 string characters out of 6137072
+ 20049 strings out of 493105
+ 378454 string characters out of 6137072
  470458 words of memory out of 5000000
- 22787 multiletter control sequences out of 15000+600000
+ 22799 multiletter control sequences out of 15000+600000
  23340 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,27n,96p,423b,930s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2214,10 +2232,10 @@ re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on presentacion.pdf (70 pages, 3516547 bytes).
+Output written on presentacion.pdf (70 pages, 3624663 bytes).
 PDF statistics:
- 690 PDF objects out of 1000 (max. 8388607)
+ 695 PDF objects out of 1000 (max. 8388607)
  501 compressed objects within 6 object streams
  148 named destinations out of 1000 (max. 500000)
- 380 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 395 words of extra memory for PDF output out of 10000 (max. 10000000)
 
