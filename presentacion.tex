@@ -150,7 +150,7 @@ Montevideo, Uruguay}
 
 \frame{
 	\frametitle{Variante multiobjetivo del PVCT: formulación matemática}
-	\pause
+	%\pause
 		\begin{itemize}
 		\item Se busca minimizar el \alert{costo total} y la \alert{demora total}.
 		%\item Se incorporan dos variables:
@@ -178,8 +178,8 @@ Montevideo, Uruguay}
 	\begin{itemize}
 	\item Baldacci et al. (2004):
 	\begin{itemize}
-		\item Variante del \textit{Car Pooling Problem (CPP)}.
-		\item Solución al problema de compartir vehículos en el trabajo.
+		\item variante del \textit{Car Pooling Problem (CPP)}
+		\item solución al problema de compartir vehículos en el trabajo
 	\end{itemize}
 	
 	\item Caso especial del \textit{Vehicle Routing Problem (VRP)} con demanda unitaria: $\mathcal{NP}$--difícil [Letcheford et al. (2002)].
@@ -290,6 +290,17 @@ Montevideo, Uruguay}
 %	\end{columns}
 %}
 
+
+\frame{
+	\frametitle{AE para el PVCT monoobjetivo}
+	\begin{block}{Aspectos comunes}
+	\centering
+		Individuos de largo $2N-1$, \small$N=$ \#pasajeros.
+		\includegraphics[width=0.8\textwidth]{distribucion.png}
+	\end{block}
+
+}
+
 \frame{
 	\frametitle{AE para el PVCT monoobjetivo}
 	\begin{block}{Aspectos comunes}
@@ -305,16 +316,6 @@ Montevideo, Uruguay}
 		\item Función correctiva:\\ \hspace{.5cm}{\small desplaza ceros para romper secuencias de dígitos inválidas}	
 	
 		\end{itemize}
-	\end{block}
-
-}
-
-\frame{
-	\frametitle{AE para el PVCT monoobjetivo}
-	\begin{block}{Aspectos comunes}
-	\centering
-		Individuos de largo $2N-1$, \small$N=$ \#pasajeros.
-		\includegraphics[width=0.8\textwidth]{distribucion.png}
 	\end{block}
 
 }
