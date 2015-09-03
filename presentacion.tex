@@ -58,7 +58,7 @@
 
 \begin{document}
 \title{Optimización de viajes compartidos en taxis utilizando algoritmos evolutivos}
-\author[G. Fagúndez \and R. Massobrio]{Gabriel Fagúndez de los Reyes \and Renzo Massobrio} 
+\author[G. Fagúndez \and R. Massobrio]{Gabriel Fagúndez de los Reyes \and Renzo Massobrio\\Supervisor: Sergio Nesmachnow} 
 \institute[]{Facultad de Ingeniería,\\
 Universidad de la República,\\
 Montevideo, Uruguay}
@@ -84,7 +84,7 @@ Montevideo, Uruguay}
 	\frametitle{Motivación} 
 	\begin{block}{Los viajes compartidos (\textit{Car Pooling})}
 		\begin{itemize}
-			\item Beneficios ecológicos y económicos, individuales y colectivos.
+			\item Beneficios ecológicos y económicos, individuales y colectivos
 			\item Iniciativas:
 			\begin{itemize}
 			\item carriles exclusivos
@@ -93,13 +93,13 @@ Montevideo, Uruguay}
 			\end{itemize}
 		\end{itemize}
 	\end{block}
-	
+	\pause
 	\begin{block}{Los viajes compartidos en taxis (\textit{Taxi Pooling})}
 		\begin{itemize}
-			\item Medio de transporte rápido y confiable.
-			\item Raramente viajan a capacidad completa.
-			\item Tarifas altas desalientan a los usuarios.
-			\item Impactan en la congestión del tráfico y en la contaminación.
+			\item Medio de transporte rápido y confiable
+			\item Raramente viajan a capacidad completa
+			\item Tarifas altas desalientan a los usuarios
+			\item Impactan en la congestión del tráfico y en la contaminación
 		\end{itemize}
 	\end{block}
 }
@@ -116,13 +116,13 @@ Montevideo, Uruguay}
 	\begin{block}{Problema de viajes compartidos en taxis (PVCT)}
 		Un grupo de personas en un \textbf{mismo lugar de origen}, desean viajar hacia \textbf{diferentes destinos} utilizando taxis de forma compartida. Hallar la cantidad de taxis y la asignación de pasajeros para minimizar el \alert{costo total}.
 	\end{block}
-		
+	\pause
 	\begin{block}{Consideraciones}
 		\begin{itemize}
-			\item Cada taxi puede trasladar a un número limitado de pasajeros.
-			\item El número máximo de taxis para $N$ pasajeros es $N$.
-			\item Costo de un taxi = \textbf{costo inicial} $+$ \textbf{costo por trayectos}.
-			\item No se consideran otros costos (e.g. esperas, propinas, peajes).
+			\item Cada taxi puede trasladar a un número limitado de pasajeros
+			%\item El número máximo de taxis para $N$ pasajeros es $N$.
+			\item Costo de un taxi = \textbf{costo inicial} $+$ \textbf{costo por trayectos}
+			\item No se consideran otros costos (e.g. esperas, propinas, peajes)
 		\end{itemize}		
 	\end{block}
 }
@@ -130,18 +130,18 @@ Montevideo, Uruguay}
 \frame{
 	\frametitle{Formulación del problema}
 	\begin{itemize}
-		\item Un conjunto de pasajeros $P$ que viajan desde un origen $O$ a un conjunto de destinos $D$.
+		\item Un conjunto de pasajeros $P$ que viajan desde un origen $O$ a un conjunto de destinos $D$
 
-		\item Un conjunto de taxis $T$ y una función $C:T\rightarrow\{0,1,\ldots,C_{MAX}\}$ con $C_{MAX}$ máxima capacidad de un taxi.
+		\item Un conjunto de taxis $T$ y una función $C:T\rightarrow\{0,1,\ldots,C_{MAX}\}$ con $C_{MAX}$ máxima capacidad de un taxi
 
-		\item Una constante $B$: costo inicial del taxi (``bajada de bandera'').
+		\item Una constante $B$: costo inicial del taxi (``bajada de bandera'')
 		
-		\item Una función de distancia, $dist: \lbrace \lbrace O \rbrace \cup D \rbrace \times D \rightarrow \mathbb{R}^+_0$.
-		\item Una función de costo asociado a la distancia, $cost: \mathbb{R}^+_0 \rightarrow \mathbb{R}^+_0$.
+		\item Una función de distancia, $dist: \lbrace \lbrace O \rbrace \cup D \rbrace \times D \rightarrow \mathbb{R}^+_0$
+		\item Una función de costo asociado a la distancia, $cost: \mathbb{R}^+_0 \rightarrow \mathbb{R}^+_0$
 		
 	\end{itemize}\pause
 
-	\textbf{Se busca una planificación $f:P \rightarrow T \times \lbrace 1, \ldots,C_{MAX} \rbrace$ que \alert{minimice la función de costo total ($CT$)}.}
+	\textbf{Se busca una planificación $f:P \rightarrow T \times \lbrace 1, \ldots,C_{MAX} \rbrace$ que \alert{minimice la función de costo total ($CT$)}}
 	%\centering
 	\begin{equation*}
 			CT  =  \sum\limits_{t_{i}, C(t_{i})\neq0} \Bigg[B+\sum\limits_{j=1}^{C(t_{i})}cost\bigg(dist \underbrace{\Big(dest\big(f^{-1}(t_{i},j-1)\big),dest\big(f^{-1}(t_{i},j)\big)\Big)}_{\text{destinos consecutivos en el recorrido del taxi } t_i}\bigg)\Bigg]
@@ -152,11 +152,11 @@ Montevideo, Uruguay}
 	\frametitle{Variante multiobjetivo del PVCT: formulación matemática}
 	%\pause
 		\begin{itemize}
-		\item Se busca minimizar el \alert{costo total} y la \alert{demora total}.
+		\item Se busca minimizar el \alert{costo total} y la \alert{demora total}
 		%\item Se incorporan dos variables:
 		%\begin{itemize}
-			\item Cada pasajero tiene un \alert{nivel de apuro} asociado.
-			\item Se consideran vehículos con \alert{diferentes capacidades}.
+			\item Cada pasajero tiene un \alert{nivel de apuro} asociado
+			\item Se consideran vehículos con \alert{diferentes capacidades}
 		%\end{itemize}
 	\end{itemize}\pause
 
@@ -182,15 +182,15 @@ Montevideo, Uruguay}
 		\item solución al problema de compartir vehículos en el trabajo
 	\end{itemize}
 	
-	\item Caso especial del \textit{Vehicle Routing Problem (VRP)} con demanda unitaria: $\mathcal{NP}$--difícil [Letcheford et al. (2002)].
-	\item El PVCT tiene grandes similitudes con el CPP.
+	\item Caso especial del \textit{Vehicle Routing Problem (VRP)} con demanda unitaria: $\mathcal{NP}$--difícil [Letcheford et al. (2002)]
+	\item El PVCT tiene grandes similitudes con el CPP
 	\end{itemize}
 	\end{block}
-
+\pause
 	\begin{block}{Estrategias de resolución}
 	\begin{itemize}
-		\item Con instancias de tamaños realistas los algoritmos exactos tradicionales no resultan útiles para una planificación eficiente.
-		\item \alert{Heurísticas} y \alert{metaheurísticas} son necesarias para calcular soluciones de calidad aceptable en tiempos razonables.
+		\item En instancias de tamaños realistas, los algoritmos exactos no resultan eficientes
+		\item \alert{Heurísticas} y \alert{metaheurísticas} permiten calcular soluciones de calidad aceptable en tiempos razonables
 	\end{itemize}
 	\end{block}
 
@@ -206,20 +206,20 @@ Montevideo, Uruguay}
 	\frametitle{Trabajos relacionados}
 
 	\begin{block}{Car pooling problem (CPP)}
-	Yan et al. (2011): \textbf{CPP con histórico de viajes} (relajación lagrangeana). 	\end{block}
+	Yan et al. (2011): \textbf{CPP con histórico de viajes} (relajación lagrangeana) 	\end{block}
 
 	\begin{block}{Dial--a--ride problem (DARP)}
-	Cordeau et al. (2003): \textbf{DARP estático con ventanas de tiempo}. \\\hspace{.8cm} {\small Búsqueda tabú con tiempos de ejecución de hasta 90 minutos.}
+	Cordeau et al. (2003): \textbf{DARP estático con ventanas de tiempo} \\\hspace{.8cm} {\small Búsqueda tabú con tiempos de ejecución de hasta 90 minutos}
 	\end{block}
 
 	\begin{block}{Taxi pooling problem (TPP)}
-	Tao et al. (2007): heurísticas ávidas para \textbf{one--to--many} y many--to--one. \\ \hspace{.8cm}{\small Las mejoras se reportan en términos absolutos.}
+	Tao et al. (2007): heurísticas ávidas para \textbf{one--to--many} y many--to--one \\ \hspace{.8cm}{\small Las mejoras se reportan en términos absolutos}
 
-	Ma et al. (2013): TPP dinámico con pedidos en tiempo real.\\ \hspace{.8cm}{\small 13\% de ahorro en distancia con un algoritmo ávido en \textbf{instancias realistas}.}
+	Ma et al. (2013): TPP dinámico con pedidos en tiempo real\\ \hspace{.8cm}{\small 13\% de ahorro en distancia con un algoritmo ávido en \textbf{instancias realistas}}
 	\end{block}
-
+	\pause
 	\begin{block}{Resumen}
-	Pocos trabajos \alert{centrados en el usuario} y con un enfoque \alert{multiobjetivo}.
+	Pocos trabajos \alert{centrados en el usuario} y con un enfoque \alert{multiobjetivo}
 	\end{block}
 }
 
@@ -228,20 +228,23 @@ Montevideo, Uruguay}
 
 
 % Slide - Implementación ==============================================================
-\section{Implementación} 
+\section{Algoritmos evolutivos} 
 \frame{\tableofcontents[currentsection]}
 
 \frame{
-	\frametitle{Algoritmos evolutivos}
+	\frametitle{Algoritmos evolutivos (AE)}
 	\begin{block}{Definición}
 		\begin{itemize}
-			\item Técnicas estocásticas que emulan el proceso de evolución natural de las especies.
-			\item Aplicadas a problemas de \alert{optimización}, búsqueda y aprendizaje.
-			\item Técnica iterativa (\textbf{generación}) que aplica operadores estocásticos sobre un conjunto de individuos (\textbf{población}).
-			\item Cada individuo codifica una solución tentativa al problema y tiene un valor de \textbf{fitness}.
-			\item El propósito es mejorar el fitness de los individuos en la población mediante la aplicación de \textbf{operadores evolutivos}.
-			\item Los operadores guian al algoritmo evolutivo hacia soluciones tentativas de mayor calidad.
+			\item Técnicas estocásticas que emulan la evolución natural de las especies
+			\item Aplicadas a problemas de \alert{optimización}, búsqueda y aprendizaje
+			\item Técnica iterativa (\textit{generación}) que aplica operadores estocásticos sobre un conjunto de individuos (\textit{población})
+			\item Cada individuo codifica una solución tentativa al problema y tiene un valor de \textit{fitness}
+			\item Se mejora el fitness de los individuos aplicando \alert{operadores evolutivos}
+			\item Los operadores guian al AE hacia soluciones de mayor calidad
 		\end{itemize}
+	\end{block}
+		\begin{block}{Bibliotecas}
+Malva (C++) y ECJ (Java)
 	\end{block}
 }
 
@@ -290,12 +293,15 @@ Montevideo, Uruguay}
 %	\end{columns}
 %}
 
+\section{Implementación} 
+\frame{\tableofcontents[currentsection]}
 
 \frame{
 	\frametitle{AE para el PVCT monoobjetivo}
-	\begin{block}{Aspectos comunes}
+	\begin{block}{Aspectos comunes: representación}
 	\centering
-		Individuos de largo $2N-1$, \small$N=$ \#pasajeros.
+		Individuos de largo $2N-1$, \small$N=$ \#pasajeros
+		%\only<1>{\mbox{\phantom{\includegraphics[width=.8\textwidth]{distribucion.png}}}}
 		\includegraphics[width=0.8\textwidth]{distribucion.png}
 	\end{block}
 
@@ -303,18 +309,19 @@ Montevideo, Uruguay}
 
 \frame{
 	\frametitle{AE para el PVCT monoobjetivo}
-	\begin{block}{Aspectos comunes}
+	\begin{block}{Aspectos comunes: operadores}
 		\begin{itemize}
 			\item Inicialización:
-			\begin{itemize}
+			\begin{enumerate}
 				\item basada en técnica aleatoria
 				\item basada en técnica ávida + permutaciones
-			\end{itemize}
-			\item Implementados en Malva.
+			\end{enumerate}
+			%\item Implementados en Malva
 	
 
 		\item Función correctiva:\\ \hspace{.5cm}{\small desplaza ceros para romper secuencias de dígitos inválidas}	
-	
+		\includegraphics[width=.8\textwidth]{temporal.png}
+
 		\end{itemize}
 	\end{block}
 
@@ -323,9 +330,9 @@ Montevideo, Uruguay}
 
 \frame{
 	\frametitle{AE para el PVCT monoobjetivo}
-	\begin{block}{Aspectos comunes}
+	\begin{block}{Aspectos comunes: operadores}
 	\centering
-		Cruzamiento basado en posición (PBX) + función correctiva.
+		Cruzamiento basado en posición (PBX) + función correctiva
 		\includegraphics[width=0.8\textwidth]{pbxaplicado.png}
 	\end{block}
 
@@ -333,9 +340,9 @@ Montevideo, Uruguay}
 
 \frame{
 	\frametitle{AE para el PVCT monoobjetivo}
-	\begin{block}{Aspectos comunes}
+	\begin{block}{Aspectos comunes: operadores}
 	\centering
-		Mutación por intercambio (EM) + función correctiva.
+		Mutación por intercambio (EM) + función correctiva
 		\includegraphics[width=1\textwidth]{emaplicado.png}
 	\end{block}
 
@@ -345,7 +352,7 @@ Montevideo, Uruguay}
 	\frametitle{AE para el PVCT monoobjetivo}
 	\begin{block}{AE secuencial \textit{(seqEA)}}
 		\begin{itemize}
-			\item Selección proporcional.
+			\item Selección proporcional
 		\end{itemize}
 	\end{block}
 
@@ -353,8 +360,8 @@ Montevideo, Uruguay}
 
 	\begin{block}{Micro AE paralelo (\textit{p$\mu$EA})}
 		\begin{itemize}
-			\item Se busca \textbf{mejorar el desempe\~no} mediante el paralelismo.
-			\item \alert{Modelo de subpoblaciones distribuidas}: divide la poblaci\'on en \textbf{islas} que intercambian individuos mediante \textbf{migración}.
+			\item Objetivo: \textbf{mejorar el desempe\~no} mediante paralelismo
+			\item \alert{Modelo de subpoblaciones distribuidas}: divide la poblaci\'on en \textbf{islas} que intercambian individuos mediante \textbf{migración}
 			
 			\begin{centering}
 				\centering
@@ -362,9 +369,9 @@ Montevideo, Uruguay}
 				\hspace{3cm} \includegraphics<2->[width=0.5\textwidth]{migracion.png}
 			\end{centering}
 			
-			\item Poblaciones pequeñas.
-			\item Selección por torneo $(m,k)$.
-			\item Migración asíncrona, con topología de anillo unidireccional.
+			\item Poblaciones pequeñas
+			\item Selección por torneo $(m,k)$
+			\item Migración asíncrona, con topología de anillo unidireccional
 
 		\end{itemize}
 	\end{block}
@@ -375,9 +382,9 @@ Montevideo, Uruguay}
 	\frametitle{AE para el PVCT multiobjetivo}
 	\begin{block}{Aspectos comunes}
 		\begin{itemize}
-			\item MOEA: acercarse al frente de Pareto del problema (\textbf{convergencia}) y muestrear adecuadamente el frente de soluciones (\textbf{diversidad}).
-			\item Función correctiva considera vehículos de distintas capacidades.
-			\item Inicialización ávida y selección por torneo.
+			\item MOEA: acercarse al frente de Pareto del problema (\alert{convergencia}) y muestrear adecuadamente el frente de soluciones (\alert{diversidad})
+			\item Función correctiva considera vehículos de distintas capacidades
+			\item Inicialización ávida y selección por torneo
 		\end{itemize}
 	\end{block}
 
@@ -388,7 +395,7 @@ Montevideo, Uruguay}
 		\begin{columns}[totalwidth=\textwidth]
 		\column{0.5\textwidth}
 			Agregación lineal de los objetivos:
-			\\\hspace{1cm}$F = w_C\times CT + w_D \times DT$, \small \\\hspace{1.8cm}{\tiny$w_C = [0:\frac{1}{\#islas}:1]$, $w_D = 1 - w_C$}.
+			\\\hspace{1cm}$F = w_C\times CT + w_D \times DT$, \small \\\hspace{1.8cm}{\tiny$w_C = [0:\frac{1}{\#islas}:1]$, $w_D = 1 - w_C$}
 		\column{0.5\textwidth}
 			\centering
 			\only<1>{\mbox{\phantom{\includegraphics[width=1\textwidth]{pmuMOEAD.png}}}}
@@ -398,7 +405,7 @@ Montevideo, Uruguay}
 	\pause
 
 	\begin{block}{MOEA explícito (\textit{NSGA--II})}
-		Ordenamiento no--dominado (elitista), \textit{crowding} para preservar diversidad.
+		Ordenamiento no--dominado (elitista), \textit{crowding} para preservar diversidad
 	\end{block}
 }
 
@@ -411,22 +418,22 @@ Montevideo, Uruguay}
 
 	\begin{block}{Generación de puntos realistas en el mapa}
 		\begin{itemize}
-		\item Generador de Pedidos de Taxis (TQG) con datos de GPS de taxis de Beijing (Ma et al., 2013).
-		\item Script para obtener instancias de un origen a muchos destinos.
-		\item API para obtener tarifas TaxiFareFinder (TFF).
-		\item Instancias en Montevideo generadas manualmente.
+		\item Generador de Pedidos de Taxis (TQG) con datos de GPS de taxis de Beijing (Ma et al., 2013)
+		\item Script para obtener instancias de un origen a muchos destinos
+		\item API para obtener tarifas TaxiFareFinder (TFF)
+		\item Instancias en Montevideo generadas manualmente
 		\end{itemize}
 	\end{block}
 	\begin{block}{Instancias generadas}
 
 	\begin{itemize}\setlength\itemsep{1pt}
-		\item \textbf{6 chicas:} 10 y 15 pasajeros (Beijing).
-		\item \textbf{6 medianas:} 15 y 25 pasajeros (Beijing).
-		\item \textbf{6 grandes:} 25 y 45 pasajeros (Beijing).
-		\item \textbf{4 en Montevideo:} 8 y 17 pasajeros (Montevideo).
+		\item \textbf{6 chicas:} 10 y 15 pasajeros (Beijing)
+		\item \textbf{6 medianas:} 15 y 25 pasajeros (Beijing)
+		\item \textbf{6 grandes:} 25 y 45 pasajeros (Beijing)
+		\item \textbf{4 en Montevideo:} 8 y 17 pasajeros (Montevideo)
 	\end{itemize}
 	
-	\alert{22} instancias para el PVCT monoobjetivo y \alert{88} instancias para el PVCT multiobjetivo, variando capacidades y tolerancias.
+	\alert{22} instancias para el PVCT monoobjetivo y \alert{88} instancias para el PVCT multiobjetivo, variando capacidades y tolerancias
 	
 	\end{block}
 
@@ -438,8 +445,8 @@ Montevideo, Uruguay}
 	\column{0.5\textwidth}
 	\begin{block}{Entorno de ejecución}
 		\begin{itemize}
-		\item Evaluación experimental realizada en el Cluster FING.
-		\item Sin compartir recursos para evitar interferencias.
+		\item Evaluación experimental en el Cluster FING
+		\item Sin compartir recursos para evitar interferencias
 		\end{itemize}
 	\end{block}
 	\column{0.5\textwidth}
@@ -448,18 +455,18 @@ Montevideo, Uruguay}
 	\end{columns}
 	\begin{block}{Ejecuciones}
 	\begin{itemize}\setlength\itemsep{1pt}
-		\item \alert{30 ejecuciones independientes} de cada algoritmo sobre cada instancia.
-		\item Criterio de parada: \textbf{10.000 generaciones} (planificación en línea).
+		\item \alert{30 ejecuciones independientes} de cada algoritmo sobre cada instancia
+		\item Criterio de parada: \textbf{10.000 generaciones} (planificación en línea)
 	\end{itemize}
 	\end{block}
 	\begin{block}{Comparación de resultados}
 	\begin{itemize}
 		\item Tests estadísticos sobre las distribuciones de resultados:
 		\begin{itemize}
-		\item Shapiro--Wilk sobre cada muestra para contrastar normalidad.
-		\item Kruskal--Wallis para comparar las muestras entre sí.
+		\item Shapiro--Wilk sobre cada muestra para contrastar normalidad
+		\item Kruskal--Wallis para comparar las muestras entre sí
 		\end{itemize}
-		\item En ambos tests se utiliza un nivel de confianza del 95\% ($\alpha=0.05$).
+		\item En ambos tests se utiliza un nivel de confianza del 95\% ($\alpha=0.05$)
 	\end{itemize}	
 	\end{block}
 
@@ -477,9 +484,9 @@ Montevideo, Uruguay}
 	\begin{block}{Configuración paramétrica}
 	\begin{itemize}
 		\item \textbf{seqEA}: %20 ejecuciones de 2000 generaciones sobre 3 instancias.\\
-		{\small $\text{\#\textit{P}} \in \lbrace 150; 200; \alert{250}\rbrace$; $p_C \in \lbrace \alert{0.6}; 0.75; 0.95\rbrace$; $p_M \in \lbrace 0.001; 0.01; \alert{0.1}\rbrace$.}	
-		\item \textbf{p$\mu$EA}: micro--población de 15 individuos, torneo ($m=2$, $k=1$), migración cada 500 generaciones. \\%20 ejecuciones de 100.000 generaciones sobre 5 instancias.\\
-		{\small $p_C \in \lbrace 0.6; \alert{0.75}; 0.95\rbrace$; $p_M \in \lbrace 0.001; 0.01; \alert{0.1}\rbrace$.}
+		{\small $\text{\#\textit{P}} \in \lbrace 150; 200; \alert{250}\rbrace$; $p_C \in \lbrace \alert{0.6}; 0.75; 0.95\rbrace$; $p_M \in \lbrace 0.001; 0.01; \alert{0.1}\rbrace$}	
+		\item \textbf{p$\mu$EA}: micro--población de 15 individuos, torneo ($m=2$, $k=1$), migración cada 500 generaciones \\%20 ejecuciones de 100.000 generaciones sobre 5 instancias.\\
+		{\small $p_C \in \lbrace 0.6; \alert{0.75}; 0.95\rbrace$; $p_M \in \lbrace 0.001; 0.01; \alert{0.1}\rbrace$}
 	\end{itemize}
 	\end{block}
 	\vspace{.5cm}
@@ -508,20 +515,20 @@ Montevideo, Uruguay}
 
 	\begin{block}{Resultados \textit{seqEA}}
 	\begin{itemize}
-		\item Inicialización ávida supera a inicialización aleatoria en \alert{10} instancias.
-		\item Inicialización aleatoria supera a inicialización ávida en \alert{2} instancias.
-		\item No hay diferencias estadísticamente significativas en 10 instancias.
+		\item Inicialización ávida supera a inicialización aleatoria en \alert{10} instancias
+		\item Inicialización aleatoria supera a inicialización ávida en \alert{2} instancias
+		\item No hay diferencias estadísticamente significativas en 10 instancias
 	\end{itemize}
 	\end{block}
 	\begin{block}{Resultados \textit{p$\mu$EA}}
 	\begin{itemize}
-		\item Inicialización ávida supera a inicialización aleatoria en \alert{11} instancias.
-		\item Inicialización aleatoria nunca supera a inicialización ávida.
-		\item No hay diferencias estadísticamente significativas en 11 instancias.
+		\item Inicialización ávida supera a inicialización aleatoria en \alert{11} instancias
+		\item Inicialización aleatoria nunca supera a inicialización ávida
+		\item No hay diferencias estadísticamente significativas en 11 instancias
 	\end{itemize}
 	\end{block}
 	\begin{block}{Conclusión}
-	Se utiliza la \alert{inicialización ávida} para el resto de la evaluación experimental.
+	Se utiliza la \alert{inicialización ávida} para el resto de la evaluación experimental
 	\end{block}
 }
 
@@ -529,9 +536,9 @@ Montevideo, Uruguay}
 	\frametitle{Mejoras \textit{seqEA} sobre algoritmo ávido}
 	\input{./evaluacion_experimental/mejoras_greedy_clei/imagenes.tex}
 	
-	Mejoras en \textbf{todas} las instancias sobre el algoritmo ávido (hasta \alert{35.9\%}).
+	Mejoras en \textbf{todas} las instancias sobre el algoritmo ávido (hasta \alert{35.9\%})
 
-	\small{\textit{``Online taxi sharing optimization using evolutionary algorithms'' (CLEI)}}
+	\small{\textit{``Online taxi sharing optimization using evolutionary algorithms'' (CLEI 2014)}}
 
 }
 
@@ -539,9 +546,9 @@ Montevideo, Uruguay}
 	\frametitle{Mejoras \textit{p$\mu$EA} sobre algoritmo ávido}
 	\input{./evaluacion_experimental/mejoras_greedy_alio/imagenes.tex}
 	
-	Mejoras en \textbf{todas} las instancias sobre el algoritmo ávido (hasta \alert{41.0\%}).
+	Mejoras en \textbf{todas} las instancias sobre el algoritmo ávido (hasta \alert{41.0\%})
 
-	\small{\textit{``A parallel micro evolutionary algorithm for taxi sharing optimization'' (ALIO)}}
+	\footnotesize{\textit{``A parallel micro evolutionary algorithm for taxi sharing optimization'' (ALIO 2014)}}
 }
 
 \frame{
@@ -549,9 +556,9 @@ Montevideo, Uruguay}
 	\input{./evaluacion_experimental/comparativa_clei_alio.tex}
 \vspace{0.3cm}
 \centering
-	\textit{p$\mu$EA} supera a \textit{seqEA} en \alert{17 de 22} instancas.
+	\textit{p$\mu$EA} supera a \textit{seqEA} en \alert{17 de 22} instancias
 
-	Únicamente en \alert{1} instancia \textit{seqEA} supera a \textit{p$\mu$EA}.
+	\scriptsize{(sólo en \alert{1} instancia \textit{seqEA} supera a \textit{p$\mu$EA})}
 
 
 }
@@ -560,9 +567,9 @@ Montevideo, Uruguay}
 	\frametitle{Evolución del costo a lo largo de una ejecución}	
 	\input{./evaluacion_experimental/fitness_sobre_tiempo/imagenes.tex}
 	\centering
-	\textit{p$\mu$EA} alcanza mejores soluciones que \textit{seqEA} en menos tiempo. 
+	\textit{p$\mu$EA} calcula mejores soluciones que \textit{seqEA} en menos tiempo
 
-	En el mejor caso alcanza una \alert{aceleración de $7.5$x} ($4.6$x en promedio).
+	En el mejor caso logra una \alert{aceleración de $7.5$x} ($4.6$x en promedio)
 
 }
 
@@ -584,7 +591,7 @@ Montevideo, Uruguay}
 			$p_C \in \lbrace 0.6; \alert{0.75}; 0.95\rbrace$; $p_M \in \lbrace 0.001; 0.01; \alert{0.1}\rbrace$}\\
 			\item \textbf{NSGA--II}: %30 ejecuciones de 5000 generaciones sobre 4 instancias. \\
 			{\small $\#P=80$; selección por torneo ($m=2,k=1$);\\
-			$p_C \in \lbrace 0.6; \alert{0.75}; 0.95\rbrace$; $p_M \in \lbrace 0.001; 0.01; \alert{0.1}\rbrace$.}\\
+			$p_C \in \lbrace 0.6; \alert{0.75}; 0.95\rbrace$; $p_M \in \lbrace 0.001; 0.01; \alert{0.1}\rbrace$}\\
 		\end{itemize}
 	\end{block}
 	\centering
@@ -598,14 +605,14 @@ Montevideo, Uruguay}
 	\frametitle{Algoritmos ávidos}
 	
 	\begin{block}{Algoritmo ávido para minimizar el costo}
-		Similar al de la variante monoobjetivo pero considerando las distintas capacidades de los vehículos.
+		Similar al de la variante monoobjetivo pero considerando las distintas capacidades de los vehículos
 	\end{block}
 	\begin{block}{Algoritmo ávido para minimizar la demora}
 		\begin{itemize}
-		\item Se crea un taxi vacío para cada pasajero con nivel máximo de apuro y se los ubica en la primera posición. 
+		\item Se crea un taxi vacío para cada pasajero con nivel máximo de apuro y se los ubica en la primera posición
 		%\item Se ubica a cada pasajero con mayor nivel de apuro en la primera posición del taxi.
-		\item Luego, se recorre la lista de pasajeros no asignados en orden de apuro, colocándolos en el taxi que minimice su demora.
-		\item Si el taxi alcanza la máxima capacidad disponible, se lo considera \textit{completo} y no acepta más pasajeros.
+		\item Se procesan los pasajeros no asignados en orden de apuro, colocándolos en el taxi que minimice su demora
+		\item Si el taxi alcanza la máxima capacidad disponible, se lo considera \textit{completo} y no acepta más pasajeros
 		\end{itemize}
 	\end{block}
 }
@@ -613,15 +620,15 @@ Montevideo, Uruguay}
 \frame{
 	\frametitle{Resultados numéricos}
 		
-	\begin{block}{\scriptsize{\textit{p$\mu$MOEA/D: \scalebox{.7}{``Planificación multiobjetivo de viajes compartidos en taxis utilizando un micro algoritmo evolutivo paralelo'' (MAEB)}}}}
-	Hasta \alert{101.2\%} de mejora en demora y \alert{72.8\%} en costo sobre ávidos.
+	\begin{block}{\scriptsize{\textit{p$\mu$MOEA/D: \scalebox{.7}{``Planificación multiobjetivo de viajes compartidos en taxis utilizando un micro AE paralelo'' (MAEB 2015)}}}}
+	Hasta \alert{101.2\%} de mejora en demora y \alert{72.8\%} en costo sobre ávidos
 		
 		\input{./evaluacion_experimental/metricas_mo_resumen_maeb.tex}
 		\small{Buena convergencia y diversidad. Pocas soluciones no dominadas.}
 	\end{block}
 	%\pause
-	\begin{block}{\scriptsize{\textit{NSGA--II: \tiny{``Multiobjective taxi sharing optimization using the NSGA-II evolutionary algorithm'' (MIC)}}}}
-		Hasta \alert{105.2\%} de mejora en demora y \alert{75.1\%} en costo sobre ávidos.
+	\begin{block}{\scriptsize{\textit{NSGA--II: \tiny{``Multiobjective taxi sharing optimization using the NSGA-II evolutionary algorithm'' (MIC 2015)}}}}
+		Hasta \alert{105.2\%} de mejora en demora y \alert{75.1\%} en costo sobre ávidos
 		
 		\input{./evaluacion_experimental/metricas_mo_resumen_mic.tex}
 		\centering
@@ -638,7 +645,7 @@ Montevideo, Uruguay}
 	\frametitle{Frentes de Pareto: p$\mu$MOEA/D vs. NSGA--II}
 	\input{./evaluacion_experimental/fp_comparacion/imagenes.tex}
 
-	\alert{\textit{NSGA--II} alcanza mejores soluciones}: mayor cantidad de puntos no dominados distribuidos homogéneamente a lo largo del frente.
+	\alert{\textit{NSGA--II} alcanza mejores soluciones:} mayor cantidad de puntos no dominados, mejor distribuidos a lo largo del frente
 
 	
 }
@@ -659,7 +666,8 @@ Montevideo, Uruguay}
 		\small \textit{demora}
 	\end{columns}
 	\vspace{0.3cm}
-	\textit{NSGA--II} alcanza mejores soluciones pero requiere de un mayor tiempo de ejecución que \textit{p$\mu$MOEA/D}. %Es necesario tomar una decisión de compromiso.
+	\centering
+	\textit{NSGA--II} alcanza mejores soluciones pero requiere de un mayor tiempo de ejecución que \textit{p$\mu$MOEA/D} %Es necesario tomar una decisión de compromiso.
 
 	
 }
@@ -674,13 +682,13 @@ Montevideo, Uruguay}
 	\begin{columns}[totalwidth=\textwidth]
 	\column{0.5\textwidth}
 	\begin{itemize}
-	\item Se ingresa el origen, los destinos y la tarifa (diurna/nocturna).
+	\item Se ingresa el origen, los destinos y la tarifa (diurna/nocturna)
 	\end{itemize}
 	\centering
 	\includegraphics[width=\textwidth]{mapa.png}
 	\column{0.5\textwidth}\pause
 	\begin{itemize}
-	\item Se ejecuta el AE y se muestra la planificación calculada.
+	\item Se ejecuta el AE y se muestra la planificación calculada
 	\end{itemize}
 	\centering
 	\only<1>{\mbox{\phantom{\includegraphics[width=.9\textwidth]{res_total.png}}}}%
@@ -697,9 +705,9 @@ Montevideo, Uruguay}
 
 
 	\begin{itemize}
-	\item Servidor implementado en Ruby on Rails siguiendo MVC.
-	\item Las aplicaciones móviles consumen la API del servidor.
-	\item Aplicaciones móviles: desarrollo híbrido vs. desarrollo nativo.
+	\item Servidor implementado en Ruby on Rails siguiendo MVC
+	\item Las aplicaciones móviles consumen la API del servidor
+	\item Aplicaciones móviles: desarrollo híbrido vs. desarrollo nativo
 	\end{itemize}
 }
 
@@ -710,13 +718,13 @@ Montevideo, Uruguay}
 \frame{
 	\frametitle{Conclusiones}
 	\begin{itemize}
-	\item Se relevó la literatura relacionada, se presentaron \textbf{dos} variantes del problema y se implementaron \textbf{cuatro} AE.
-	\item El análisis experimental se realizó sobre \textbf{instancias realistas} comparando contra algoritmos ávidos.\pause
-	\item Variante monoobjetivo: mejoras en costo de hasta \alert{35.9\%} (seqEA) y \alert{41.0\%} (p$\mu$EA) sobre algoritmo ávido.
-	\item Variante multiobjetivo: mejoras de hasta \alert{72.8\%} y \alert{101.2\%} (p$\mu$MOEA/D); \alert{75.1\%} y \alert{105.2\%} (NSGA--II) en costo y demora sobre algoritmos ávidos.\pause
-	\item Planificador de viajes compartidos en taxis (\url{www.mepaseaste.uy}).\pause
-	\item \textbf{Cuatro} artículos en conferencias internacionales.
-	\item \textbf{Primer premio} del jurado en ``Ingeniería deMuestra 2014''.
+	\item Se relevó la literatura relacionada, se presentaron \textbf{dos} variantes del problema y se implementaron \textbf{cuatro} AE
+	\item El análisis experimental se realizó sobre \textbf{instancias realistas} comparando contra algoritmos ávidos\pause
+	\item Variante monoobjetivo: mejoras en costo de hasta \alert{35.9\%} (seqEA) y \alert{41.0\%} (p$\mu$EA) sobre algoritmo ávido
+	\item Variante multiobjetivo: mejoras de hasta \alert{72.8\%} y \alert{101.2\%} (p$\mu$MOEA/D); \alert{75.1\%} y \alert{105.2\%} (NSGA--II) en costo y demora sobre algoritmos ávidos\pause
+	\item Planificador de viajes compartidos en taxis (\url{www.mepaseaste.uy})\pause
+	\item \textbf{Cuatro} artículos en conferencias internacionales
+	\item \textbf{Primer premio} del jurado en ``Ingeniería deMuestra 2014''
 	\end{itemize}
 }
 
@@ -725,22 +733,22 @@ Montevideo, Uruguay}
 	\frametitle{Trabajo futuro}
 	\begin{block}{Mejoras en los AE}
 	\begin{itemize}
-		\item Implementar NSGA--II con subpoblaciones distribuidas.
-		\item Incorporar \textbf{datos realistas del tráfico}.
-		\item Incorporar datos de la \textbf{disponibilidad de los taxis} en tiempo real.
+		\item Implementar NSGA--II con subpoblaciones distribuidas
+		\item Incorporar \textbf{datos realistas del tráfico}
+		\item Incorporar datos de la \textbf{disponibilidad de los taxis} en tiempo real
 	\end{itemize}
 	\end{block}
 	\begin{block}{Mejoras en el planificador de viajes compartidos}
 	\begin{itemize}
-		\item Mejorar la experiencia de usuario.
-		\item Desarrollar versiones para Android y Windows Phone.
-		\item Soportar la variante multiobjetivo.
+		\item Mejorar la experiencia de usuario
+		\item Desarrollar versiones para Android y Windows Phone
+		\item Soportar la variante multiobjetivo
 	\end{itemize}
 	\end{block}
 	\begin{block}{Problemas relacionados}
 	\begin{itemize}
-	\item Estudiar otras variantes del problema (many--to--one, many--to--many).
-	\item Estudiar la aplicabilidad de los AE a otros escenarios.
+	\item Estudiar otras variantes del problema (many--to--one, many--to--many)
+	\item Estudiar la aplicabilidad de los AE a otros escenarios
 	\end{itemize}
 	\end{block}
 }
@@ -749,10 +757,13 @@ Montevideo, Uruguay}
 	%\frametitle{Fin}
 	\centering
 	{\huge Gracias}
-	\vspace{1cm}
+	\vspace{.3cm}
 
-	\includegraphics[width=.3\textwidth]{logo-mepaseaste.png}
+	\includegraphics[width=.6\textwidth]{stand.jpg}
+
 	\vspace{.5cm}
+
+	\includegraphics[width=.2\textwidth]{logo-mepaseaste.png}
 
 	Sitio web del proyecto: \url{www.fing.edu.uy/inco/grupos/cecal/hpc/AG-Taxi/}
 	
